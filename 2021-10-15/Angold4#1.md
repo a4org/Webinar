@@ -99,7 +99,7 @@ If the scaling of clock frequency had continued its trend of 25%-30% increase pe
 
 
 
-## 2. Different Abstraction
+## 2. Different Level of Abstraction
 ![aws](Sources/aws.png)
 
 **Square-Matrix Multiplication**
@@ -195,9 +195,7 @@ public class mm_java {
 #include <sys/time.h>
 
 #define n 4096
-double A[n][n;]
-double B[n][n;]
-double C[n][n;]
+double A[n][n]; double B[n][n]; double C[n][n];
 
 float tdiff(struct timeval *start, struct timeval *end) {
     return (end->tv_sec- start->tv_sec) + 1e-6*(end->tv_usec-start->tv_usec);
@@ -232,6 +230,102 @@ int main(int argc, const char *argv[]) {
 * **About 18x faster than Python**
 * ...
 * **C gets `0.014%` of peak**
+
+
+
+|Version   |Implementation   | Running Time  |Relative Speedup |Absolute Speedup   |Percent of peak   |
+|:--:|:--:|:--:|:--:|:--:|:--:|
+| 1 | Python |21041.67 | 1 | 1 | 0.00075 |
+| 2 | Java | 2387.32 | 8.81 | 9 | 0.007 |
+| 3 | C | 1155.77 | 2.07 | 18 | 0.014 |
+
+### Why? 
+![relationship](Sources/relationship.png)
+
+#### 1. Interpreted  vs  Compiled
+![intervscomp](Sources/intervscomp.png)
+* The interpreter **reads**, **interprets**, and **performs each program statement** and **updates** the machine state.
+* The interpreted Language are more **flexible** than Compiled Language
+* Since it is execute line by line and do not need the compile time
+
+<img src="Sources/interpreter.png" align="right" weight="300" height="200"/>
+* **Example:**
+    * **1. Chrome is written in C++ and C (Compiled Language)**
+    * **But it uses javascript as its interface language**
+    ****
+    * **2. Unreal Engine is written in C++**
+    * **But most of the time for a normal game coder, he uses Python/C#/Lua as its developing language**
+
+
+#### 2. Dynamic  vs  Static
+![java](Sources/java.png)
+Java has an **interpreter** as well as a **virtual machine**, and Python has a **virtual machine** as well as an **interpreter**.
+* ** The Java virtual machine requires the programmer to specify the primitive data type of each variable.**
+    *  This provides sufficient information for Java bytecode to be interpreted and executed by the Java virtual machine.
+
+
+* **The Python virtual machine is more complex in the sense that it takes on the additional task of pausing before the execution of each operation to determine the primitive data types for each variable or data structure involved in the operation.**
+    * Python frees the programmer from thinking in terms of primitive data types, and allows operations to be expressed at a higher level. The price of this freedom is **performance**.
+
+> **The virtual machines of dynamic languages like Python implement some idealized logical machine, and don't necessarily correspond very closely to any real physical hardware.**
+
+> **The Java virtual machine, in contrast, is more similar in functionality to a classical C compiler, except that instead of emitting machine instructions, it executes built-in routines.**
+
+#### Why Java is designed in this way?
+* **It is for sake of speed and portability at the same time.**
+* If you merely interpret the java file with an interpreter you would have **portability but not speed.**
+* If you have to compile the code for a given processor architecture you would have **speed but not portability.**
+* **With the bytecode, you compile the code (into bytecode) for a common machine that will execute it (the JVM) it is a compromise between speed and portability.**
+
+
+## 3. Matrix Multiplication
+### 1. Loop Order:
+**We can change the order of the loops in this program without affecting its correctness.**
+
+```c
+   for (int i = 0; i < n; ++i) {
+             for (int k = 0; k < n; ++k) {
+         for (int j = 0; j < n; ++j) {
+                 C[i][j] += A[i][j] * B[i][j];
+             }
+         }
+   }
+```
+|Loop Order | Running Time|
+|:--:|:--:|
+|i, j, k|   1155.77|
+|i, k, j|  177.68 |
+|j, i, k|  1080.61|
+|j, k, i| 3056.63 |
+|k, i, j| 179.21 |
+|k, j, i| 3032.82 |
+
+* **Loop order affects running time by a factor of 18!**
+
+![cache](Sources/cache.png)
+![case1](Sources/case1.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
