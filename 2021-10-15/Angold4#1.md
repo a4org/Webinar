@@ -1,7 +1,9 @@
 # Performance Engineering
 #### Angorithm4 Webinar #1 by Jiawei Wang 2021-10-15
 
+
 ##1 Why Performance Engineering?
+
 ### Currency
 * Performance is the **currency** of computing. You can often “buy” needed properties with performance.
     * **Functionality**  **Reliability**  **Correctness**  **Testability**  **Maintainability**...
