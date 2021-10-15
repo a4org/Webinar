@@ -215,7 +215,7 @@ int main(int argc, const char *argv[]) {
      for (int i = 0; i < n; ++i) {
          for (int j = 0; j < n; ++j) {
              for (int k = 0; k < n; ++k) {
-                 C[i][j] += A[i][j] * B[i][j];
+                 C[i][j] += A[i][k] * B[k][j];
              }
          }
      }
@@ -286,7 +286,7 @@ Java has an **interpreter** as well as a **virtual machine**, and Python has a *
    for (int i = 0; i < n; ++i) {
              for (int k = 0; k < n; ++k) {
          for (int j = 0; j < n; ++j) {
-                 C[i][j] += A[i][j] * B[i][j];
+                 C[i][j] += A[i][k] * B[k][j];
              }
          }
    }
@@ -305,24 +305,39 @@ Java has an **interpreter** as well as a **virtual machine**, and Python has a *
 ![cache](Sources/cache.png)
 ![case1](Sources/case1.png)
 
+```c
+
+    for (int i = 0; i < n; ++i) {
+         for (int j = 0; j < n; ++j) {
+             for (int k = 0; k < n; ++k) {
+                 C[i][j] += A[i][k] * B[k][j];
+             }
+         }
+   }
+
+   for (int i = 0; i < n; ++i) {
+             for (int k = 0; k < n; ++k) {
+         for (int j = 0; j < n; ++j) {
+                 C[i][j] += A[i][k] * B[k][j];
+             }
+         }
+   }
+```
 
 
+![case2](Sources/case2.png)
 
 
+![matrixrow](Sources/matrixrow.png)
+![matrixcol](Sources/matrixcol.png)
 
+### 2.Parallel Programming
 
+![cilk](Sources/cilk.png)
 
+### 3. Compiler Optimization
 
-
-
-
-
-
-
-
-
-
-
+![summary](Sources/summary.png)
 
 
 
