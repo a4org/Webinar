@@ -1,6 +1,6 @@
-# Performance Engineering
-#### Angorithm4 Webinar #1 by Jiawei Wang 2021-10-15
+# Angorithm4 Webinar #1 
 
+#### Host by Jiawei Wang 2021-10-15
 
 ##1 Why Performance Engineering?
 
@@ -76,6 +76,7 @@ If the scaling of clock frequency had continued its trend of 25%-30% increase pe
 * If you wants to use that potential, you had to do **parallel programming**.etc.
 
 <img src="Sources/intel.png" align="right" weight="300" height="400"/>
+
 #### Hardware
 
 * big multicore processors 
@@ -249,6 +250,7 @@ int main(int argc, const char *argv[]) {
 * Since it is execute line by line and do not need the compile time
 
 <img src="Sources/interpreter.png" align="right" weight="300" height="200"/>
+
 * **Example:**
     * **1. Chrome is written in C++ and C (Compiled Language)**
     * **But it uses javascript as its interface language**
