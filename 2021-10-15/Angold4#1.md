@@ -2,7 +2,8 @@
 
 #### Host by Jiawei Wang 2021-10-15
 
-##1 Why Performance Engineering?
+
+## 1 Why Performance Engineering?
 
 ### Currency
 * Performance is the **currency** of computing. You can often “buy” needed properties with performance.
