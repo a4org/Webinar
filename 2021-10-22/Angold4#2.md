@@ -22,7 +22,9 @@
 
 ![AMD](Sources/AMD.png)
 
+
 ** Programmable Computer**<br>
+
 Using instructions flow to control the Computer
 #### Examples:
 
