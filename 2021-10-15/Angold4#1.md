@@ -242,7 +242,7 @@ int main(int argc, const char *argv[]) {
 | 3 | C | 1155.77 | 2.07 | 18 | 0.014 |
 
 ### Why? 
-![relationship](Sources/relationship.png)
+![Relationship](Sources/Relationship.png)
 
 #### 1. Interpreted  vs  Compiled
 ![intervscomp](Sources/intervscomp.png)
