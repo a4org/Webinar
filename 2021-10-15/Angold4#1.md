@@ -33,7 +33,7 @@
     * How? 8 bits -> 16 bits -> 32 bits + smaller transistors
 
 * **Dennard Scaling** As transistors get smaller, their **power density** stays constant.
-    * **1. why smaller faster? ** -> Because its gate requires shorter charging and discharging time **[youdao](https://note.youdao.com/web/#/file/WEB23e18924c57ddb8c09563b64950ac104/note/WEBc36af711fa7632e2513f6114a328589c/)**
+    * **1. why smaller faster?** -> Because its gate requires shorter charging and discharging time **[youdao](https://note.youdao.com/web/#/file/WEB23e18924c57ddb8c09563b64950ac104/note/WEBc36af711fa7632e2513f6114a328589c/)**
     * **2. what is power density?** from [wikipedia](https://en.wikipedia.org/wiki/Power_density#:~:text=Power%20density%20is%20the%20amount,expressed%20as%20W%2Fm3.)<br>
     Power density is the amount of power (time rate of energy transfer) per unit volume.
 
@@ -263,7 +263,7 @@ int main(int argc, const char *argv[]) {
 #### 2. Dynamic  vs  Static
 ![java](Sources/java.png)
 Java has an **interpreter** as well as a **virtual machine**, and Python has a **virtual machine** as well as an **interpreter**.
-* ** The Java virtual machine requires the programmer to specify the primitive data type of each variable.**
+* **The Java virtual machine requires the programmer to specify the primitive data type of each variable.**
     *  This provides sufficient information for Java bytecode to be interpreted and executed by the Java virtual machine.
 
 

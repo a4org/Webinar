@@ -9,7 +9,7 @@
 ### i. Description
 > **The Quicksort algorithm has a worst-case running time of `O(N^2)` on any input array of number.**
 
-Despite this slow worst-case running time**, Quicksort is often the best practical choice for sorting because it is remarkbly efficient on the average:** Its expected running time is **`O(nlogn)`** and the constant factors hidden in the O(nlogn) notation are quite small.
+Despite this slow worst-case running time, **Quicksort is often the best practical choice for sorting because it is remarkbly efficient on the average:** Its expected running time is **`O(nlogn)`** and the constant factors hidden in the O(nlogn) notation are quite small.
 
 * Designed by Hoare in 1962
 * Sort **in Place** (No extra storiage needed)
