@@ -25,20 +25,20 @@ After that Microsoft dominated the scenes but at the same time they weren't impr
 
 ### Notable JS Engines:
 <img src="Sources/V8.png" align="right" weight="90" height="90"/>
-#### [V8](https://v8.dev/)
-* From Google
+#### V8
+* From **[Google](https://v8.dev/)**
 * Most Used JS Engine
 * Used in Chromium-based browsers (Chrome)
 
 <img src="Sources/SpiderMonkey.png" align="right" weight="90" height="90"/>
-#### [SpiderMonkey](https://spidermonkey.dev/)
-* From Mozilla Foundation
+#### SpiderMonkey
+* From **[Mozilla Foundation](https://spidermonkey.dev/)**
 * The First JS Engine
 * Used in FireFox
 
-<img src="Sources/WebKit.png" align="right" weight="80" height="80"/>
-#### [JavaScriptCore From WebKit](https://developer.apple.com/documentation/javascriptcore)
-* From Apple
+<img src="Sources/WebKit.png" align="right" weight="80" height="80">
+#### JavaScriptCore From WebKit
+* From **[Apple](https://developer.apple.com/documentation/javascriptcore)**
 * Used in Safari
 
 
