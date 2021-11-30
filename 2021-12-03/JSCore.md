@@ -131,7 +131,7 @@ or for the implemention level, **A Function is just a object with its native cod
 Here comes a question:<br>
 **We haven't defined any method of object `point3D`. How does this object have `toString()` method?**<br>
 
-In **[ii. Objects](#ii. Objects)**, we introduced **Dynamic Dispatch**. <br>
+In **[ii. Objects](https://github.com/Angorithm4/Webinar/blob/main/2021-12-03/JSCore.md#ii-objects)**, we introduced **Dynamic Dispatch**. <br>
 From that, we can know  **`toString()`** method must be defined in the **`Prototype Chain`** of object **`point3D`**.
 
 So, where are the inherited properties and methods defined? 
@@ -156,47 +156,95 @@ You'll see other examples of **prototype chain inheritance** all over JavaScript
 
 
 
-
 ### iv. Class
 
+**When several objects share the same initial state and behavior, they form a classification.**<br>
+
+A **"Class"** is just a theoretical abstraction, in the implementation-level, it usually represented as a **"constructior function + prototype"** pair. (or even if a object but cumbersome):
+
+```javascript
+// Constructor Function
+function Letter(number) {
+    this.number = number;
+};
+
+// Prototype
+Letter.prototype.getNumber = function() {
+    return this.number;
+}
+
+let a = new Letter(1);
+let b = new Letter(2);
+// ... 
+let z = new Letter(26);
 
 
+console.log(
+    a.getNumber(); // 1
+    b.getNumber(); // 2
+    // ...
+    z.getNumber(); // 26
+);
+```
+![class](Sources/class.png)
 
+For **user-convinence** (sometimes you don't want things to become cumbersome).<br>
+The **Class** Abstraction serves exactly this purpose - being a **syntactic sugar** (a construct which semantically does the same, but in a much nicer syntactic form).<br>
+It allows creating such multiple objects with the convenient pattern:
 
+```javascript
+// Class
+class Letter2 {
+    constructor(number) {
+        this.number = number;
+    }
 
+    getNumber() {
+        return this.number;
+    }
+}
+```
 
+While you create a **Class** object, this **syntactic sugar** will help you automatically set the **prototype**.<br>
+And if you check their prototype, you will find that there is no such big difference - And, both of them are **Object**.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+![classfunc](Sources/classfunc.png)
 
 
 ### v. Primitives
+At the begining of this [Note](https://github.com/Angorithm4/Webinar/blob/main/2021-12-03/JSCore.md#i-javascript-type). I said: 
+>> **All things in JavaScript can be presented as an Object, but there are something called Primitives that usually do not implement as an Object.**
+
+* **Primitives** : that is - **Many things that you interact with regularly** (`String` `Number` and `Boolean`).
+* **Reason** : I Believe that is for the **Speed** -- Since most of the time when you create a **Primitive** type variable, you just want to do some calculation with others.<br>
+Or in other words - **When you create a Primitive type variable, maybe you just want its `Value`, rather than those "high-level" functions, etc.**
+
+```javascript
+var i = 12;
+i.p1 = 13;
+
+console.log(i);    // 12
+console.log(i.p1); // undefined
+
+```
+
+But **primitives** do have **Object Wrappers** (`String`, `Number`, `Boolean`, etc.); these **objects** have methods and properties while the **primitives** do not.<br>
+But the **primitives** appear to have methods because JavaScript silently creates a **Wrapper Object** when code attempts to access any property of a **primitive**.<br>
+
+For example, consider the following code:
+```javascript
+var s = 'foo';
+var sub = s.substring(1, 2); // sub is now the string "o"
+```
+
+Behind the scenes, `s.substring(1, 2)` behaves as if it is performing the following (approximate) steps:
+1. Create a wrapper **`String` Object** from `s`, equivalent to using `new String(s)`;
+2. Call the `substring()` method with the appropriate parameters on the **`String` Object** returned by step1;
+3. Dispose of the **`String` Object**;
+4. Return the string (primitive) from step2.
+
+And that also explain why we can't access `i.p1`, while we can assign the property to primitives `i`.<br>
+--- **We cannot retrieve them**.
 
 
 
