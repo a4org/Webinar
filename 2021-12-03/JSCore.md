@@ -247,12 +247,188 @@ And that also explain why we can't access `i.p1`, while we can assign the proper
 --- **We cannot retrieve them**.
 
 
-
-
-
-
-
 ## 3. Runtime
+
+After we understand the basic relationships between ECMAScript **objects**, Let's take a deeper look at JS **runtime system**<br>
+You will see a bunch of **concepts** in the following contents, but remember -- they are just the **Abstraction**, **the things that help you to have a better understanding about what runs underneath.**
+
+### i. Execution Stack
+There are severals types of ECMAScript code:
+* **Global Code**
+* **Function Code**
+* **Module Code**
+* **......**
+
+Each code is **evaluated** in its **execution context**<br>what do I means by **evaluate** is that interprete the code and then execute.
+
+Let's consider a recursive function call:
+```javascript
+function recursive(flag) {
+    // Termination Condition
+    if (flag == 2) {
+        return;
+    }
+    
+    recursive(++flag);
+}
+
+// Entry.
+recursive(0);
+```
+The following figure shows the runtime of this function:
+
+![es](Sources/es.png)
+
+* The **Execution Context Stack** is a LIFO structure(stack), that used to **maintain control flow and order of execution.**
+* The **Global Context** is always at the bottom of the stack, it is created prior execution of any other context
+
+This example may give you a better understanding of **Execution Context:**
+
+```javascript
+function *gen() {  // generator function in javascript
+    yield 1;
+    return 2;
+}
+
+let g = gen();
+
+console.log(
+    g.next().value, // 1
+    g.next().value, // 2
+)
+```
+
+![ec](Sources/ec.png)
+
+* The **`yield`** statement here returns the value to the caller, and pops the context.
+* One the second `next()` call, the same context is pushed again onto the stack, and is resumed.
+
+
+
+### ii. Variable Storiage
+
+**Every execution context has an associated lexical environment -- called Environment**.<br>
+* **Environment can be defined in both ways:**
+* A **structure** used to define associaton between **identifiers** appearing in the context with their **values**.
+* A **storage** of variables, functions, and classes (Objects) defined in this **Execution Context**.
+
+Technically, an environment is a **pair**, consisting of an environment record (an actual storage table which maps identifiers to values), and a **reference to the parent** (which can be `null`).
+
+Similarly to **Prototype Chain** which we've discussed above. the rule for identifiers resolution is very similar: <br>
+if a variable is not found in the own environment, there is an attempt to lookup it in the parent environment, in the parent of the parent, and so on — until the whole environment chain is considered.
+
+
+#### this
+
+The **`this`** is a special object, the major use-case of **`this`** is the class-based **OOP**.<br>
+For example:
+
+```javascript
+class Point {
+    constructor(x, y) {
+        this._x = x;
+        this._y = y;
+    }
+
+    getX() {
+        return this._x;
+    }
+
+    getY() {
+        return this._y;
+    }
+}
+
+let p1 = new Point(1, 2);
+let p2 = new Point(3, 4);
+
+console.log(
+    p1.getX(); // 1
+    p2.getX(); // 3
+)
+```
+
+ When the `getX()` method be called by p1, or **the `getX()` Execution Context being created**<br>
+ For this **Execution Context** there will be an **Environment** being created to store local variables and parameters.<br>
+ **In addition, the `getX()` Environment will implicit gets a `this` passed into**, which is bound dynamically depending how a function is called.
+
+```javascript
+console.log(x); // undefined
+console.log(y); // throw reference error
+
+var x = 10;
+let y = 20;
+
+console.log(this.x); // 10
+console.log(this.y); // undefined
+console.log(x); // 10
+console.log(y); // 20
+```
+
+At the high-level, the `this` object is exactly a `Binding Object`.
+
+
+
+### iii. Job Queue
+
+
+### iv. JS Engine
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
