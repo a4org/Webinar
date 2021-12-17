@@ -1,5 +1,5 @@
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-#Digital Modulation
+# Digital Modulation
 
 #### Target:
 Make the signal suitable for transmission in channel.
@@ -62,7 +62,7 @@ Make the signal suitable for transmission in channel.
   - Coherent
   ![avatar](source/2PSK-demodulation.png)
 <br>
-#####4.2DPSK(Differential-Phase-Shift Keying)
+##### 4.2DPSK(Differential-Phase-Shift Keying)
 &#8195; Spread digital signal through changing the phase of the carrier wave.
 &#8195; Phase difference:&#8194;*0 --> stand "1"*
 &#8195;&#8195;&#8195;&#8195;&#8195;&#8195;&#8195;&#8195;&#8194;&#8194; *π --> stand "0"*
