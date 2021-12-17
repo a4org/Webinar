@@ -17,32 +17,33 @@ Make the signal suitable for transmission in channel.
 &#8195;FM (Frequency Modulation);
 <br><br>
 
-![avatar](source/Summary.jpg)
+![avatar](sources/Summary.jpg)
 
-<br>
-#####1. 2ASK
+
+##### 1. 2ASK
 &#8195;Spread digital signal through the amplitude of a carrier wave, or on-off-keying.
 
 
 + **Modulate :**
   - 1. Analog Modulation.
-![avatar](source/ASK.png)
+![avatar](sources/ASK.png)
   - 2. Keying
-![avatar](source/ASK_2.png)
+![avatar](sources/ASK_2.png)
 
-![avatar](source/ASK-modulation.jpg)
+![avatar](sources/ASK-modulation.jpg)
 
 + **Demodulate :**
   - 1. Noncoherent.
-![avatar](source/2ASK-Demodulation.png)
+![avatar](sources/2ASK-Demodulation.png)
 <br>
+
 ##### 2. 2FSK
 &#8195;Spread digital data through the frequency of a carrier wave.
 
 
 + **Modulate:**
   - Keying
-![avatar](source/FSK.png)
+![avatar](sources/FSK.png)
 ![avatar](source/2FSK-modulation.gif)
 + **Demodulate :**
 
@@ -53,14 +54,14 @@ Make the signal suitable for transmission in channel.
 
 + **Modulate :**
   - 1. Analog Modulation.
-![avatar](source/PSK.png)
+![avatar](sources/PSK.png)
   - 2. Keying.
-![avatar](source/PSK2.png)
+![avatar](sources/PSK2.png)
 <br>
 
 + **Demodulate :**
   - Coherent
-  ![avatar](source/2PSK-demodulation.png)
+  ![avatar](sources/2PSK-demodulation.png)
 <br>
 ##### 4.2DPSK(Differential-Phase-Shift Keying)
 &#8195; Spread digital signal through changing the phase of the carrier wave.
@@ -70,7 +71,7 @@ Make the signal suitable for transmission in channel.
 
 + **Modulate :**
   - 1. Keying.
- ![avatar](source/2DPSK.png) 
- ![avatar](source/2DPSK-modulation.png)
+ ![avatar](sources/2DPSK.png) 
+ ![avatar](sources/2DPSK-modulation.png)
 + **Demodulation :**
- ![avatar](source/2DPSK-demodulation.png)
+ ![avatar](sources/2DPSK-demodulation.png)
