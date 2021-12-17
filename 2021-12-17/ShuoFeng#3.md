@@ -36,7 +36,7 @@ Make the signal suitable for transmission in channel.
   - 1. Noncoherent.
 ![avatar](source/2ASK-Demodulation.png)
 <br>
-#####2. 2FSK
+##### 2. 2FSK
 &#8195;Spread digital data through the frequency of a carrier wave.
 
 
@@ -47,7 +47,7 @@ Make the signal suitable for transmission in channel.
 + **Demodulate :**
 
 <br>
-#####3. 2PSK
+##### 3. 2PSK
 &#8195;Spread digital signal through the phase of a carrier wave.
 
 
