@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+<head>
+    <title>Angold-4 Organization</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="../../../images/favicon.png" rel="icon">
+
+<link rel="canonical" href=".">
+        <meta name="author" content="Angold Wang" />
+
+    <meta property="og:site_name" content="Angold-4" />
+<!--     <meta property="og:type" content="article"/> -->
+    <meta property="og:title" content="Angold-4 Organization"/>
+    <meta property="og:url" content="."/>
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../theme/css/bootstrap.flatly.min.css" type="text/css"/>
+    <link href="../../../theme/css/font-awesome.min.css" rel="stylesheet">
+<!--     <link href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.9/typicons.min.css" rel="stylesheet"> -->
+
+    <link href="../../../theme/css/pygments/monokai.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script> -->
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://angold4.org" class="navbar-brand">
+<img src="../../../images/logo.png" width="32"/> Angold4            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+			    <li><a href="../../../about.html">About</a>
+                            <li><a href="../../../blogs.html">Blogs</a>
+                            <li><a href="../../../projects.html">Projects</a>
+
+	    </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li> <a title="Youtube" href="https://www.youtube.com/channel/UC3ZAjh2LHhm-FrgxgBtgMzQ" target="_new"><i class="fa fa-youtube"></i> Youtube</a>
+		</li>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+	<section id="content" class="body">
+
+
+<h1>Angorithm4 Webinar #1</h1>
+<h4>Host by Jiawei Wang 2021-10-15</h4>
+<h2>1 Why Performance Engineering?</h2>
+<h3>Currency</h3>
+<ul>
+<li>Performance is the <strong>currency</strong> of computing. You can often “buy” needed properties with performance.
+<ul>
+<li><strong>Functionality</strong>  <strong>Reliability</strong>  <strong>Correctness</strong>  <strong>Testability</strong>  <strong>Maintainability</strong>...</li>
+</ul>
+</li>
+</ul>
+<h3>Modern Hardware (Complex)</h3>
+<ul>
+<li>As the hardware become more and more complex, How can we write software to utilize modern hardware <strong>efficiently</strong>?</li>
+</ul>
+<h4>1) The Second Generation (1955–65) Transistors and Batch Systems</h4>
+<p><strong><a href="https://github.com/Angold-4/OSDI/blob/master/Chapter/Chapter1/2HSE.md#2-the-second-generation-195565-transistors-and-batch-systems">OSDI Notes Link</a></strong>
+<img src="Sources/early.png" alt="early"></p>
+<ul>
+<li>Many programs strained the machine’s resources.</li>
+<li>Software performance engineering was common</li>
+<li>Programs had to be planned around the machine.</li>
+<li>No &quot;Performance Engineering&quot;</li>
+</ul>
+<h4>2) The Fourth Generation (1980-2004) Personal Computers</h4>
+<p><strong><a href="https://github.com/Angold-4/OSDI/blob/master/Chapter/Chapter1/4MCOS.md">OSDI Notes Link</a></strong>
+<img src="Sources/steve.png" alt="steve">
+<img src="Sources/2004.png" alt="2004"></p>
+<h5>Why and How? -&gt; Moore’s Law and Dennard Scaling</h5>
+<p><img src="Sources/moore.png" alt="moore"></p>
+<ul>
+<li>
+<p><strong>Moore’s Law</strong> -- <strong>observation</strong> by Gordon Moore in 1965 <!-- raw HTML omitted --></p>
+<ul>
+<li>the number of transistors on a microchip <strong>doubled</strong> about every year.</li>
+<li>How? 8 bits -&gt; 16 bits -&gt; 32 bits + smaller transistors</li>
+</ul>
+</li>
+<li>
+<p><strong>Dennard Scaling</strong> As transistors get smaller, their <strong>power density</strong> stays constant.</p>
+<ul>
+<li><strong>1. why smaller faster?</strong> -&gt; Because its gate requires shorter charging and discharging time <strong><a href="https://note.youdao.com/web/#/file/WEB23e18924c57ddb8c09563b64950ac104/note/WEBc36af711fa7632e2513f6114a328589c/">youdao</a></strong></li>
+<li><strong>2. what is power density?</strong> from <a href="https://en.wikipedia.org/wiki/Power_density#:~:text=Power%20density%20is%20the%20amount,expressed%20as%20W%2Fm3.">wikipedia</a><!-- raw HTML omitted -->
+Power density is the amount of power (time rate of energy transfer) per unit volume.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>If you found something was too slow, wait couple of years!</strong></p>
+</blockquote>
+<h4>3) The Fourth Generation (also) (2004-present)</h4>
+<p><strong>All that came to end after 2004</strong></p>
+<p><img src="Sources/end.png" alt="end"></p>
+<h4>1. Power Density (Clock Rate)</h4>
+<p><img src="Sources/power.png" alt="power">
+If the scaling of clock frequency had continued its trend of 25%-30% increase per year.<!-- raw HTML omitted -->
+<strong>The tempreture of chip would reach the sun's surface!</strong> (Dannard Scaling <strong>X</strong>)</p>
+<p><strong>Solution -&gt; keep the frequency unchanged</strong><!-- raw HTML omitted --></p>
+<h4>2. Semicondictor fabrication (growing slower than before)</h4>
+<ul>
+<li><strong>0.5um -&gt; 0.35um (1 year)</strong></li>
+<li><strong>22nm -&gt; 14nm</strong> (3 years)</li>
+<li><strong>14nm -&gt; 10nm</strong> (4 years)</li>
+</ul>
+<p><img src="Sources/process.png" alt="process"></p>
+<p><strong>Solution -&gt; Introduce Paralleism in the form of multicore processors.</strong><!-- raw HTML omitted --></p>
+<p><img src="Sources/cores.png" alt="cores"></p>
+<ul>
+<li>To scale performance, processor manufacturers put <strong>many processing cores</strong> on the microprocessor chip.</li>
+<li>Each generation of Moore’s Law potentially doubles the number of cores. (still work!)</li>
+</ul>
+<p><img src="Sources/hole.png" alt="hole"></p>
+<h3>The Performance is No Longer Free</h3>
+<ul>
+<li>Moore’s Law continues to increase computer performance.</li>
+<li><strong>We couldn't just speed up the hardware like the old days.</strong></li>
+<li>If you wants to use that potential, you had to do <strong>parallel programming</strong>.etc.</li>
+</ul>
+<!-- raw HTML omitted -->
+<h4>Hardware</h4>
+<ul>
+<li>big multicore processors</li>
+<li>complex cache hierarchies</li>
+<li>wide vector units</li>
+<li>GPU</li>
+<li>FPGA</li>
+</ul>
+<h4>Software</h4>
+<ul>
+<li>parallel-processing</li>
+<li>vector units</li>
+<li>caches</li>
+<li>prefetchers</li>
+<li>GPU’s</li>
+<li>hyperthreading</li>
+<li>dynamic frequency scaling</li>
+<li>...</li>
+</ul>
+<h3>We need to write software to utilize modern hardware efficiently.</h3>
+<h2>2. Different Level of Abstraction</h2>
+<p><img src="Sources/aws.png" alt="aws"></p>
+<p><strong>Square-Matrix Multiplication</strong></p>
+<p><img src="Sources/matrix.png" alt="matrix"></p>
+<h3>1) Python</h3>
+<pre><code class="language-python">import sys, random
+from time import *
+
+n = 4096
+
+A = [[random.random()
+    for row in xrange(n)]
+    for col in xrange(n)]
+B = [[random.random()
+    for row in xrange(n)]
+    for col in xrange(n)]
+
+C = [[0 for row in xrange(n)
+    for col in xrange(n)]]
+
+start = time()
+for i in xrange(n):
+    for j in xrange(n):
+        for k in xrange(n):
+            C[i][j] += A[i][k] * B[k][j]
+end = time()
+
+print '%0.6f' % (end - start)
+
+</code></pre>
+<ul>
+<li><strong>Running time = 21042 seconds -&gt; 6 hours</strong></li>
+<li>Analysis:
+<ul>
+<li><strong>C + A * B: Two opeartions each iteration</strong></li>
+<li>When n is <strong><code>4096(2^13)</code></strong> There are <strong><code>2 * n^3 = 2 * (2^13)^3 = 2^37</code></strong> floating point operations.</li>
+<li>Python gets <strong><code>2^37 / 21042 = 6.25M</code></strong> floating point opeartions per second.</li>
+<li>Peak = <strong><code>836G</code></strong> floating point opeartions per second</li>
+<li><strong>Python gets <code>0.00075%</code> of peak</strong></li>
+</ul>
+</li>
+</ul>
+<h3>2) Java</h3>
+<pre><code class="language-java">import java.util.Random;
+
+public class mm_java {
+    static int n = 4096;
+    static double[][] A = new double[n][n];
+    static double[][] B = new double[n][n];
+    static double[][] C = new double[n][n];
+
+    public static void main(String[], args) {
+        Random r = new Random();
+
+        for (int i=0; i&lt;n; i++) {
+            for (int j=0; j&lt;n; j++) {
+                A[i][j] = r.nextDouble();
+                B[i][j] = r.nextDouble();
+                C[i][j] = 0;
+            }
+        }
+
+        long start = System.nanoTime();
+
+        for (int i = 0; i &lt; n; i++) {
+            for (int j = 0; j &lt; n; j++) {
+                for (int k = 0; k &lt; n; k++) {
+                    C[i][j] += A[i][k] * B[k][j];
+                }
+            }
+        }
+
+        long stop = System.nanoTime();
+
+        double tdiff = (stop - start) * 1e-9;
+        System.out.println(tdiff);
+    }
+}
+</code></pre>
+<ul>
+<li><strong>Running time = 2738 seconds -&gt; 46 minutes</strong></li>
+<li><strong>Analysis: About 8.8x faster than Python</strong></li>
+<li>...</li>
+<li><strong>Java gets <code>0.007%</code> of peak</strong></li>
+</ul>
+<h3>3) C</h3>
+<pre><code class="language-c">#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;sys/time.h&gt;
+
+#define n 4096
+double A[n][n]; double B[n][n]; double C[n][n];
+
+float tdiff(struct timeval *start, struct timeval *end) {
+    return (end-&gt;tv_sec- start-&gt;tv_sec) + 1e-6*(end-&gt;tv_usec-start-&gt;tv_usec);
+}
+
+int main(int argc, const char *argv[]) {
+    for (int i = 0; i &lt; n; ++i) {
+        for (int j = 0; j &lt; n; ++j) {
+            A[i][j] = (double)rand() / (double)RAND_MAX;
+            B[i][j] = (double)rand() / (double)RAND_MAX;
+            C[i][j] = 0;
+        }
+    }
+     struct timeval start, and;
+     gettimeofday(&amp;start, NULL);
+
+     for (int i = 0; i &lt; n; ++i) {
+         for (int j = 0; j &lt; n; ++j) {
+             for (int k = 0; k &lt; n; ++k) {
+                 C[i][j] += A[i][k] * B[k][j];
+             }
+         }
+     }
+
+     gettimeofday(&amp;end, NULL);
+     printf(&quot;0.6f\n&quot;, tdiff(&amp;start, &amp;end));
+     return 0;
+}
+</code></pre>
+<ul>
+<li><strong>Running time = 1156 seconds -&gt; 19 minutes</strong></li>
+<li><strong>Analysis: About 2x faster than Java</strong></li>
+<li><strong>About 18x faster than Python</strong></li>
+<li>...</li>
+<li><strong>C gets <code>0.014%</code> of peak</strong></li>
+</ul>
+<p>|Version   |Implementation   | Running Time  |Relative Speedup |Absolute Speedup   |Percent of peak   |
+|:--:|:--:|:--:|:--:|:--:|:--:|
+| 1 | Python |21041.67 | 1 | 1 | 0.00075 |
+| 2 | Java | 2387.32 | 8.81 | 9 | 0.007 |
+| 3 | C | 1155.77 | 2.07 | 18 | 0.014 |</p>
+<h3>Why?</h3>
+<p><img src="Sources/Relationship.png" alt="Relationship"></p>
+<h4>1. Interpreted  vs  Compiled</h4>
+<p><img src="Sources/intervscomp.png" alt="intervscomp"></p>
+<ul>
+<li>The interpreter <strong>reads</strong>, <strong>interprets</strong>, and <strong>performs each program statement</strong> and <strong>updates</strong> the machine state.</li>
+<li>The interpreted Language are more <strong>flexible</strong> than Compiled Language</li>
+<li>Since it is execute line by line and do not need the compile time</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li><strong>Example:</strong>
+<ul>
+<li><strong>1. Chrome is written in C++ and C (Compiled Language)</strong></li>
+<li><strong>But it uses javascript as its interface language</strong></li>
+</ul>
+<hr>
+<ul>
+<li><strong>2. Unreal Engine is written in C++</strong></li>
+<li><strong>But most of the time for a normal game coder, he uses Python/C#/Lua as its developing language</strong></li>
+</ul>
+</li>
+</ul>
+<h4>2. Dynamic  vs  Static</h4>
+<p><img src="Sources/java.png" alt="java">
+Java has an <strong>interpreter</strong> as well as a <strong>virtual machine</strong>, and Python has a <strong>virtual machine</strong> as well as an <strong>interpreter</strong>.</p>
+<ul>
+<li>
+<p><strong>The Java virtual machine requires the programmer to specify the primitive data type of each variable.</strong></p>
+<ul>
+<li>This provides sufficient information for Java bytecode to be interpreted and executed by the Java virtual machine.</li>
+</ul>
+</li>
+<li>
+<p><strong>The Python virtual machine is more complex in the sense that it takes on the additional task of pausing before the execution of each operation to determine the primitive data types for each variable or data structure involved in the operation.</strong></p>
+<ul>
+<li>Python frees the programmer from thinking in terms of primitive data types, and allows operations to be expressed at a higher level. The price of this freedom is <strong>performance</strong>.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>The virtual machines of dynamic languages like Python implement some idealized logical machine, and don't necessarily correspond very closely to any real physical hardware.</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>The Java virtual machine, in contrast, is more similar in functionality to a classical C compiler, except that instead of emitting machine instructions, it executes built-in routines.</strong></p>
+</blockquote>
+<h4>Why Java is designed in this way?</h4>
+<ul>
+<li><strong>It is for sake of speed and portability at the same time.</strong></li>
+<li>If you merely interpret the java file with an interpreter you would have <strong>portability but not speed.</strong></li>
+<li>If you have to compile the code for a given processor architecture you would have <strong>speed but not portability.</strong></li>
+<li><strong>With the bytecode, you compile the code (into bytecode) for a common machine that will execute it (the JVM) it is a compromise between speed and portability.</strong></li>
+</ul>
+<h2>3. Matrix Multiplication</h2>
+<h3>1. Loop Order:</h3>
+<p><strong>We can change the order of the loops in this program without affecting its correctness.</strong></p>
+<pre><code class="language-c">   for (int i = 0; i &lt; n; ++i) {
+             for (int k = 0; k &lt; n; ++k) {
+         for (int j = 0; j &lt; n; ++j) {
+                 C[i][j] += A[i][k] * B[k][j];
+             }
+         }
+   }
+</code></pre>
+<p>|Loop Order | Running Time|
+|:--:|:--:|
+|i, j, k|   1155.77|
+|i, k, j|  177.68 |
+|j, i, k|  1080.61|
+|j, k, i| 3056.63 |
+|k, i, j| 179.21 |
+|k, j, i| 3032.82 |</p>
+<ul>
+<li><strong>Loop order affects running time by a factor of 18!</strong></li>
+</ul>
+<p><img src="Sources/cache.png" alt="cache">
+<img src="Sources/case1.png" alt="case1"></p>
+<pre><code class="language-c">
+    for (int i = 0; i &lt; n; ++i) {
+         for (int j = 0; j &lt; n; ++j) {
+             for (int k = 0; k &lt; n; ++k) {
+                 C[i][j] += A[i][k] * B[k][j];
+             }
+         }
+   }
+
+   for (int i = 0; i &lt; n; ++i) {
+             for (int k = 0; k &lt; n; ++k) {
+         for (int j = 0; j &lt; n; ++j) {
+                 C[i][j] += A[i][k] * B[k][j];
+             }
+         }
+   }
+</code></pre>
+<p><img src="Sources/case2.png" alt="case2"></p>
+<p><img src="Sources/matrixrow.png" alt="matrixrow">
+<img src="Sources/matrixcol.png" alt="matrixcol"></p>
+<h3>2.Parallel Programming</h3>
+<p><img src="Sources/cilk.png" alt="cilk"></p>
+<h3>3. Compiler Optimization</h3>
+<p><img src="Sources/summary.png" alt="summary"></p>
+	</section>
+	</div>
+    </div>
+</div>
+<footer>
+   <div class="well well-lg" id="footer-well">
+      <div class="container">
+
+
+      <div class="row">
+         <div class="col-xs-6">
+            <a href="https://angold4.org" title="Angold-4 Organization" class="image-link"><img src="../../../images/logo.png" class="cmudb-logo" /></a>
+         </div>
+         <div class="col-xs-6">
+            <p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p>
+        </div>
+      </div>
+   </div>
+   </div>
+</footer>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../theme/js/respond.min.js"></script>
+
+<!-- Fix scrolling issues to internal HREFs that get positioned behind navbar -->
+<!-- http://stackoverflow.com/questions/10732690/offsetting-an-html-anchor-to-adjust-for-fixed-header -->
+<script src="../../../theme/js/href_scroll.js"></script>
+
+<!-- You know what this is and you know what he did to me... -->
+<script src="../../../theme/js/tim-kraska-betrayed-me.js"></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+<head>
+    <title>Angold-4 Organization</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="../../../images/favicon.png" rel="icon">
+
+<link rel="canonical" href=".">
+        <meta name="author" content="Angold Wang" />
+
+    <meta property="og:site_name" content="Angold-4" />
+<!--     <meta property="og:type" content="article"/> -->
+    <meta property="og:title" content="Angold-4 Organization"/>
+    <meta property="og:url" content="."/>
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../theme/css/bootstrap.flatly.min.css" type="text/css"/>
+    <link href="../../../theme/css/font-awesome.min.css" rel="stylesheet">
+<!--     <link href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.9/typicons.min.css" rel="stylesheet"> -->
+
+    <link href="../../../theme/css/pygments/monokai.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script> -->
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://angold4.org" class="navbar-brand">
+<img src="../../../images/logo.png" width="32"/> Angold4            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+			    <li><a href="../../../about.html">About</a>
+                            <li><a href="../../../blogs.html">Blogs</a>
+                            <li><a href="../../../projects.html">Projects</a>
+
+	    </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li> <a title="Youtube" href="https://www.youtube.com/channel/UC3ZAjh2LHhm-FrgxgBtgMzQ" target="_new"><i class="fa fa-youtube"></i> Youtube</a>
+		</li>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+	<section id="content" class="body">
+
+
+<h1>Angorithm4 Webinar #4</h1>
+<h4>Cohost by Jiawei Wang 2021-11-5</h4>
+<h2>1. Main Falcon</h2>
+<p><img src="Sources/falcon.jpeg" alt="falcon"></p>
+<h2>2. Comparision Sort(II) - QuickSort</h2>
+<h3>i. Description</h3>
+<blockquote>
+<p><strong>The Quicksort algorithm has a worst-case running time of <code>O(N^2)</code> on any input array of number.</strong></p>
+</blockquote>
+<p>Despite this slow worst-case running time, <strong>Quicksort is often the best practical choice for sorting because it is remarkbly efficient on the average:</strong> Its expected running time is <strong><code>O(nlogn)</code></strong> and the constant factors hidden in the O(nlogn) notation are quite small.</p>
+<ul>
+<li>Designed by Hoare in 1962</li>
+<li>Sort <strong>in Place</strong> (No extra storiage needed)</li>
+<li><strong>Three</strong> or more times faster than <strong>Merge Sort</strong> (Merge guarentee O(N))</li>
+<li><strong>Most good sorting algorithms that you will find are based on quicksort</strong></li>
+<li>But not the <strong>Theoretically</strong> fastest sorting algorithm (Will be proved in the next Webinar)</li>
+</ul>
+<pre><code class="language-cpp">int Partition(vector&lt;int&gt; &amp;A, int p, int q) {
+    // (p, i) (i+1, j)
+    int x = A[p];
+    int i = p;
+    for (int j = p + 1; j &lt;= q; j++) {
+        if(A[j] &lt;= x) {
+            i = i + 1;
+            swap(A[i], A[j]);
+        }
+    }
+    swap(A[p], A[i]);
+    return i;
+}
+
+
+void QuickSort(vector&lt;int&gt; &amp;A, int p, int r)  {
+    if (p &lt; r) {
+        int q = Partition(A, p, r);
+        QuickSort(A, p, q-1);
+        QuickSort(A, q+1, r);
+    }
+
+}
+</code></pre>
+<ul>
+<li><strong><code>Partition(A, p, q)</code> find the rank of <code>A[p]</code> in region <code>[p, q]</code></strong></li>
+<li><strong>Initial call: <code>QuickSort(A, 0, n-1)</code></strong></li>
+</ul>
+<p><img src="Sources/quicksort.png" alt="quicksort"></p>
+<pre><code class="language-txt">  5   2   6   1
+  5   2   1   6
+  1   2   5   6
+</code></pre>
+<p><img src="Sources/eq.png" alt="eq"></p>
+<h3>ii. Analysis</h3>
+<h4>Key: Good / Bad Partition</h4>
+<h3>1. Worst-Case Partitioning</h3>
+<p>The worst-case behavior for quicksort occurs when the input is <strong>sorted</strong> or <strong>reverse-sorted</strong>.<!-- raw HTML omitted -->
+<strong>At that time, the partition routine produce one subproblem with <code>n-1</code> element and one with <code>0</code> element</strong></p>
+<p><strong><code>T(N) = T(N-1) + O(N)</code></strong>  -&gt; <strong><code>O(N^2)</code></strong></p>
+<h3>2. Best-Case Partitioning</h3>
+<ul>
+<li>When Best-Case ?</li>
+</ul>
+<p>Back to 1. Worse-Case<!-- raw HTML omitted -->
+<strong><code>T(N) = max(T(q) + T(N-q-1)) + O(N)</code></strong><!-- raw HTML omitted --></p>
+<p>We use substitution method, asssume that <strong><code>T(N) &lt;= cN^2</code></strong> for some constant c<!-- raw HTML omitted --></p>
+<p><strong><code>T(N) &lt;= max(c q^2 + c (n-q-1)^2) + O(N)</code></strong><!-- raw HTML omitted -->
+<strong><code>T(N) &lt;= c max(q^2 + (n-q-1)^2) + O(N)</code></strong> <!-- raw HTML omitted -->
+<strong><code>f'(q) = 4q - 2n + 2</code></strong> <!-- raw HTML omitted -->
+<strong><code>f''(q) = 4</code> -&gt; <code>f'(q) = 0</code> when <code>q = n/2 - 1/2 = (n-1)/2</code></strong> and that time get the minimum</p>
+<p><strong>Which subproblem's size no more than <code>n/2</code></strong>
+<strong><code>T(N) = 2T(N/2) + O(N)</code> -&gt; <code>O(NlogN)</code></strong></p>
+<p><img src="Sources/partition.png" alt="partition"></p>
+<h3>3. Randomized Quicksort -&gt; proof the avg Time Complexity is <code>O(NlogN)</code></h3>
+<h3>iii. Example (LeetCode 215)</h3>
+<pre><code>nums = [3,2,1,5,6,4], k = 2
+Output: 5
+</code></pre>
+<pre><code class="language-cpp">using namespace::std;
+
+class Solution {
+public:
+    // #1 using priority queue
+    int findKthLargest(vector&lt;int&gt;&amp; nums, int k) {
+        priority_queue&lt;int&gt; q(nums.begin(), nums.end());
+        for (int i = 0; i &lt; k - 1; ++i) {
+            q.pop();
+        }
+        return q.top();
+    }
+
+    // #2 using quick sort partition
+    int findKthLargest2(vector&lt;int&gt;&amp; nums, int k) {
+	int left = 0; int right = nums.size() - 1;
+
+	while (true) {
+	    int desc = Partition(nums, left, right);
+	    
+	    if (desc == k-1) 
+		return nums[desc];
+
+	    if (desc &lt; k-1) {
+		// nums[pos-1] is too large
+		left = desc + 1;
+	    } else {
+		right = desc - 1;
+	    }
+	}
+    }
+
+private:
+    int Partition(vector&lt;int&gt; &amp;A, int p, int q) {
+	// [p, i] [i+1, q]
+	//  -----------&gt;
+	// descending order
+	int x = A[p];
+	int i = p;
+	for (int j = p + 1; j &lt;= q; j++) {
+	    if(A[j] &gt;= x) {
+		i = i + 1;
+		swap(A[i], A[j]);
+	    }
+	}
+	swap(A[p], A[i]);
+	return i;
+    }
+};
+
+</code></pre>
+	</section>
+	</div>
+    </div>
+</div>
+<footer>
+   <div class="well well-lg" id="footer-well">
+      <div class="container">
+
+
+      <div class="row">
+         <div class="col-xs-6">
+            <a href="https://angold4.org" title="Angold-4 Organization" class="image-link"><img src="../../../images/logo.png" class="cmudb-logo" /></a>
+         </div>
+         <div class="col-xs-6">
+            <p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p>
+        </div>
+      </div>
+   </div>
+   </div>
+</footer>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../theme/js/respond.min.js"></script>
+
+<!-- Fix scrolling issues to internal HREFs that get positioned behind navbar -->
+<!-- http://stackoverflow.com/questions/10732690/offsetting-an-html-anchor-to-adjust-for-fixed-header -->
+<script src="../../../theme/js/href_scroll.js"></script>
+
+<!-- You know what this is and you know what he did to me... -->
+<script src="../../../theme/js/tim-kraska-betrayed-me.js"></script>
+</body>
+</html>

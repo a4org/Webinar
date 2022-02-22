@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+<head>
+    <title>Angold-4 Organization</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="../../../images/favicon.png" rel="icon">
+
+<link rel="canonical" href=".">
+        <meta name="author" content="Angold Wang" />
+
+    <meta property="og:site_name" content="Angold-4" />
+<!--     <meta property="og:type" content="article"/> -->
+    <meta property="og:title" content="Angold-4 Organization"/>
+    <meta property="og:url" content="."/>
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../theme/css/bootstrap.flatly.min.css" type="text/css"/>
+    <link href="../../../theme/css/font-awesome.min.css" rel="stylesheet">
+<!--     <link href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.9/typicons.min.css" rel="stylesheet"> -->
+
+    <link href="../../../theme/css/pygments/monokai.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script> -->
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://angold4.org" class="navbar-brand">
+<img src="../../../images/logo.png" width="32"/> Angold4            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+			    <li><a href="../../../about.html">About</a>
+                            <li><a href="../../../blogs.html">Blogs</a>
+                            <li><a href="../../../projects.html">Projects</a>
+
+	    </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li> <a title="Youtube" href="https://www.youtube.com/channel/UC3ZAjh2LHhm-FrgxgBtgMzQ" target="_new"><i class="fa fa-youtube"></i> Youtube</a>
+		</li>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+	<section id="content" class="body">
+
+
+<h1>Angorithm4 Webinar #3</h1>
+<h4>Cohost by Jiawei Wang 2021-10-29</h4>
+<h2>1. Review ISC</h2>
+<p><img src="Sources/Level.png" alt="Level"></p>
+<p><img src="Sources/rc.png" alt="rc"></p>
+<h2>Trade off</h2>
+<ul>
+<li>In 1981s. Compiler technology didn't develop well at that time.</li>
+<li><strong>Simple Compiler, Complex Hardware vs. Complex Compiler, Simple Hardware</strong></li>
+</ul>
+<p><img src="Sources/semantic.png" alt="semantic"></p>
+<h3>Decode in x86:</h3>
+<ul>
+<li><strong>Intel’s and AMD’s x86 implementations translate x86 instructions into programmer-invisible microoperations (simple instructions) in hardware</strong></li>
+<li>In fact, in most x86-64 machines today, what’s the processors do is that they take the complex instructions, <strong>they translate down</strong>, and save the translated form, so next time, when you get the same instruction, you don’t need to translate it again. You just take the simple micro-operations.</li>
+<li><strong>All high-performance processors' underneath looks like RISC processors</strong></li>
+</ul>
+<h2>2. Comparision Sort(I) - Merge Sort</h2>
+<h3>i. Description</h3>
+<pre><code class="language-cpp">
+void Merge(int* A, int* L, int leftCount, int* R, int rightCount) {
+    int i, j, k;
+    i = 0, j = 0, k = 0;
+
+    while (i &lt; leftCount &amp;&amp; j &lt; rightCount)
+    {
+        if(R[j] &lt; L[i]) A[k++] = R[j++];
+        else A[k++] = L[i++];
+    }
+
+    // last check
+    while (i &lt; leftCount) A[k++] = L[i++];
+    while (j &lt; rightCount) A[k++] = R[j++];
+
+}
+
+void MergeSort(int* A, int n) {
+    int mid, *L, *R;
+
+    if (n &lt; 2) return;
+
+    mid = n / 2;
+
+    L = new int[mid];
+    R = new int[n - mid];
+
+    for(int i = 0; i &lt; mid; i++) L[i] = A[i];
+    for(int j = mid; j &lt; n; j++) R[j-mid] = A[j];
+
+    MergeSort(L, mid);
+    MergeSort(R, n-mid);
+
+    Merge(A, L, mid, R, n-mid);
+
+    delete [] R;
+    delete [] L;
+
+}
+
+</code></pre>
+<pre><code>      5     2     6     1
+
+   |  1     2     5     6  |     
+   |  2     5  |  1     6  |
+   |  5  |  2  |  6  |  1  |
+
+</code></pre>
+<h3>ii. Analysis</h3>
+<p><strong><code>T(N) = 2T(N/2) + O(N)</code></strong></p>
+<p><img src="Sources/Analysis.png" alt="Analysis"></p>
+<h3><strong><code>O(NlogN)</code></strong></h3>
+<h3>iii. Example (LeetCode 315)</h3>
+<p><strong><a href="https://leetcode.com/problems/count-of-smaller-numbers-after-self/">LeetCode 315 Count Number of Smaller Numbers After Self</a></strong></p>
+<pre><code class="language-txt">Input:  [5,2,6,1]
+Output: [2,1,1,0]
+</code></pre>
+<pre><code class="language-cpp">class Solution {
+public:
+    vector&lt;int&gt; countSmaller(vector&lt;int&gt;&amp; nums) {
+        for (int i = 0; i &lt; nums.size(); i++) {
+            int count = 0;
+            for (int j = i+1; j &lt; nums.size(); j++) {
+                if (nums[j] &lt; nums[i]) count++;
+            }
+            nums[i] = count;
+        }
+        return nums;
+    }
+};
+
+</code></pre>
+<h4>Divide and Conquer</h4>
+<pre><code>[A A A A A  B B B B B]
+[A A A A A][B B B B B]
+</code></pre>
+<pre><code>[X X X X]
+</code></pre>
+<pre><code class="language-cpp">using namespace::std;
+
+class Solution {
+    vector&lt;int&gt; counts;
+public:
+    vector&lt;int&gt; countSmaller(vector&lt;int&gt;&amp; nums) {
+        int N = nums.size();
+        counts.resize(N);
+
+        if (N == 0) return {};
+
+        vector&lt;int&gt; sortedNums = nums;
+
+        helper(nums, sortedNums, 0, N-1);
+
+        return counts;
+    }
+
+private: 
+    void helper(vector&lt;int&gt;&amp; nums, vector&lt;int&gt;&amp; sortedNums, int start, int end) {
+        if (start == end) return;
+
+
+        int mid = start + (end - start) / 2; // round down ((int) x / 2 &lt;= (float) x / 2)
+        helper(nums, sortedNums, start, mid);
+        helper(nums, sortedNums, mid+1, end);
+
+        for (int i = start; i &lt;= mid; i++) {
+            auto iter = lower_bound(sortedNums.begin() + mid + 1, sortedNums.begin() + end + 1, nums[i]); // [mid+1, end+1)
+            counts[i] += iter - (sortedNums.begin() + mid + 1); // Ranking in [mid+1, end]
+        }
+        
+        vector&lt;int&gt; temp(end - start + 1); // to store the merged vector from start to end
+        // sort(sortedNums.begin()+start, sortedNums.begin()+end+1);
+
+        int i = start, j = mid+1, p = 0;
+        while (i &lt;= mid &amp;&amp; j &lt;= end) {
+            if (sortedNums[i] &lt;= sortedNums[j]) {
+                temp[p] = sortedNums[i];
+                i++;
+            } else {
+                temp[p] = sortedNums[j];
+                j++;
+            }
+            p++;
+        }
+
+        while (i &lt;= mid) {
+            temp[p] = sortedNums[i];
+            i++;
+            p++;
+        }
+
+        while (j &lt;= end) {
+            temp[p] = sortedNums[j];
+            j++;
+            p++;
+        }
+
+        for (int i = 0; i &lt; end-start+1; i++) {
+            sortedNums[start+i] = temp[i];
+        }
+
+    }
+};
+</code></pre>
+<h3>Runtime</h3>
+<pre><code>      5     2     6     1
+
+   |  1     2     5     6  |  &lt;- counts = [2, 1, 1, 0]
+   |  2     5  |  1     6  |  &lt;- counts = [1, 0, 1, 0]
+   |  5  |  2  |  6  |  1  |  &lt;- start == end return
+
+</code></pre>
+	</section>
+	</div>
+    </div>
+</div>
+<footer>
+   <div class="well well-lg" id="footer-well">
+      <div class="container">
+
+
+      <div class="row">
+         <div class="col-xs-6">
+            <a href="https://angold4.org" title="Angold-4 Organization" class="image-link"><img src="../../../images/logo.png" class="cmudb-logo" /></a>
+         </div>
+         <div class="col-xs-6">
+            <p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p>
+        </div>
+      </div>
+   </div>
+   </div>
+</footer>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../theme/js/respond.min.js"></script>
+
+<!-- Fix scrolling issues to internal HREFs that get positioned behind navbar -->
+<!-- http://stackoverflow.com/questions/10732690/offsetting-an-html-anchor-to-adjust-for-fixed-header -->
+<script src="../../../theme/js/href_scroll.js"></script>
+
+<!-- You know what this is and you know what he did to me... -->
+<script src="../../../theme/js/tim-kraska-betrayed-me.js"></script>
+</body>
+</html>

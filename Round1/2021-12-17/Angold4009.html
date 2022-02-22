@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+<head>
+    <title>Angold-4 Organization</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="../../../images/favicon.png" rel="icon">
+
+<link rel="canonical" href=".">
+        <meta name="author" content="Angold Wang" />
+
+    <meta property="og:site_name" content="Angold-4" />
+<!--     <meta property="og:type" content="article"/> -->
+    <meta property="og:title" content="Angold-4 Organization"/>
+    <meta property="og:url" content="."/>
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../theme/css/bootstrap.flatly.min.css" type="text/css"/>
+    <link href="../../../theme/css/font-awesome.min.css" rel="stylesheet">
+<!--     <link href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.9/typicons.min.css" rel="stylesheet"> -->
+
+    <link href="../../../theme/css/pygments/monokai.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script> -->
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://angold4.org" class="navbar-brand">
+<img src="../../../images/logo.png" width="32"/> Angold4            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+			    <li><a href="../../../about.html">About</a>
+                            <li><a href="../../../blogs.html">Blogs</a>
+                            <li><a href="../../../projects.html">Projects</a>
+
+	    </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li> <a title="Youtube" href="https://www.youtube.com/channel/UC3ZAjh2LHhm-FrgxgBtgMzQ" target="_new"><i class="fa fa-youtube"></i> Youtube</a>
+		</li>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+	<section id="content" class="body">
+
+
+<h1>Angorithm4 Webinar #9</h1>
+<h5>Host By Jiawei Wang 2021-12-17</h5>
+<h2>1.angorithm4.org Dev Process</h2>
+<blockquote>
+<p>Redesign a brand-new <strong>light</strong> index page, Hope you like it :)</p>
+</blockquote>
+<p><img src="Sources/index.png" alt="index.png"></p>
+<ul>
+<li>[x] <strong>Domain Register (USD 7.99/YR)</strong></li>
+<li>[x] <strong>Web Server Basic (Apache httpd2, Ubuntu)</strong></li>
+<li>[x] <strong>Server Language (php, C++)</strong></li>
+<li>[x] <strong>Index Page Design (Custom CSS with Bootstrap)</strong></li>
+<li>[x] <strong>Database (Sqlite)</strong></li>
+<li>[ ] <strong>Applications (Online Docker) (Chat Room)</strong></li>
+<li>[ ] <strong>User-friendly features (md -&gt; html)</strong></li>
+<li>[ ] <strong>Personal Page, information, and other pages (Webinar, Projects...)</strong></li>
+<li>[ ]........</li>
+</ul>
+<h3>Future Plan</h3>
+<p><img src="Sources/m1.png" alt="Sources/m1.png">
+<img src="Sources/m2.png" alt="Sources/m2.png">
+<img src="Sources/m3.png" alt="Sources/m3.png">
+<img src="Sources/m4.png" alt="Sources/m4.png"></p>
+<h3><a href="https://github.com/jdah/minecraft-weekend">Minecraft in a Weekend</a></h3>
+<p><img src="Sources/c.png" alt="c.png"></p>
+<h2>2. Hashing (Part II)</h2>
+<h3>i. Revision: Buffer Pool</h3>
+<p><img src="Sources/bufferpool.png" alt="bufferpool"></p>
+<h3>ii. Revision: Linear Probe Hashing (Static Hashing)</h3>
+<ul>
+<li>Static Assumption: <strong>You know the number of elements ahead of time.</strong></li>
+<li>Cost More Storiage but Faster <strong>(Handle Collision)</strong> Vs Cost Less Storiage but Slower**(Wide Hash Function)**</li>
+</ul>
+<p><img src="Sources/linear.png" alt="linear"></p>
+<p>If we hash into a slot and we find something that’s already there, I’m trying to insert something there.<!-- raw HTML omitted -->
+We just keep scanning down to the next position and keep going <strong>until we find the first open slot</strong></p>
+<h3>iii. Dynamic Hashing</h3>
+<ul>
+<li>The previous hash tables require the DBMS to know the <strong>number of elements it wants to store.</strong></li>
+</ul>
+<p><strong>Otherwise it has rebuild the table if it needs to grow/shrink in size.</strong></p>
+<p><strong><code>unordered_map</code>?</strong></p>
+<h4>Example</h4>
+<p><img src="Sources/pageex.png" alt="pageex"></p>
+<p><img src="Sources/hash.png" alt="hash"></p>
+<h4>1) Chained Hashing (Used in Java)</h4>
+<p>Maintain a linked list of buckets for each slot in the hash table.<!-- raw HTML omitted -->
+<strong>Resolve collisions by placing all elements with the same hash key into the same bucket.</strong></p>
+<ul>
+<li>Similar to Linear Probe Hashing</li>
+</ul>
+<p><img src="Sources/chain.png" alt="chain"></p>
+<h4>2) Extendible Hashing</h4>
+<ul>
+<li><strong><a href="https://www.youtube.com/watch?v=HcVyagxx_b4">Very Good Explianation</a></strong></li>
+</ul>
+<blockquote>
+<p>&quot;<strong>Only Split the chain when overflowed</strong>&quot;</p>
+</blockquote>
+<p><img src="Sources/extendible.png" alt="extendible"></p>
+<h4>3) Linear Hashing</h4>
+<blockquote>
+<p>&quot;<strong>Two Hash Functions</strong>&quot;</p>
+</blockquote>
+<p><img src="Sources/Linearh.png" alt="Linearh"></p>
+	</section>
+	</div>
+    </div>
+</div>
+<footer>
+   <div class="well well-lg" id="footer-well">
+      <div class="container">
+
+
+      <div class="row">
+         <div class="col-xs-6">
+            <a href="https://angold4.org" title="Angold-4 Organization" class="image-link"><img src="../../../images/logo.png" class="cmudb-logo" /></a>
+         </div>
+         <div class="col-xs-6">
+            <p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p>
+        </div>
+      </div>
+   </div>
+   </div>
+</footer>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../theme/js/respond.min.js"></script>
+
+<!-- Fix scrolling issues to internal HREFs that get positioned behind navbar -->
+<!-- http://stackoverflow.com/questions/10732690/offsetting-an-html-anchor-to-adjust-for-fixed-header -->
+<script src="../../../theme/js/href_scroll.js"></script>
+
+<!-- You know what this is and you know what he did to me... -->
+<script src="../../../theme/js/tim-kraska-betrayed-me.js"></script>
+</body>
+</html>

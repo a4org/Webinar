@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+<head>
+    <title>Angold-4 Organization</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="../../../images/favicon.png" rel="icon">
+
+<link rel="canonical" href=".">
+        <meta name="author" content="Angold Wang" />
+
+    <meta property="og:site_name" content="Angold-4" />
+<!--     <meta property="og:type" content="article"/> -->
+    <meta property="og:title" content="Angold-4 Organization"/>
+    <meta property="og:url" content="."/>
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../theme/css/bootstrap.flatly.min.css" type="text/css"/>
+    <link href="../../../theme/css/font-awesome.min.css" rel="stylesheet">
+<!--     <link href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.9/typicons.min.css" rel="stylesheet"> -->
+
+    <link href="../../../theme/css/pygments/monokai.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script> -->
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://angold4.org" class="navbar-brand">
+<img src="../../../images/logo.png" width="32"/> Angold4            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+			    <li><a href="../../../about.html">About</a>
+                            <li><a href="../../../blogs.html">Blogs</a>
+                            <li><a href="../../../projects.html">Projects</a>
+
+	    </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li> <a title="Youtube" href="https://www.youtube.com/channel/UC3ZAjh2LHhm-FrgxgBtgMzQ" target="_new"><i class="fa fa-youtube"></i> Youtube</a>
+		</li>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+	<section id="content" class="body">
+
+
+<h1>Angorithm4 Webinar #2</h1>
+<h4>Cohost by Jiawei Wang 2021-10-22</h4>
+<h2>1. M1</h2>
+<p><img src="Sources/M1Performance.png" alt="M1Performance"></p>
+<h3>(1). TSMC 5nm</h3>
+<p><strong>Taiwan Semiconductor Manufacturing Company</strong></p>
+<p><img src="Sources/tsmc.png" alt="tsmc"></p>
+<p><strong><a href="https://note.youdao.com/web/#/file/WEB23e18924c57ddb8c09563b64950ac104/note/WEBf16acca39d735b6b9d735343b839905a/">Notes for industry</a></strong></p>
+<ul>
+<li><strong>Transistor Density: 180%</strong></li>
+<li><strong>Transistor Performance: 115%</strong></li>
+<li><strong>Power Consumption: 70%</strong></li>
+</ul>
+<h3>(2). Architecture</h3>
+<p><img src="Sources/M1Max.png" alt="M1Max"></p>
+<p><img src="Sources/AMD.png" alt="AMD"></p>
+<p><strong>Programmable Computer</strong><!-- raw HTML omitted --></p>
+<p>Using instructions flow to control the Computer</p>
+<h4>Examples:</h4>
+<h4>CISC</h4>
+<pre><code class="language-asm">ADD  $4, 14(%eax, %ebx, 8)
+</code></pre>
+<ul>
+<li><strong>Usage: Adding <code>4</code> to the data stored in memory: <code>14 + %eax + (%ebx * 8)</code></strong></li>
+</ul>
+<h4>RISC</h4>
+<pre><code class="language-asm">LOAD (%eax), %ebx
+LOAD $4, %ecx
+ADD  %ecx, %ebx
+STORE %ecx, (%eax)
+</code></pre>
+<p><strong><a href="https://cs.stanford.edu/people/eroberts/courses/soco/projects/risc/risccisc/">An Article from stanford (Cisc vs Risc)</a></strong></p>
+<p><img src="Sources/rc.png" alt="rc"></p>
+<ul>
+<li>
+<p><strong>Reduced Instruction Set Computer</strong></p>
+<ul>
+<li><strong>Fixed Instruction Format and Fewer Instructions</strong>
+<ul>
+<li>Faster to Encode and Decode</li>
+<li>Require more Instruction Memory and Registers</li>
+<li>Circuit is Simpler</li>
+</ul>
+</li>
+<li><strong>Examples</strong>
+<ul>
+<li>MIPS, ARM, AVR</li>
+</ul>
+</li>
+<li><strong>Often used in</strong>
+<ul>
+<li><strong>Mobile Devices</strong> (Phone)</li>
+<li><strong>Less Power-Consuming Devices</strong> (Embedded device)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Complex Instruction Set Computer</strong></p>
+<ul>
+<li><strong>Instruction Takes Longer to Execute</strong> (Pipeline)</li>
+<li><strong>Larger Number of Instructions</strong> (Decode Hardware)</li>
+<li><strong>Examples</strong>
+<ul>
+<li>IBM System 360, x86, IA-32, AMD-64, x86-64</li>
+</ul>
+</li>
+<li><strong>Often usde in</strong>
+<ul>
+<li><strong>Large Servers</strong></li>
+<li><strong>PC</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2>(3). Apple</h2>
+<h3>Comparing with Other Laptop Company</h3>
+<ul>
+<li><strong>Dell, Lenovo...</strong></li>
+<li>Apple Has its own <strong>Ecology</strong> (Unique and Cannot Compete)</li>
+</ul>
+<h3>Comparing with Other Semiconductor Company</h3>
+<ul>
+<li><strong>Intel, TSMC...</strong></li>
+<li>Apple can sell its products <strong>directly</strong> to its user (Maximum Profit)</li>
+</ul>
+<h3>The Comination fo Software and Hardware (For Specific Task)</h3>
+<h3>My Concern</h3>
+<ul>
+<li><strong>1. Desktop GPU and CPU (&gt; 300W)?</strong></li>
+<li><strong>2. Just for Specific Software (Logic Pro/ Final Cut Pro...)</strong></li>
+<li><strong>3. Gamers?</strong></li>
+</ul>
+<h2>2. Computer Architecture</h2>
+<ul>
+<li><strong>As long as everything goes well, not knowing what happens in the underlying level (or above) is not a problem.</strong></li>
+</ul>
+<p><img src="Sources/AMD.png" alt="AMD">
+<img src="Sources/shutdown.png" alt="shutdown"></p>
+<p><img src="Sources/levelofabstraction.png" alt="levelofabstraction"></p>
+<p><img src="Sources/reasons.png" alt="reasons"></p>
+	</section>
+	</div>
+    </div>
+</div>
+<footer>
+   <div class="well well-lg" id="footer-well">
+      <div class="container">
+
+
+      <div class="row">
+         <div class="col-xs-6">
+            <a href="https://angold4.org" title="Angold-4 Organization" class="image-link"><img src="../../../images/logo.png" class="cmudb-logo" /></a>
+         </div>
+         <div class="col-xs-6">
+            <p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p>
+        </div>
+      </div>
+   </div>
+   </div>
+</footer>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../theme/js/respond.min.js"></script>
+
+<!-- Fix scrolling issues to internal HREFs that get positioned behind navbar -->
+<!-- http://stackoverflow.com/questions/10732690/offsetting-an-html-anchor-to-adjust-for-fixed-header -->
+<script src="../../../theme/js/href_scroll.js"></script>
+
+<!-- You know what this is and you know what he did to me... -->
+<script src="../../../theme/js/tim-kraska-betrayed-me.js"></script>
+</body>
+</html>

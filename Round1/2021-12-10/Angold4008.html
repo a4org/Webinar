@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+<head>
+    <title>Angold-4 Organization</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="../../../images/favicon.png" rel="icon">
+
+<link rel="canonical" href=".">
+        <meta name="author" content="Angold Wang" />
+
+    <meta property="og:site_name" content="Angold-4" />
+<!--     <meta property="og:type" content="article"/> -->
+    <meta property="og:title" content="Angold-4 Organization"/>
+    <meta property="og:url" content="."/>
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../theme/css/bootstrap.flatly.min.css" type="text/css"/>
+    <link href="../../../theme/css/font-awesome.min.css" rel="stylesheet">
+<!--     <link href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.9/typicons.min.css" rel="stylesheet"> -->
+
+    <link href="../../../theme/css/pygments/monokai.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script> -->
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://angold4.org" class="navbar-brand">
+<img src="../../../images/logo.png" width="32"/> Angold4            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+			    <li><a href="../../../about.html">About</a>
+                            <li><a href="../../../blogs.html">Blogs</a>
+                            <li><a href="../../../projects.html">Projects</a>
+
+	    </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li> <a title="Youtube" href="https://www.youtube.com/channel/UC3ZAjh2LHhm-FrgxgBtgMzQ" target="_new"><i class="fa fa-youtube"></i> Youtube</a>
+		</li>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+	<section id="content" class="body">
+
+
+<h1>Angorithm4 Webinar #8</h1>
+<h2>1. angorithm4.org Dev Process</h2>
+<p><img src="Sources/ddog.png" alt="ddog"></p>
+<ul>
+<li>[x] <strong>Domain Register (USD 7.99/YR)</strong></li>
+<li>[x] <strong>Web Server Basic (Apache httpd2, Ubuntu)</strong></li>
+<li>[x] <strong>Server Language (php, C++)</strong></li>
+<li>[x] <strong>Index Page Design (Custom CSS with Bootstrap)</strong></li>
+<li>[ ] <strong>Database (Sqlite)</strong></li>
+<li>[ ] <strong>Applications (Online Docker) (Chat Room)</strong></li>
+<li>[ ] <strong>User-friendly features (md -&gt; html)</strong></li>
+<li>[ ] <strong>Personal Page, information, and other pages (Webinar, Projects...)</strong></li>
+<li>[ ]........</li>
+</ul>
+<h2>2. Intro to Database</h2>
+<ul>
+<li>
+<p><strong>How to Store?</strong></p>
+<ul>
+<li><strong>CSV File</strong>?
+<img src="Sources/ex1.png" alt="ex1">
+<ul>
+<li>How do we ensure that the artist is the same for each album entry?</li>
+<li>What if somebody overwrites the album year with an invalid string?</li>
+<li>How do we store that there are multiple artists on an album?</li>
+<li>What if there are multiple database has relationship?</li>
+<li>What if there are terabytes data?</li>
+<li>What if we now want to create a new application that uses the same database?</li>
+<li>What if two threads try to write to the same file at the same time?</li>
+</ul>
+</li>
+<li><strong>DBMS</strong>
+<ul>
+<li><strong>A DBMS is software that allows applications to store and analyze information in a database.</strong></li>
+<li><strong>A general-purpose DBMS is designed to allow the definition, creation, querying, update, and administration of databases.</strong></li>
+<li>Faster!</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Where to Store?</strong></p>
+</li>
+</ul>
+<p><img src="Sources/StoriageLayer.png" alt="StoriageLayer"></p>
+<p><img src="Sources/Times.png" alt="Times"></p>
+<h2>3. Buffer Pool</h2>
+<!-- raw HTML omitted -->
+<p><img src="Sources/Structure.png" alt="Structure"></p>
+<p><strong>When the DBMS needs to free up a frame to make room for a new page, it must decide which page to evict from the buffer pool.</strong></p>
+<ul>
+<li>Correctness</li>
+<li>Accuracy</li>
+<li>Speed</li>
+</ul>
+<h3>LRU - Least Recent Used</h3>
+<!-- raw HTML omitted -->
+<ul>
+<li><strong><a href="https://leetcode.com/problems/lru-cache/">LeetCode 146. LRU Cache</a></strong></li>
+<li><strong>Maintain a timestamp of when each page was last accessed.</strong></li>
+<li>When the DBMS needs to evict a page, select the one with the oldest timestamp.</li>
+</ul>
+<h2>4. Hashing (Part I)</h2>
+<h3>i. What is Hashing</h3>
+<ul>
+<li>
+<p>A hash table implements an unordered <strong>associative array</strong> that maps keys to values. (In C++ <strong><code>unordered_map</code></strong>)</p>
+</li>
+<li>
+<p>It uses a <strong>Hash Function</strong> to compute an offset into the array for a given key, from which the desired value can be found.
+<!-- raw HTML omitted --></p>
+<ul>
+<li>Simplest <strong>Hash Function</strong>: <strong><code>mod(n)</code></strong></li>
+<li><strong>Map a large key space into a smaller domain?</strong></li>
+<li>Space Complexity: O(n)</li>
+<li>Time Complexity: Average: O(1) <strong>Money Cares about constants!</strong></li>
+</ul>
+</li>
+<li>
+<p>Perfect hash function. → <strong>If key1 ≠ key2, then hash(key1) ≠ hash(key2)</strong></p>
+</li>
+<li>
+<p><strong>Trade off</strong></p>
+<ul>
+<li>
+<p>Two Phases</p>
+<ul>
+<li>Hash Function<!-- raw HTML omitted -->How to map a large key space into a smaller domain.</li>
+<li>Hashing Scheme<!-- raw HTML omitted -->How to handle key collisions after hashing.</li>
+</ul>
+</li>
+<li>
+<p>Classic CS Question: <strong>Cost More Storiage but Faster</strong> Vs <strong>Cost Less Storiage but Slower</strong></p>
+</li>
+<li>
+<p>More Storiage Faster Example: <strong><code>Mod</code></strong> # of Slots, Collision Rate = 0 (Impossible) (Not always integer)</p>
+</li>
+<li>
+<p>Less Storiage Slower Example  <strong>Hash Function always return 1</strong> additional instructions to handle collision</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3>ii. Static Hashing</h3>
+<ul>
+<li>Static <strong>Assumption: You know the number of elements ahead of time.</strong></li>
+</ul>
+<h4>Linear Probe Hashing</h4>
+<p>If we hash into a slot and we find something that’s already there, I’m trying to insert something there.<!-- raw HTML omitted -->
+We just keep scanning down to the next position and keep going until we find the first open slot</p>
+	</section>
+	</div>
+    </div>
+</div>
+<footer>
+   <div class="well well-lg" id="footer-well">
+      <div class="container">
+
+
+      <div class="row">
+         <div class="col-xs-6">
+            <a href="https://angold4.org" title="Angold-4 Organization" class="image-link"><img src="../../../images/logo.png" class="cmudb-logo" /></a>
+         </div>
+         <div class="col-xs-6">
+            <p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p>
+        </div>
+      </div>
+   </div>
+   </div>
+</footer>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../theme/js/respond.min.js"></script>
+
+<!-- Fix scrolling issues to internal HREFs that get positioned behind navbar -->
+<!-- http://stackoverflow.com/questions/10732690/offsetting-an-html-anchor-to-adjust-for-fixed-header -->
+<script src="../../../theme/js/href_scroll.js"></script>
+
+<!-- You know what this is and you know what he did to me... -->
+<script src="../../../theme/js/tim-kraska-betrayed-me.js"></script>
+</body>
+</html>

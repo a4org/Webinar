@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+<head>
+    <title>Angold-4 Organization</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="../../../images/favicon.png" rel="icon">
+
+<link rel="canonical" href=".">
+        <meta name="author" content="Angold Wang" />
+
+    <meta property="og:site_name" content="Angold-4" />
+<!--     <meta property="og:type" content="article"/> -->
+    <meta property="og:title" content="Angold-4 Organization"/>
+    <meta property="og:url" content="."/>
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../theme/css/bootstrap.flatly.min.css" type="text/css"/>
+    <link href="../../../theme/css/font-awesome.min.css" rel="stylesheet">
+<!--     <link href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.9/typicons.min.css" rel="stylesheet"> -->
+
+    <link href="../../../theme/css/pygments/monokai.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script> -->
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://angold4.org" class="navbar-brand">
+<img src="../../../images/logo.png" width="32"/> Angold4            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+			    <li><a href="../../../about.html">About</a>
+                            <li><a href="../../../blogs.html">Blogs</a>
+                            <li><a href="../../../projects.html">Projects</a>
+
+	    </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li> <a title="Youtube" href="https://www.youtube.com/channel/UC3ZAjh2LHhm-FrgxgBtgMzQ" target="_new"><i class="fa fa-youtube"></i> Youtube</a>
+		</li>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+	<section id="content" class="body">
+
+
+<h1>Angorithm4 Webinar #6</h1>
+<h4>Cohost by Jiawei Wang 2021-11-26</h4>
+<h2>1. Announcement</h2>
+<h3>1. About angorithm4.org</h3>
+<ul>
+<li><strong>In Progress...</strong></li>
+<li><strong>With database, and support notes display, video playing etc.</strong></li>
+<li><strong>About one month</strong> (till end of this year)</li>
+<li><strong>Runs on my Raspberry Pi 4B</strong></li>
+<li><strong>A challenge for me, since it won't based on any web framework</strong></li>
+<li>Maybe you can help...</li>
+</ul>
+<h3>2. About Linux:</h3>
+<ul>
+<li>Run Ubuntu on VirtualBox is <strong>not</strong> a good idea..., Mostly, especially when you do not have a desktop computer.</li>
+<li><strong>Instead, Try boot Ubuntu sepreate from Windows (Install ubuntu 20.04 LTS alongside windows 10)</strong></li>
+<li><strong>All you need is a 32GB SD Card and <a href="https://www.youtube.com/watch?v=-iSAyiicyQY">this</a> video</strong></li>
+</ul>
+<h2>2. Microarchitecture - Single-Cycle</h2>
+<h3>1. Turing Machine</h3>
+<p><img src="Sources/Turing.png" alt="Turing"></p>
+<p><img src="Sources/TMs.png" alt="TMs"></p>
+<!-- raw HTML omitted -->
+<h4>T-recognizable:</h4>
+<p><strong>If the Turing machine is always reject by looping forever</strong> (From state to state but never stop in the final state).</p>
+<h4>One example of T-recognizable: (Hilbert's 10th Problem)</h4>
+<ul>
+<li>Equations of polynomials where solutions must be integers.</li>
+<li>Let D = {p | polynomial p(x1, x2, ..., xk) = 0 <strong>has a solution in integers</strong>}</li>
+<li>E.g. <code>3x^2 - 2xy -y^2z = 7 Solution: x = 1, y = 2, z = -2</code></li>
+<li>Hilbert's 10th problem: <strong>Give an algorithm (TM) to decide D. (Only yes or no)</strong></li>
+<li><strong>Matiyasevich proved in 1970: D is not decidable.</strong></li>
+</ul>
+<p><img src="Sources/relation.png" alt="relation"></p>
+<h3>2. Single-Cycle Machine</h3>
+<p><img src="Sources/single.png" alt="single"></p>
+<ul>
+<li><strong>Each instrurction takes a single clock cycle to execute</strong></li>
+<li>From <strong>ISA</strong> point of view, there are <strong>no “intermediate states” between AS and AS’</strong> during instruction execution</li>
+<li>All <strong>six phases</strong> of the instruction processing cycle take a single machine clock cycle to complete
+<ul>
+<li>Fetch</li>
+<li>Decode</li>
+<li>Evaluate Address</li>
+<li>Fetch Operands</li>
+<li>Execute</li>
+<li>Store Result</li>
+</ul>
+</li>
+</ul>
+<p><img src="Sources/state.png" alt="state"></p>
+<ul>
+<li><strong>Bottom neck of Single-Cycle Machine: The slowest instruction determines cycle time -&gt; long cycle time (STORE)</strong></li>
+<li>We can have <strong>programmer-invisible state</strong> to optimize the speed of the instruction execution: <strong>multiple state transitions per instruction</strong>
+<ul>
+<li><strong>AS -&gt; AS' (transform AS to AS' in a single clock cycle)</strong></li>
+<li><strong>AS -&gt; AS + MS1 -&gt; AS + MS2 -&gt; ... -&gt; AS' (take multiple clock cycles to transform AS to AS')</strong></li>
+</ul>
+</li>
+<li><strong>Multi-Cycle Machine: The slowest &quot;stage&quot; determines cycle time</strong></li>
+</ul>
+<h3>3. MIPS-Simulator</h3>
+<ul>
+<li><strong>Source Code: <a href="https://github.com/Angold-4/MIPS-Simulator">Angold-4/MIPS-Simulator</a></strong></li>
+<li><strong>Based on <a href="https://course.ece.cmu.edu/~ece447/s15/doku.php?id=labs">CMU 18-447 Lab1</a></strong></li>
+</ul>
+<h4>MIPS</h4>
+<ul>
+<li><strong>Microprocessor without interlocked Pipelined Stages</strong></li>
+<li>The hardware doesn’t do anything to detect the dependency between instructions, everything is handled by the software, so that you can <strong>design a microprocessor that is simple</strong></li>
+<li>Using C to simulate MIPS-hardware</li>
+</ul>
+<h4>Example</h4>
+<p><img src="Sources/appaddi.png" alt="appaddi">
+<img src="Sources/addih.png" alt="addih"></p>
+<pre><code class="language-c">/*
+ * handle_addi
+ * Add Immediate 
+ * Opcode: 8
+ * The 16-bit immediate is sign-extended and added to the contents of 
+ * general register rs to form the result. The result is placed into general register rt.
+ */
+
+int handle_addi(uint32_t instr) {
+    // decode source code and target register
+    int rs = decode_i_rs(instr);
+    int rt = decode_i_rt(instr);
+
+    int32_t immediate = (int32_t) decode_i_immediate(instr);
+    // Note: addi normally raises exception on overflow
+    // however, this functionality is not implemented here
+
+    NEXT_STATE.REGS[rt] = CURRENT_STATE.REGS[rs] + immediate;
+
+    NEXT_STATE.PC = CURRENT_STATE.PC + 4;
+
+    return STATUS_OK;
+}
+
+</code></pre>
+<p><img src="Sources/mips.png" alt="mips">
+<img src="Sources/addimips.png" alt="addimips"></p>
+<h2>3. Eva</h2>
+<ul>
+<li><strong>Source Code: <a href="https://github.com/Angold-4/Eval">Angold-4/Eval</a></strong></li>
+</ul>
+<h3>Runtime semantics should be preserved !</h3>
+<p><img src="Sources/runtime.png" alt="runtime"></p>
+<h3>Runtime #1 Arithmatic</h3>
+<h3>Runtime #2 Variable</h3>
+<h3>Runtime #3 Function (var lambda)</h3>
+<h3>Runtime #4 Class (var Environment)</h3>
+	</section>
+	</div>
+    </div>
+</div>
+<footer>
+   <div class="well well-lg" id="footer-well">
+      <div class="container">
+
+
+      <div class="row">
+         <div class="col-xs-6">
+            <a href="https://angold4.org" title="Angold-4 Organization" class="image-link"><img src="../../../images/logo.png" class="cmudb-logo" /></a>
+         </div>
+         <div class="col-xs-6">
+            <p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p>
+        </div>
+      </div>
+   </div>
+   </div>
+</footer>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../theme/js/respond.min.js"></script>
+
+<!-- Fix scrolling issues to internal HREFs that get positioned behind navbar -->
+<!-- http://stackoverflow.com/questions/10732690/offsetting-an-html-anchor-to-adjust-for-fixed-header -->
+<script src="../../../theme/js/href_scroll.js"></script>
+
+<!-- You know what this is and you know what he did to me... -->
+<script src="../../../theme/js/tim-kraska-betrayed-me.js"></script>
+</body>
+</html>

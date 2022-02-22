@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+<head>
+    <title>Angold-4 Organization</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="../../../images/favicon.png" rel="icon">
+
+<link rel="canonical" href=".">
+        <meta name="author" content="Angold Wang" />
+
+    <meta property="og:site_name" content="Angold-4" />
+<!--     <meta property="og:type" content="article"/> -->
+    <meta property="og:title" content="Angold-4 Organization"/>
+    <meta property="og:url" content="."/>
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../theme/css/bootstrap.flatly.min.css" type="text/css"/>
+    <link href="../../../theme/css/font-awesome.min.css" rel="stylesheet">
+<!--     <link href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.9/typicons.min.css" rel="stylesheet"> -->
+
+    <link href="../../../theme/css/pygments/monokai.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script> -->
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://angold4.org" class="navbar-brand">
+<img src="../../../images/logo.png" width="32"/> Angold4            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+			    <li><a href="../../../about.html">About</a>
+                            <li><a href="../../../blogs.html">Blogs</a>
+                            <li><a href="../../../projects.html">Projects</a>
+
+	    </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li> <a title="Youtube" href="https://www.youtube.com/channel/UC3ZAjh2LHhm-FrgxgBtgMzQ" target="_new"><i class="fa fa-youtube"></i> Youtube</a>
+		</li>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+	<section id="content" class="body">
+
+
+<h1>Angorithm4 Webinar #5</h1>
+<h4>Host by Jiawei Wang 2021-11-19</h4>
+<h2>1. Review Interpreter vs. Compiler</h2>
+<h3>i. Interpreter == Virtual Machine</h3>
+<p><img src="Sources/runtime.png" alt="runtime"></p>
+<ul>
+<li><strong>There is no &quot;Interpreted language&quot; or &quot;Compiled language&quot;</strong></li>
+<li><strong>Just layer-by-layer interpret (running in the Virtual machine)</strong></li>
+<li><strong>Interpret means just update the state of this machine (Turing Machine)</strong></li>
+<li><strong>Finally interprete at the real-machine --&gt; CPU</strong></li>
+</ul>
+<h3>ii. Static Time</h3>
+<p><img src="Sources/statictime.png" alt="statictime">
+<img src="Sources/ast.png" alt="ast"></p>
+<h3>iii. Runtime</h3>
+<p><img src="Sources/runtime.png" alt="runtime"></p>
+<ul>
+<li>
+<h3>1. Stack-based VM</h3>
+</li>
+</ul>
+<pre><code>                 # stack contents (leftmost = top = most recent):
+ push A          #           A
+ push B          #     B     A
+ push C          # C   B     A
+ subtract        #     B-C   A
+ multiply        #           A*(B-C)
+ push D          #     D     A*(B-C)
+ push E          # E   D     A*(B-C)
+ add             #     D+E   A*(B-C)
+ add             #           A*(B-C)+(D+E)
+</code></pre>
+<pre><code class="language-java">public class JavaBytecode {
+    public static void main(String[] args) {
+	int x = 15;
+	System.out.println(x + 10 - 5);
+    }
+};
+</code></pre>
+<pre><code>Compiled from &quot;JavaBytecode.java&quot;
+public class JavaBytecode {
+  public JavaBytecode();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object.&quot;&lt;init&gt;&quot;:()V
+       4: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: bipush        15
+       2: istore_1
+       3: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+       6: iload_1
+       7: bipush        10
+       9: iadd
+      10: iconst_5
+      11: isub
+      12: invokevirtual #13                 // Method java/io/PrintStream.println:(I)V
+      15: return
+}
+</code></pre>
+<ul>
+<li>
+<h3>2. Register-based VM (Real-CPU)</h3>
+</li>
+</ul>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    int x = 15;
+    printf(&quot;%i&quot;, x);
+}
+
+</code></pre>
+<pre><code class="language-asm">	.section	__TEXT,__text,regular,pure_instructions
+	.build_version macos, 11, 0	sdk_version 12, 0
+	.globl	_main                           ## -- Begin function main
+	.p2align	4, 0x90
+_main:                                  ## @main
+	.cfi_startproc
+## %bb.0:
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset %rbp, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register %rbp
+	subq	$16, %rsp
+	movl	$15, -4(%rbp)
+	movl	-4(%rbp), %esi
+	leaq	L_.str(%rip), %rdi
+	movb	$0, %al
+	callq	_printf
+	xorl	%eax, %eax
+	addq	$16, %rsp
+	popq	%rbp
+	retq
+	.cfi_endproc
+                                        ## -- End function
+	.section	__TEXT,__cstring,cstring_literals
+L_.str:                                 ## @.str
+	.asciz	&quot;%i&quot;
+
+.subsections_via_symbols
+</code></pre>
+<h3>The Deeper, the faster!</h3>
+<h2>2. Comparision Sort(III) - Heap Sort</h2>
+<h3>i. Heap</h3>
+<ul>
+<li><strong>Heap is a special &quot;Piority Queue&quot;</strong></li>
+<li><strong>Heap is a Complete Binary Tree</strong></li>
+<li>The value of each node must be <strong>no greater than (or no less than)</strong> the value of its child nodes.</li>
+</ul>
+<p><img src="Sources/heap.png" alt="heap"></p>
+<pre><code class="language-cpp">void MaxHeaptify(vector&lt;int&gt;&amp; A, int root, int length) {
+    // complete binary tree
+    int left = 2*root;
+    int right = 2*root + 1;
+
+    int largest;
+
+    if (left &lt;= length &amp;&amp; A[left] &gt; A[root]) {
+        largest = left;
+    } else {
+        largest = root;
+    }
+
+    if (right &lt;= length &amp;&amp; A[right] &gt; A[largest]) {
+        largest = right;
+    }
+
+    if (largest != root) {
+        // we need to update the subtree
+        swap(A[root], A[largest]);
+        MaxHeaptify(A, largest, length);
+    }
+}
+
+void BuildMaxHeap(vector&lt;int&gt;&amp; A) {
+    // from the last parent node to root
+    for (int i = (int)A.size()/2; i &gt;= 1; i--) {
+        MaxHeaptify(A, i, (int)A.size()-1);
+    }
+}
+</code></pre>
+<p><img src="Sources/buildheap.png" alt="buildheap"></p>
+<h3>ii. Heap Sort</h3>
+<pre><code class="language-cpp">void HeapSort(vector&lt;int&gt;&amp; A) {
+    A.insert(A.begin(), 0);
+    BuildMaxHeap(A);
+
+    int size = (int)A.size() - 1;
+    for (int i = (int)A.size()-1; i &gt;= 2; i--) {
+        swap(A[1], A[i]);
+        size--; // key
+        MaxHeaptify(A, 1, size);
+    }
+    A.erase(A.begin());
+}
+
+
+</code></pre>
+<p><img src="Sources/heapsort.png" alt="heapsort"></p>
+<h3>iii. Time Complexity Analysis</h3>
+<ul>
+<li>
+<h4>Worse-case analysis:</h4>
+<ul>
+<li><strong><code>BuildMaxHeap()</code></strong> -- O(N)</li>
+<li><strong><code>MaxHeaptify()</code></strong>  -- O(logN) (h)</li>
+<li><strong><code>HeapSort()</code></strong>     -- O(NlogN)</li>
+</ul>
+</li>
+</ul>
+<h3>iv. Application (Example)</h3>
+<ul>
+<li><strong><a href="https://leetcode.com/problems/kth-largest-element-in-an-array/">LeetCode 215. Kth Largest Element in an Array</a></strong></li>
+</ul>
+<pre><code class="language-cpp">class Solution {
+    public int findKthLargest(int[] nums, int k) {
+        // init heap 'the smallest element first'
+        PriorityQueue&lt;Integer&gt; heap =
+            new PriorityQueue&lt;Integer&gt;((n1, n2) -&gt; n1 - n2);
+
+        // keep k largest elements in the heap
+        for (int n: nums) {
+          heap.add(n);
+          if (heap.size() &gt; k)
+            heap.poll();
+        }
+
+        // output
+        return heap.poll();        
+  }
+}
+</code></pre>
+<h2>3. Lower Bounds of Comparision Sort</h2>
+<h3>1. Is O(NlogN) the best we can do?</h3>
+<p><strong><code>N! &lt;= 2^h</code> -&gt;<code>h &gt;= log(N!)</code> &gt;= log(N/e)^N = Nlog(N/e) = NlogN - Nloge</strong><!-- raw HTML omitted -->
+= <strong>O<code>(NlogN)</code></strong></p>
+<h3>2. Theoretically Fastest (Which One?)</h3>
+	</section>
+	</div>
+    </div>
+</div>
+<footer>
+   <div class="well well-lg" id="footer-well">
+      <div class="container">
+
+
+      <div class="row">
+         <div class="col-xs-6">
+            <a href="https://angold4.org" title="Angold-4 Organization" class="image-link"><img src="../../../images/logo.png" class="cmudb-logo" /></a>
+         </div>
+         <div class="col-xs-6">
+            <p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p>
+        </div>
+      </div>
+   </div>
+   </div>
+</footer>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../theme/js/respond.min.js"></script>
+
+<!-- Fix scrolling issues to internal HREFs that get positioned behind navbar -->
+<!-- http://stackoverflow.com/questions/10732690/offsetting-an-html-anchor-to-adjust-for-fixed-header -->
+<script src="../../../theme/js/href_scroll.js"></script>
+
+<!-- You know what this is and you know what he did to me... -->
+<script src="../../../theme/js/tim-kraska-betrayed-me.js"></script>
+</body>
+</html>
