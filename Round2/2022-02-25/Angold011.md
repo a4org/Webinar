@@ -74,6 +74,7 @@ Usually, the high-level goal of building a distributed system is to get **scalab
 4. Security / Isolated
 
 ### iii. Challenges
+
 1. **Fault Tolerate.**
     * Big distributed systems: **Failure problems just happen all the time !**
     * The failure has to be built into the design.
@@ -91,11 +92,84 @@ Usually, the high-level goal of building a distributed system is to get **scalab
 
 ## 2. MapReduce
 
+### i. Overview
+**Back to 2004, engineers in Google were were looking for a framework that would make it easy for non-specialists to be able to write and run giant distributed computations.**
+
+* Analysis Crawled Documents
+* Build a index of the web
+* Sort Web requests logs
+* ...
+
+* ****
+
+* **Multi-hour Computations**
+* **Multi-terabyte Datasets**
+* **Multi-thousand Machines** 
+
+
+* ****
+
+
+* How to parallelize the computations ?
+* How to distribute the data ? 
+* How to handle failures ?
+
+
+### ii. Programming Model
+**In a programmer's view, the computation recieves many files, and takes a set of input key/value pairs, then produces a set of output key/value pairs.**
+
+#### Example: word count
+![mrex](Sources/mrex.png)
+
+#### Map
+* Written by the User.
+* Recieve input files and then produces a set of output key/value pairs.
+* MR calls `map(k, v)` for each input file `k`, and its contains `v`, produces set of `k2`, `v2` " intermediate" data.
+```javascript
+map(String key, String value) {
+    // key: document name
+    // value: document contents
+    for each word w in value:
+        Emit(w, "1");
+}
+```
+
+
+#### Reduce
+* Wirtten by the user.
+* Recieve key/value pairs from **`Map`**.
+* Then merge together these values with same key to **form a possibly smaller set of values**.
+* MR gathers all intermediate `v2` for a given `k2`, and passes each key + values to a reduce call.
+* Final outut is set of <k2, v3> pairs from `reduce(k2, v2)`s.
+```javascript
+reduce(k, v)
+    // key: a word
+    // value: a list of counts
+    int result = 0; 
+    for each v in values:
+        result += ParseInt(v);
+    Emit(AsString(result));
+```
+
+#### MapReduce scales well
+* N "worker" computers get you Nx throughtput.
+* `map`s can run in parallel, since they don't interact. Same for `reduce`s.
+* In that way, you can get more throughtput by buying more computers.
+
+
+
+## 3. Implementation Details
+
+### i. [Runtime Details (check my notes)](https://a4org.github.io/ds/papers/MapReduce/mapreduce.html):
+![mapreduce](Sources/mapreduce.png)
+
+### ii. RPC MapReduce Implementation
+
 ![mapreducerpc](Sources/mapreducerpc.png)
 
-## 3. Back to Practice
 
 
 
+## 4. Practice Performance
 
 

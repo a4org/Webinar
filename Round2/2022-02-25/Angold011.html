@@ -178,8 +178,71 @@
 </li>
 </ol>
 <h2>2. MapReduce</h2>
+<h3>i. Overview</h3>
+<p><strong>Back to 2004, engineers in Google were were looking for a framework that would make it easy for non-specialists to be able to write and run giant distributed computations.</strong></p>
+<ul>
+<li>Analysis Crawled Documents</li>
+<li>Build a index of the web</li>
+<li>Sort Web requests logs</li>
+<li>...</li>
+</ul>
+<hr>
+<ul>
+<li><strong>Multi-hour Computations</strong></li>
+<li><strong>Multi-terabyte Datasets</strong></li>
+<li><strong>Multi-thousand Machines</strong></li>
+</ul>
+<hr>
+<ul>
+<li>How to parallelize the computations ?</li>
+<li>How to distribute the data ?</li>
+<li>How to handle failures ?</li>
+</ul>
+<h3>ii. Programming Model</h3>
+<p><strong>In a programmer's view, the computation recieves many files, and takes a set of input key/value pairs, then produces a set of output key/value pairs.</strong></p>
+<h4>Example: word count</h4>
+<p><img src="Sources/mrex.png" alt="mrex"></p>
+<h4>Map</h4>
+<ul>
+<li>Written by the User.</li>
+<li>Recieve input files and then produces a set of output key/value pairs.</li>
+<li>MR calls <code>map(k, v)</code> for each input file <code>k</code>, and its contains <code>v</code>, produces set of <code>k2</code>, <code>v2</code> &quot; intermediate&quot; data.</li>
+</ul>
+<pre><code class="language-javascript">map(String key, String value) {
+    // key: document name
+    // value: document contents
+    for each word w in value:
+        Emit(w, &quot;1&quot;);
+}
+</code></pre>
+<h4>Reduce</h4>
+<ul>
+<li>Wirtten by the user.</li>
+<li>Recieve key/value pairs from <strong><code>Map</code></strong>.</li>
+<li>Then merge together these values with same key to <strong>form a possibly smaller set of values</strong>.</li>
+<li>MR gathers all intermediate <code>v2</code> for a given <code>k2</code>, and passes each key + values to a reduce call.</li>
+<li>Final outut is set of &lt;k2, v3&gt; pairs from <code>reduce(k2, v2)</code>s.</li>
+</ul>
+<pre><code class="language-javascript">reduce(k, v)
+    // key: a word
+    // value: a list of counts
+    int result = 0; 
+    for each v in values:
+        result += ParseInt(v);
+    Emit(AsString(result));
+</code></pre>
+<h4>MapReduce scales well</h4>
+<ul>
+<li>N &quot;worker&quot; computers get you Nx throughtput.</li>
+<li><code>map</code>s can run in parallel, since they don't interact. Same for <code>reduce</code>s.</li>
+<li>In that way, you can get more throughtput by buying more computers.</li>
+</ul>
+<h2>3. Implementation Details</h2>
+<h3>i. <a href="https://a4org.github.io/ds/papers/MapReduce/mapreduce.html">Runtime Details (check my notes)</a>:</h3>
+<p><img src="Sources/mapreduce.png" alt="mapreduce"></p>
+<h3>ii. RPC MapReduce Implementation</h3>
 <p><img src="Sources/mapreducerpc.png" alt="mapreducerpc"></p>
-<h2>3. Back to Practice</h2>
+<h2>4. Practice Performance</h2>
 	</section>
 	</div>
     </div>
