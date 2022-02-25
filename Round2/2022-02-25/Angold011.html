@@ -72,8 +72,112 @@
 <h3>Prologue: The Power of Abstraction</h3>
 <p><img src="Sources/abstractions.png" alt="abstractions"></p>
 <p><strong>These Abstractions let us reason about the behavior of our building blocks, without understanding the implementation details underneath.</strong></p>
-<h2>1. MapReduce</h2>
-<h2>2. Implementation Details</h2>
+<h2>Thread</h2>
+<ul>
+<li><strong>IO concurrency</strong>
+<ul>
+<li>While some threads are waiting for I/O, other threads can utilize the CPU resources.</li>
+</ul>
+</li>
+<li><strong>Parallelism</strong>
+<ul>
+<li>Execute code in parallel on several cores.</li>
+</ul>
+</li>
+<li><strong>Convinence</strong>
+<ul>
+<li>Relatively simple to programming</li>
+</ul>
+</li>
+</ul>
+<h3>User</h3>
+<ul>
+<li><strong>Most User:</strong> Do not aware / care.</li>
+<li><strong>Computer Enthusiast (Geek):</strong> Intel Core i7-12700K, 12 Cores / 20 Threads.</li>
+<li><strong>Some Programmers:</strong> Thread vs. Process.</li>
+</ul>
+<p><img src="Sources/threadprocess.png" alt="threadprocess"></p>
+<h3>Programming Language</h3>
+<ul>
+<li><strong>User-level Threads <code>(N:M)</code></strong>*
+<ul>
+<li>The kernel is <strong>not aware</strong> of the existence of these threads.</li>
+<li>These threads are usually inside 1 or more process, managed by the <strong>Thread Scheduler</strong> of the programming language itself.</li>
+<li>Example: <strong>Golang: <code>goroutine</code>.</strong></li>
+</ul>
+</li>
+<li><strong>Kernel-level Threads <code>(1:1)</code></strong>
+<ul>
+<li>Kernel Scheduling Entity (KSE)</li>
+<li>The <strong>minimum-executable</strong> unit in the machine.</li>
+<li>Managed by the <strong>OS Scheduler</strong></li>
+<li>Example: <strong>C: <code>pthread</code>, Java: <code>java.lang.Thread</code>, C++ <code>std::thread</code></strong>.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>Thread implementation in Golang - Goroutine</strong></p>
+</blockquote>
+<p><img src="Sources/gpmgoroutine.png" alt="gpmgoroutine"></p>
+<ul>
+<li>Each <strong>goroutine</strong> is an independent unit of execution, which have its <strong>unique stack</strong>.</li>
+<li>Go's runtime uses resizable, bounded stacks, initially of only 2KB/goroutine. (the runtime grows and shrinks).</li>
+<li><strong>Work-stealing</strong> scheduling algorithm.</li>
+</ul>
+<h3>Operating Systems</h3>
+<h4>Threads and Processes are the same !</h4>
+<h4>They are all KSEs, and the OS manage them through the OS Scheduler.</h4>
+<h2>1. Distributed Systems</h2>
+<h3>i. What a Distributed System is?</h3>
+<p>A set of cooperating computers that are communicating with each other over network to get some conherent task done.</p>
+<ul>
+<li><strong>Storiage for big websites</strong></li>
+<li><strong>Big data computations (MapReduce)</strong></li>
+<li><strong>...</strong></li>
+</ul>
+<h3>ii. Why People Need a Distributed System?</h3>
+<p>Usually, the high-level goal of building a distributed system is to get <strong>scalable speed-up</strong>.</p>
+<ol>
+<li><strong>&quot;More&quot; Data and Computations</strong></li>
+<li><strong>Scalability</strong>
+<ul>
+<li><strong>2x computers -&gt; 2x throughput (huge win)</strong></li>
+<li><strong>Parallelism:</strong> Split the computations into multiple machines. (MapReduce)</li>
+<li><strong>High-throughput:</strong> Split the request data into pieces and read them conrurrently from different servers (GFS).</li>
+</ul>
+</li>
+<li>Phsical Reason</li>
+<li>Security / Isolated</li>
+</ol>
+<h3>iii. Challenges</h3>
+<ol>
+<li>
+<p><strong>Fault Tolerate.</strong></p>
+<ul>
+<li>Big distributed systems: <strong>Failure problems just happen all the time !</strong></li>
+<li>The failure has to be built into the design.</li>
+<li><strong>Recoverability</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>Achieve this Scalability.</strong> (not infinite)</p>
+</li>
+<li>
+<p><strong>Build the Interface.</strong></p>
+<ul>
+<li>The <strong>&quot;Abstraction&quot;</strong>.</li>
+<li>We'd love to be able to build interfaces that look and act just like non-distributed storage and computation systems, but are actually with vast and extremely high performance fault tolerant distributed systems underneath.</li>
+</ul>
+</li>
+<li>
+<p><strong>Consistency</strong></p>
+<ul>
+<li>How to make <strong>Replicas</strong> consistent.</li>
+<li>Communication problem (Weak and Strong consistency)</li>
+</ul>
+</li>
+</ol>
+<h2>2. MapReduce</h2>
 <p><img src="Sources/mapreducerpc.png" alt="mapreducerpc"></p>
 <h2>3. Back to Practice</h2>
 	</section>
