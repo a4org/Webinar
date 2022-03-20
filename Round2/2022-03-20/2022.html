@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+<head>
+    <title>Angold-4 Organization</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="../../../images/favicon.png" rel="icon">
+
+<link rel="canonical" href=".">
+        <meta name="author" content="Angold Wang" />
+
+    <meta property="og:site_name" content="Angold-4" />
+<!--     <meta property="og:type" content="article"/> -->
+    <meta property="og:title" content="Angold-4 Organization"/>
+    <meta property="og:url" content="."/>
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../theme/css/bootstrap.flatly.min.css" type="text/css"/>
+    <link href="../../../theme/css/font-awesome.min.css" rel="stylesheet">
+<!--     <link href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.9/typicons.min.css" rel="stylesheet"> -->
+
+    <link href="../../../theme/css/pygments/monokai.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script> -->
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://angold4.org" class="navbar-brand">
+<img src="../../../images/logo.png" width="32"/> Angold4            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+			    <li><a href="../../../about.html">About</a>
+                            <li><a href="../../../blogs.html">Blogs</a>
+                            <li><a href="../../../projects.html">Projects</a>
+
+	    </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li> <a title="Youtube" href="https://www.youtube.com/channel/UC3ZAjh2LHhm-FrgxgBtgMzQ" target="_new"><i class="fa fa-youtube"></i> Youtube</a>
+		</li>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+	<section id="content" class="body">
+
+
+<h2>A4 Spring 2022 Webinar Series</h2>
+<h1>4. TCP Flow Control</h1>
+<h5>Host By Shuo Feng 03/20/2022</h5>
+<h3>FLOW CONTROL</h3>
+<h4>DEFINITION</h4>
+<p>We are always looking for faster speed in data transmission, however, a too fast speed is not necessarily a better choise. Usually, if sending speed much faster than receiving speed, it would contribute to the overflow of receive buffer.
+Flow control provide a mechanism which is able to control the rate of data transmission between two nodes to prevent sender faster too much than receiver.</p>
+<h3>APPROACH</h3>
+<p>Now A send data to B, when the connection is establish, the receiver B provide sender A a receive window (rwnd) to show A how much free space in B`s receive buffer.</p>
+<p>Due to full duplex working mode, both A &amp; B maintain a rwnd, we use 'RCVbuffer' to represent the receive buffer of receiver B, 'LastByteRead' represent the last byte that application read from receive buffer, 'LastByteRcvd' represent the last byte arrived in receive buffer.</p>
+<p>To avoid buffer overflow, there must have:</p>
+<p><strong><code>LastByteRcvd - LastByteRead &lt;= RcvBuffer</code></strong></p>
+<p>And we can get:</p>
+<p><strong><code>rwnd = RcvBuffer - [LastByteRcvd - LastByteRead]</code></strong></p>
+<p>So what A need to do is control <strong><code>[LastByteRcvd - LastByteRead]</code></strong> smaller than RcvBuffer</p>
+<p>Both sender and receiver have their buffer space ,for receive buffer, when providing data for application process, it also receive data from sender, to avoid buffer overflow, we must control space accroding to free buffer space to ensure that buffer data will not exceed receive buffer.</p>
+<p>![avatar](2022.3.20/RCVbuffer4 .png)</p>
+<h4>SLIDING WINDOW PROTOCOL</h4>
+<p>Sliding window is measure for flow control. Siliding window alow sender transmit multiple data group without acknowledgment.</p>
+<p>For sender's window, all data in window can be sended continuously, the larger the window, the faster the transfer speed</p>
+<p>For receiver's window, reveiver will send acknowledgment for the last data received in order, when receive data out of data, receiver will storage them in buffer temporarily.</p>
+<p><img src="2022.3.20/neosliding1.png" alt="avatar"></p>
+<p>Now A transfers data to B and there is a 12 bytes size window, at the beginning A sends 7 bytes to B</p>
+<p><img src="2022.3.20/neosliding2.png" alt="avatar"></p>
+<p>TCP may not resend ACK for each massege, to send 26 ~ 32 in send window, TCP devided then into four parts, seg1: 26 —— 27, seg2: 28 —— 29, seg3: 30, seg4: 31 —— 32.</p>
+<p>26 —— 32 was sended sequentially, but B only receive 26, 27, 28, 29, 31, 32, due to 30 was lost in transmission and receiver only send acknowledgment for the highest number that received in order, B send acknowledgment (ack = 30)  to illustrate that 26——29 is received, and for A 26——29 changes from not yet acknowledge to already acknowledge. 31——32 are received but not in order, receiver will storage them in buffer.</p>
+<p><img src="2022.3.20/neosliding3.png" alt="avatar"></p>
+<p>Eventhough some data lost in transmission, sender A would not care about ACK and send remianing data in window, when A sends 12 bytes, there is not usable space window and A will stop transmission, to solve this problem, timeout retransmission will kick in.</p>
+<p>TCP provides that if sender do not receive acknowledgment in specified time, then it have to transfers the data that have transferred.</p>
+<p><img src="2022.3.20/neosliding4.png" alt="avatar"></p>
+<h5>RETRANSMISSION-TIME OUT</h5>
+<ul>
+<li>RTT  : round tirp time</li>
+<li>RTTs : round trip time smoothed</li>
+<li>RTTD : deviation RTT</li>
+<li>RTO  ：retransmission time out</li>
+<li>RFC 6298 recommend: a(Alpha) = 1/8 b(Beta) = 1/4.</li>
+</ul>
+<p><img src="2022.3.20/RTO.png" alt="avatra"></p>
+<h4>SLIDING WINDOW in FOLW CONTROL</h4>
+<p><img src="2022.3.20/TCPheader2.png" alt="avatar">
+In TCP header there is a 2 bytes data called receive window (rwnd), to show how much free space in receiver `s receive buffer， which is also tell sender the amount of data that can be send.</p>
+<p>Benifit from full duplex working mode, sender can receives data and receiver can also sends data, so before data transmission, receiver B tell A about the free buffer space of B thought receive window in TCP header, and the send window of A can not be bigger than receive window.</p>
+<p><img src="2022.3.20/process.png" alt="avatar"></p>
+	</section>
+	</div>
+    </div>
+</div>
+<footer>
+   <div class="well well-lg" id="footer-well">
+      <div class="container">
+
+
+      <div class="row">
+         <div class="col-xs-6">
+            <a href="https://angold4.org" title="Angold-4 Organization" class="image-link"><img src="../../../images/logo.png" class="cmudb-logo" /></a>
+         </div>
+         <div class="col-xs-6">
+            <p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p>
+        </div>
+      </div>
+   </div>
+   </div>
+</footer>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../theme/js/respond.min.js"></script>
+
+<!-- Fix scrolling issues to internal HREFs that get positioned behind navbar -->
+<!-- http://stackoverflow.com/questions/10732690/offsetting-an-html-anchor-to-adjust-for-fixed-header -->
+<script src="../../../theme/js/href_scroll.js"></script>
+
+<!-- You know what this is and you know what he did to me... -->
+<script src="../../../theme/js/tim-kraska-betrayed-me.js"></script>
+</body>
+</html>
