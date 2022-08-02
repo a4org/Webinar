@@ -10,7 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link href="../../../images/favicon.png" rel="icon">
-
 <link rel="canonical" href=".">
         <meta name="author" content="Angold Wang" />
 
@@ -26,6 +25,128 @@
 
     <link href="../../../theme/css/pygments/monokai.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+  <style>
+
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+
+    li {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    a {
+      font-size: 18px;
+    }
+
+    k
+
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+    {   }
+
+    @media screen {
+      pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
 
 </head>
 <body>
@@ -64,59 +185,126 @@
     <div class="row">
         <div class="col-lg-12">
 	<section id="content" class="body">
-
-
-
-<h1>&quot;JavaScript. The Core&quot; Notes</h1>
-<h5>Jiawei Wang (Angold-4) Nov 2021</h5>
+<nav id="TOC" role="doc-toc">
 <ul>
-<li><strong>Paper : <a href="http://dmitrysoshnikov.com/ecmascript/javascript-the-core-2nd-edition/">JavaScript. The Core</a></strong></li>
-<li><strong>Author : <a href="http://dmitrysoshnikov.com/">Dmitry Soshnikov</a></strong></li>
+<li><a href="#javascript.-the-core-notes"
+id="toc-javascript.-the-core-notes">“JavaScript. The Core” Notes</a>
+<ul>
+<li><a href="#ecmascript" id="toc-ecmascript">1. ECMAScript</a>
+<ul>
+<li><a
+href="#javascript-is-the-most-popular-implementation-of-the-ecmascript-standard"
+id="toc-javascript-is-the-most-popular-implementation-of-the-ecmascript-standard">JavaScript
+is the most popular implementation of the ECMAScript Standard!</a></li>
+<li><a href="#notable-js-engines" id="toc-notable-js-engines">Notable JS
+Engines:</a></li>
+</ul></li>
+<li><a href="#prototype" id="toc-prototype">2. Prototype</a>
+<ul>
+<li><a href="#i.-javascript-type" id="toc-i.-javascript-type">i.
+JavaScript Type</a></li>
+<li><a href="#ii.-objects" id="toc-ii.-objects">ii. Objects</a></li>
+<li><a href="#iii.-function" id="toc-iii.-function">iii.
+Function</a></li>
+<li><a href="#iv.-class" id="toc-iv.-class">iv. Class</a></li>
+<li><a href="#v.-primitives" id="toc-v.-primitives">v.
+Primitives</a></li>
+</ul></li>
+<li><a href="#runtime" id="toc-runtime">3. Runtime</a>
+<ul>
+<li><a href="#i.-execution-stack" id="toc-i.-execution-stack">i.
+Execution Stack</a></li>
+<li><a href="#ii.-variable-storiage" id="toc-ii.-variable-storiage">ii.
+Variable Storiage</a></li>
+<li><a href="#iii.-job-queue" id="toc-iii.-job-queue">iii. Job
+Queue</a></li>
+<li><a href="#iv.-js-engine" id="toc-iv.-js-engine">iv. JS
+Engine</a></li>
+</ul></li>
+</ul></li>
 </ul>
-<h2>1. ECMAScript</h2>
+</nav>
+<h1 id="javascript.-the-core-notes">“JavaScript. The Core” Notes</h1>
+<h5 id="jiawei-wang-angold-4-nov-2021">Jiawei Wang (Angold-4) Nov
+2021</h5>
+<ul>
+<li><strong>Paper : <a
+href="http://dmitrysoshnikov.com/ecmascript/javascript-the-core-2nd-edition/">JavaScript.
+The Core</a></strong></li>
+<li><strong>Author : <a href="http://dmitrysoshnikov.com/">Dmitry
+Soshnikov</a></strong></li>
+</ul>
+<h2 id="ecmascript">1. ECMAScript</h2>
 <blockquote>
-<p><strong>Mocha -&gt; LiveScript -&gt; JavaScript -&gt; ECMA-262 -&gt; ECMAScript -&gt; JavaScript (ECMAScript + DOM + BOM)</strong></p>
+<p><strong>Mocha -&gt; LiveScript -&gt; JavaScript -&gt; ECMA-262 -&gt;
+ECMAScript -&gt; JavaScript (ECMAScript + DOM + BOM)</strong></p>
 </blockquote>
-<p>To start from the beginning, <strong>JavaScript</strong> derived its name from <strong>Java</strong> and initially <strong><a href="https://en.wikipedia.org/wiki/Brendan_Eich">Brendan Eich</a></strong> (the Co-founder of Mozilla) was asked to develop a language that resembled Java for the web for his company Netscape.<!-- raw HTML omitted -->
-But Eich decided that Java was too complicated and not suitable for web development, <strong>and set out to create a simple language that even a beginner could code in.</strong><!-- raw HTML omitted --></p>
-<p>After the language was complete <strong>(Eich &quot;wrote JavaScript in ten days&quot; in 1995)</strong>, the marketing team of Netscape requested Sun to allow them to name it JavaScript as a marketing stunt and hence why most people who have never used JavaScript think it's related to Java.</p>
-<p>About a year or two after JavaScript's release in the browser, Microsoft's IE took the language and started making its own implementations such as JScript. At the same time, IE was dominating the market and not long after Netscape had to shut its project.</p>
-<p>Before Netscape went down, they decided to start a <strong>standard</strong> that would guide the path of JavaScript, named <strong>ECMAScript</strong>.</p>
-<h3>JavaScript is the most popular implementation of the ECMAScript Standard!</h3>
-<p>After that Microsoft dominated the scenes but at the same time they weren't improving their product(IE) and hence <strong>Firefox</strong> was born (led by <strong>Eich</strong>) and a whole heap of other browsers such as Chrome, Opera, and they use <strong>JavaScript</strong> as their web scripting language (follow the ECMA Standard).</p>
-<h3>Notable JS Engines:</h3>
-<!-- raw HTML omitted -->
-<h4>V8</h4>
+<p>To start from the beginning, <strong>JavaScript</strong> derived its
+name from <strong>Java</strong> and initially <strong><a
+href="https://en.wikipedia.org/wiki/Brendan_Eich">Brendan
+Eich</a></strong> (the Co-founder of Mozilla) was asked to develop a
+language that resembled Java for the web for his company Netscape.<br>
+But Eich decided that Java was too complicated and not suitable for web
+development, <strong>and set out to create a simple language that even a
+beginner could code in.</strong><br></p>
+<p>After the language was complete <strong>(Eich “wrote JavaScript in
+ten days” in 1995)</strong>, the marketing team of Netscape requested
+Sun to allow them to name it JavaScript as a marketing stunt and hence
+why most people who have never used JavaScript think it’s related to
+Java.</p>
+<p>About a year or two after JavaScript’s release in the browser,
+Microsoft’s IE took the language and started making its own
+implementations such as JScript. At the same time, IE was dominating the
+market and not long after Netscape had to shut its project.</p>
+<p>Before Netscape went down, they decided to start a
+<strong>standard</strong> that would guide the path of JavaScript, named
+<strong>ECMAScript</strong>.</p>
+<h3
+id="javascript-is-the-most-popular-implementation-of-the-ecmascript-standard">JavaScript
+is the most popular implementation of the ECMAScript Standard!</h3>
+<p>After that Microsoft dominated the scenes but at the same time they
+weren’t improving their product(IE) and hence <strong>Firefox</strong>
+was born (led by <strong>Eich</strong>) and a whole heap of other
+browsers such as Chrome, Opera, and they use <strong>JavaScript</strong>
+as their web scripting language (follow the ECMA Standard).</p>
+<h3 id="notable-js-engines">Notable JS Engines:</h3>
+<p><img src="Sources/V8.png" align="right" weight="90" height="90"/></p>
+<h4 id="v8">V8</h4>
 <ul>
 <li>From <strong><a href="https://v8.dev/">Google</a></strong></li>
 <li>Most Used JS Engine</li>
 <li>Used in Chromium-based browsers (Chrome)</li>
 </ul>
-<!-- raw HTML omitted -->
-<h4>SpiderMonkey</h4>
+<p><img src="Sources/SpiderMonkey.png" align="right" weight="90" height="90"/></p>
+<h4 id="spidermonkey">SpiderMonkey</h4>
 <ul>
-<li>From <strong><a href="https://spidermonkey.dev/">Mozilla Foundation</a></strong></li>
+<li>From <strong><a href="https://spidermonkey.dev/">Mozilla
+Foundation</a></strong></li>
 <li>The First JS Engine</li>
 <li>Used in FireFox</li>
 </ul>
-<!-- raw HTML omitted -->
-<h4>JavaScriptCore From WebKit</h4>
+<p><img src="Sources/WebKit.png" align="right" weight="80" height="80"/></p>
+<h4 id="javascriptcore-from-webkit">JavaScriptCore From WebKit</h4>
 <ul>
-<li>From <strong><a href="https://developer.apple.com/documentation/javascriptcore">Apple</a></strong></li>
+<li>From <strong><a
+href="https://developer.apple.com/documentation/javascriptcore">Apple</a></strong></li>
 <li>Used in Safari</li>
 </ul>
-<h2>2. Prototype</h2>
-<h3>i. JavaScript Type</h3>
+<h2 id="prototype">2. Prototype</h2>
+<h3 id="i.-javascript-type">i. JavaScript Type</h3>
 <blockquote>
 <blockquote>
-<p><strong>&quot;With the Prototype, almost everything there can also be presented as an object.&quot;</strong></p>
+<p><strong>“With the Prototype, almost everything there can also be
+presented as an object.”</strong></p>
 </blockquote>
 </blockquote>
-<p>Let's start off by looking at <strong>the types</strong>. JavaScript programs manipulate values, and those values all belong to a type.<!-- raw HTML omitted -->
-In my opinion, there are only two kinds of <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript">types</a> -- <strong>Primitives</strong> and <strong>Objects</strong><!-- raw HTML omitted --></p>
+<p>Let’s start off by looking at <strong>the types</strong>. JavaScript
+programs manipulate values, and those values all belong to a type.<br>
+In my opinion, there are only two kinds of <a
+href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript">types</a>
+– <strong>Primitives</strong> and <strong>Objects</strong><br></p>
 <ul>
-<li>
-<p><strong>Primitives</strong></p>
+<li><strong>Primitives</strong>
 <ul>
 <li>Number</li>
 <li>BigInt</li>
@@ -124,263 +312,365 @@ In my opinion, there are only two kinds of <a href="https://developer.mozilla.or
 <li>Boolean</li>
 <li>null</li>
 <li>undefined</li>
-</ul>
-</li>
-<li>
-<p><strong>Objects</strong></p>
+</ul></li>
+<li><strong>Objects</strong>
 <ul>
 <li>Function</li>
 <li>Array</li>
 <li>Date</li>
 <li>RegExp</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<p><strong>From the implementation-level perspective, all-of these different types can be implement with Object.</strong></p>
-<h3>ii. Objects</h3>
+<p><strong>From the implementation-level perspective, all-of these
+different types can be implement with Object.</strong></p>
+<h3 id="ii.-objects">ii. Objects</h3>
 <blockquote>
 <blockquote>
-<p><strong>An object is a collection of properties, and has its own prototype -&gt; either another object or null.</strong></p>
+<p><strong>An object is a collection of properties, and has its own
+prototype -&gt; either another object or null.</strong></p>
 </blockquote>
 </blockquote>
 <ul>
-<li>The <strong>prototype</strong> is a delegation object used to implement <strong>prototype-based inheritance.</strong><!-- raw HTML omitted --></li>
-<li>The <strong>prototype</strong> can be set xeplicitly via either the <strong><code>__proto__</code></strong> property, or <strong><code>Object.create</code></strong> method.</li>
+<li>The <strong>prototype</strong> is a delegation object used to
+implement <strong>prototype-based inheritance.</strong><br></li>
+<li>The <strong>prototype</strong> can be set xeplicitly via either the
+<strong><code>__proto__</code></strong> property, or
+<strong><code>Object.create</code></strong> method.</li>
 </ul>
-<pre><code class="language-javascript">let point = { // point is an object
-    x: 10,
-    y: 20,
-};
-
-// either this way
-let point3D = {
-    z: 30,
-    __proto__: point,
-}
-
-// or this way
-let point3D = Object.create(point);
-point3D.z = 30;
-
-
-console.log(
-    point3D.x, // 10
-    point3D.y, // 20
-    point3D.z, // 30
-);
-
-</code></pre>
-<p>The <strong>Prototype Chain</strong>, which is a finite chain of object.<!-- raw HTML omitted -->Shows how JavaScript implement <em><strong>inheritance</strong></em> and <em><strong>shared properties</strong></em>:</p>
-<p><img src="Sources/prototypechain.png" alt="prototypechain"></p>
-<p>If a property is nout found in the object itself, The rule is very simple:</p>
-<ul>
-<li>There is an attempt to resolve it in the <strong>prototype</strong>; in <strong>the prototype of the prototype</strong>, etc.</li>
-<li>After the whole prototype chain is considered, if a property eventually not found, the <strong><code>undefined</code></strong> value is returned.</li>
-</ul>
-<p>This mechanism is called <strong>Delegation</strong>, or <strong>Dynamic Dispatch</strong>.<!-- raw HTML omitted -->
-For those readers who want to have a closer look at the <strong>Prototype Chain</strong>, here is the detail:</p>
-<p><img src="Sources/objproto.png" alt="objproto"></p>
-<h3>iii. Function</h3>
-<p>Every JavaScript function is actually a <strong>Function object</strong><!-- raw HTML omitted -->
-or for the implemention level, <strong>A Function is just a object with its native code as a property and inherited from Object</strong></p>
-<p><img src="Sources/function.png" alt="function"></p>
-<!-- raw HTML omitted -->
-<h4>Prototype</h4>
-<p>Here comes a question:<!-- raw HTML omitted -->
-<strong>We haven't defined any method of object <code>point3D</code>. How does this object have <code>toString()</code> method?</strong><!-- raw HTML omitted --></p>
-<p>In <strong><a href="https://github.com/Angorithm4/Webinar/blob/main/2021-12-03/JSCore.md#ii-objects">ii. Objects</a></strong>, we introduced <strong>Dynamic Dispatch</strong>. <!-- raw HTML omitted -->
-From that, we can know  <strong><code>toString()</code></strong> method must be defined in the <strong><code>Prototype Chain</code></strong> of object <strong><code>point3D</code></strong>.</p>
-<p>So, where are the inherited properties and methods defined?
-If you look at the <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></strong> reference page, you'll see listed in the left hand side a large number of properties and methods — many more than the number of inherited members we saw available on the <strong><code>point3D</code></strong> object. Some are inherited, and some aren't — why is this?</p>
-<p>As mentioned above, the inherited ones are the ones defined on the <strong>prototype</strong> property — that is, the ones that begin with <strong><code>Object.prototype</code></strong>, and not the ones that begin with just <strong><code>Object</code></strong>.</p>
-<p><strong>The prototype property's value is an object, which is basically a bucket for storing properties and methods that we want to be inherited by objects further down the prototype chain.</strong></p>
-<p><img src="Sources/prototype.png" alt="prototype"></p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> point <span class="op">=</span> { <span class="co">// point is an object</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">x</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">y</span><span class="op">:</span> <span class="dv">20</span><span class="op">,</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">// either this way</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> point3D <span class="op">=</span> {</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">z</span><span class="op">:</span> <span class="dv">30</span><span class="op">,</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">__proto__</span><span class="op">:</span> point<span class="op">,</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">// or this way</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> point3D <span class="op">=</span> <span class="bu">Object</span><span class="op">.</span><span class="fu">create</span>(point)<span class="op">;</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>point3D<span class="op">.</span><span class="at">z</span> <span class="op">=</span> <span class="dv">30</span><span class="op">;</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    point3D<span class="op">.</span><span class="at">x</span><span class="op">,</span> <span class="co">// 10</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    point3D<span class="op">.</span><span class="at">y</span><span class="op">,</span> <span class="co">// 20</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    point3D<span class="op">.</span><span class="at">z</span><span class="op">,</span> <span class="co">// 30</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span></code></pre></div>
+<p>The <strong>Prototype Chain</strong>, which is a finite chain of
+object.<br>Shows how JavaScript implement
+<strong><em>inheritance</em></strong> and <strong><em>shared
+properties</em></strong>:</p>
+<figure>
+<img src="Sources/prototypechain.png" alt="prototypechain" />
+<figcaption aria-hidden="true">prototypechain</figcaption>
+</figure>
+<p>If a property is nout found in the object itself, The rule is very
+simple: * There is an attempt to resolve it in the
+<strong>prototype</strong>; in <strong>the prototype of the
+prototype</strong>, etc. * After the whole prototype chain is
+considered, if a property eventually not found, the
+<strong><code>undefined</code></strong> value is returned.</p>
+<p>This mechanism is called <strong>Delegation</strong>, or
+<strong>Dynamic Dispatch</strong>.<br> For those readers who want to
+have a closer look at the <strong>Prototype Chain</strong>, here is the
+detail:</p>
+<figure>
+<img src="Sources/objproto.png" alt="objproto" />
+<figcaption aria-hidden="true">objproto</figcaption>
+</figure>
+<h3 id="iii.-function">iii. Function</h3>
+<p>Every JavaScript function is actually a <strong>Function
+object</strong><br> or for the implemention level, <strong>A Function is
+just a object with its native code as a property and inherited from
+Object</strong></p>
+<figure>
+<img src="Sources/function.png" alt="function" />
+<figcaption aria-hidden="true">function</figcaption>
+</figure>
+<p><img src="Sources/tostring.png" align="right" weight="30" height="40"/></p>
+<h4 id="prototype-1">Prototype</h4>
+<p>Here comes a question:<br> <strong>We haven’t defined any method of
+object <code>point3D</code>. How does this object have
+<code>toString()</code> method?</strong><br></p>
+<p>In <strong><a
+href="https://github.com/Angorithm4/Webinar/blob/main/2021-12-03/JSCore.md#ii-objects">ii.
+Objects</a></strong>, we introduced <strong>Dynamic Dispatch</strong>.
+<br> From that, we can know <strong><code>toString()</code></strong>
+method must be defined in the
+<strong><code>Prototype Chain</code></strong> of object
+<strong><code>point3D</code></strong>.</p>
+<p>So, where are the inherited properties and methods defined? If you
+look at the <strong><a
+href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></strong>
+reference page, you’ll see listed in the left hand side a large number
+of properties and methods — many more than the number of inherited
+members we saw available on the <strong><code>point3D</code></strong>
+object. Some are inherited, and some aren’t — why is this?</p>
+<p>As mentioned above, the inherited ones are the ones defined on the
+<strong>prototype</strong> property — that is, the ones that begin with
+<strong><code>Object.prototype</code></strong>, and not the ones that
+begin with just <strong><code>Object</code></strong>.</p>
+<p><strong>The prototype property’s value is an object, which is
+basically a bucket for storing properties and methods that we want to be
+inherited by objects further down the prototype chain.</strong></p>
+<figure>
+<img src="Sources/prototype.png" alt="prototype" />
+<figcaption aria-hidden="true">prototype</figcaption>
+</figure>
 <p>if you try the following in your console:</p>
-<pre><code class="language-javascript">Object.prototype
-</code></pre>
-<p>You'll see a large number of methods defined on Object's <strong>prototype</strong> property, which are then available on objects that inherit from Object, as shown earlier.</p>
-<p>You'll see other examples of <strong>prototype chain inheritance</strong> all over JavaScript — try looking for the methods and properties defined on the prototype of the <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></strong>, and
-<strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></strong> global objects.</p>
-<h3>iv. Class</h3>
-<p><strong>When several objects share the same initial state and behavior, they form a classification.</strong><!-- raw HTML omitted --></p>
-<p>A <strong>&quot;Class&quot;</strong> is just a theoretical abstraction, in the implementation-level, it usually represented as a <strong>&quot;constructior function + prototype&quot;</strong> pair. (or even if a object but cumbersome):</p>
-<pre><code class="language-javascript">// Constructor Function
-function Letter(number) {
-    this.number = number;
-};
-
-// Prototype
-Letter.prototype.getNumber = function() {
-    return this.number;
-}
-
-let a = new Letter(1);
-let b = new Letter(2);
-// ... 
-let z = new Letter(26);
-
-
-console.log(
-    a.getNumber(); // 1
-    b.getNumber(); // 2
-    // ...
-    z.getNumber(); // 26
-);
-</code></pre>
-<p><img src="Sources/class.png" alt="class"></p>
-<p>For <strong>user-convinence</strong> (sometimes you don't want things to become cumbersome).<!-- raw HTML omitted -->
-The <strong>Class</strong> Abstraction serves exactly this purpose - being a <strong>syntactic sugar</strong> (a construct which semantically does the same, but in a much nicer syntactic form).<!-- raw HTML omitted -->
-It allows creating such multiple objects with the convenient pattern:</p>
-<pre><code class="language-javascript">// Class
-class Letter2 {
-    constructor(number) {
-        this.number = number;
-    }
-
-    getNumber() {
-        return this.number;
-    }
-}
-</code></pre>
-<p>While you create a <strong>Class</strong> object, this <strong>syntactic sugar</strong> will help you automatically set the <strong>prototype</strong>.<!-- raw HTML omitted -->
-And if you check their prototype, you will find that there is no such big difference - And, both of them are <strong>Object</strong>.</p>
-<p><img src="Sources/classfunc.png" alt="classfunc"></p>
-<h3>v. Primitives</h3>
-<p>At the begining of this <a href="https://github.com/Angorithm4/Webinar/blob/main/2021-12-03/JSCore.md#i-javascript-type">Note</a>. I said:</p>
-<blockquote>
-<blockquote>
-<p><strong>All things in JavaScript can be presented as an Object, but there are something called Primitives that usually do not implement as an Object.</strong></p>
-</blockquote>
-</blockquote>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">Object</span><span class="op">.</span><span class="at">prototype</span></span></code></pre></div>
+<p>You’ll see a large number of methods defined on Object’s
+<strong>prototype</strong> property, which are then available on objects
+that inherit from Object, as shown earlier.</p>
+<p>You’ll see other examples of <strong>prototype chain
+inheritance</strong> all over JavaScript — try looking for the methods
+and properties defined on the prototype of the <strong><a
+href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a>,
+<a
+href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>,
+<a
+href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></strong>,
+and <strong><a
+href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a></strong>
+global objects.</p>
+<h3 id="iv.-class">iv. Class</h3>
+<p><strong>When several objects share the same initial state and
+behavior, they form a classification.</strong><br></p>
+<p>A <strong>“Class”</strong> is just a theoretical abstraction, in the
+implementation-level, it usually represented as a <strong>“constructior
+function + prototype”</strong> pair. (or even if a object but
+cumbersome):</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Constructor Function</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">Letter</span>(number) {</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">number</span> <span class="op">=</span> number<span class="op">;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>}<span class="op">;</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">// Prototype</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>Letter<span class="op">.</span><span class="at">prototype</span><span class="op">.</span><span class="at">getNumber</span> <span class="op">=</span> <span class="kw">function</span>() {</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="kw">this</span><span class="op">.</span><span class="at">number</span><span class="op">;</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> a <span class="op">=</span> <span class="kw">new</span> <span class="fu">Letter</span>(<span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> b <span class="op">=</span> <span class="kw">new</span> <span class="fu">Letter</span>(<span class="dv">2</span>)<span class="op">;</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">// ... </span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> z <span class="op">=</span> <span class="kw">new</span> <span class="fu">Letter</span>(<span class="dv">26</span>)<span class="op">;</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    a<span class="op">.</span><span class="fu">getNumber</span>()<span class="op">;</span> <span class="co">// 1</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    b<span class="op">.</span><span class="fu">getNumber</span>()<span class="op">;</span> <span class="co">// 2</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="co">// ...</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    z<span class="op">.</span><span class="fu">getNumber</span>()<span class="op">;</span> <span class="co">// 26</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span></code></pre></div>
+<figure>
+<img src="Sources/class.png" alt="class" />
+<figcaption aria-hidden="true">class</figcaption>
+</figure>
+<p>For <strong>user-convinence</strong> (sometimes you don’t want things
+to become cumbersome).<br> The <strong>Class</strong> Abstraction serves
+exactly this purpose - being a <strong>syntactic sugar</strong> (a
+construct which semantically does the same, but in a much nicer
+syntactic form).<br> It allows creating such multiple objects with the
+convenient pattern:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Class</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Letter2 {</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">constructor</span>(number) {</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">number</span> <span class="op">=</span> number<span class="op">;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">getNumber</span>() {</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="kw">this</span><span class="op">.</span><span class="at">number</span><span class="op">;</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>While you create a <strong>Class</strong> object, this
+<strong>syntactic sugar</strong> will help you automatically set the
+<strong>prototype</strong>.<br> And if you check their prototype, you
+will find that there is no such big difference - And, both of them are
+<strong>Object</strong>.</p>
+<figure>
+<img src="Sources/classfunc.png" alt="classfunc" />
+<figcaption aria-hidden="true">classfunc</figcaption>
+</figure>
+<h3 id="v.-primitives">v. Primitives</h3>
+<p>At the begining of this <a
+href="https://github.com/Angorithm4/Webinar/blob/main/2021-12-03/JSCore.md#i-javascript-type">Note</a>.
+I said: &gt;&gt; <strong>All things in JavaScript can be presented as an
+Object, but there are something called Primitives that usually do not
+implement as an Object.</strong></p>
 <ul>
-<li><strong>Primitives</strong> : that is - <strong>Many things that you interact with regularly</strong> (<code>String</code> <code>Number</code> and <code>Boolean</code>).</li>
-<li><strong>Reason</strong> : I Believe that is for the <strong>Speed</strong> -- Since most of the time when you create a <strong>Primitive</strong> type variable, you just want to do some calculation with others.<!-- raw HTML omitted -->
-Or in other words - <strong>When you create a Primitive type variable, maybe you just want its <code>Value</code>, rather than those &quot;high-level&quot; functions, etc.</strong></li>
+<li><strong>Primitives</strong> : that is - <strong>Many things that you
+interact with regularly</strong> (<code>String</code>
+<code>Number</code> and <code>Boolean</code>).</li>
+<li><strong>Reason</strong> : I Believe that is for the
+<strong>Speed</strong> – Since most of the time when you create a
+<strong>Primitive</strong> type variable, you just want to do some
+calculation with others.<br> Or in other words - <strong>When you create
+a Primitive type variable, maybe you just want its <code>Value</code>,
+rather than those “high-level” functions, etc.</strong></li>
 </ul>
-<pre><code class="language-javascript">var i = 12;
-i.p1 = 13;
-
-console.log(i);    // 12
-console.log(i.p1); // undefined
-
-</code></pre>
-<p>But <strong>primitives</strong> do have <strong>Object Wrappers</strong> (<code>String</code>, <code>Number</code>, <code>Boolean</code>, etc.); these <strong>objects</strong> have methods and properties while the <strong>primitives</strong> do not.<!-- raw HTML omitted -->
-But the <strong>primitives</strong> appear to have methods because JavaScript silently creates a <strong>Wrapper Object</strong> when code attempts to access any property of a <strong>primitive</strong>.<!-- raw HTML omitted --></p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> i <span class="op">=</span> <span class="dv">12</span><span class="op">;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>i<span class="op">.</span><span class="at">p1</span> <span class="op">=</span> <span class="dv">13</span><span class="op">;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(i)<span class="op">;</span>    <span class="co">// 12</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(i<span class="op">.</span><span class="at">p1</span>)<span class="op">;</span> <span class="co">// undefined</span></span></code></pre></div>
+<p>But <strong>primitives</strong> do have <strong>Object
+Wrappers</strong> (<code>String</code>, <code>Number</code>,
+<code>Boolean</code>, etc.); these <strong>objects</strong> have methods
+and properties while the <strong>primitives</strong> do not.<br> But the
+<strong>primitives</strong> appear to have methods because JavaScript
+silently creates a <strong>Wrapper Object</strong> when code attempts to
+access any property of a <strong>primitive</strong>.<br></p>
 <p>For example, consider the following code:</p>
-<pre><code class="language-javascript">var s = 'foo';
-var sub = s.substring(1, 2); // sub is now the string &quot;o&quot;
-</code></pre>
-<p>Behind the scenes, <code>s.substring(1, 2)</code> behaves as if it is performing the following (approximate) steps:</p>
-<ol>
-<li>Create a wrapper <strong><code>String</code> Object</strong> from <code>s</code>, equivalent to using <code>new String(s)</code>;</li>
-<li>Call the <code>substring()</code> method with the appropriate parameters on the <strong><code>String</code> Object</strong> returned by step1;</li>
-<li>Dispose of the <strong><code>String</code> Object</strong>;</li>
-<li>Return the string (primitive) from step2.</li>
-</ol>
-<p>And that also explain why we can't access <code>i.p1</code>, while we can assign the property to primitives <code>i</code>.<!-- raw HTML omitted -->
---- <strong>We cannot retrieve them</strong>.</p>
-<h2>3. Runtime</h2>
-<p>After we understand the basic relationships between ECMAScript <strong>objects</strong>, Let's take a deeper look at JS <strong>runtime system</strong><!-- raw HTML omitted -->
-You will see a bunch of <strong>concepts</strong> in the following contents, but remember -- they are just the <strong>Abstraction</strong>, <strong>the things that help you to have a better understanding about what runs underneath.</strong></p>
-<h3>i. Execution Stack</h3>
-<p>There are severals types of ECMAScript code:</p>
-<ul>
-<li><strong>Global Code</strong></li>
-<li><strong>Function Code</strong></li>
-<li><strong>Module Code</strong></li>
-<li><strong>......</strong></li>
-</ul>
-<p>Each code is <strong>evaluated</strong> in its <strong>execution context</strong><!-- raw HTML omitted -->what do I means by <strong>evaluate</strong> is that interprete the code and then execute.</p>
-<p>Let's consider a recursive function call:</p>
-<pre><code class="language-javascript">function recursive(flag) {
-    // Termination Condition
-    if (flag == 2) {
-        return;
-    }
-    
-    recursive(++flag);
-}
-
-// Entry.
-recursive(0);
-</code></pre>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> s <span class="op">=</span> <span class="st">&#39;foo&#39;</span><span class="op">;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> sub <span class="op">=</span> s<span class="op">.</span><span class="fu">substring</span>(<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span>)<span class="op">;</span> <span class="co">// sub is now the string &quot;o&quot;</span></span></code></pre></div>
+<p>Behind the scenes, <code>s.substring(1, 2)</code> behaves as if it is
+performing the following (approximate) steps: 1. Create a wrapper
+<strong><code>String</code> Object</strong> from <code>s</code>,
+equivalent to using <code>new String(s)</code>; 2. Call the
+<code>substring()</code> method with the appropriate parameters on the
+<strong><code>String</code> Object</strong> returned by step1; 3.
+Dispose of the <strong><code>String</code> Object</strong>; 4. Return
+the string (primitive) from step2.</p>
+<p>And that also explain why we can’t access <code>i.p1</code>, while we
+can assign the property to primitives <code>i</code>.<br> — <strong>We
+cannot retrieve them</strong>.</p>
+<h2 id="runtime">3. Runtime</h2>
+<p>After we understand the basic relationships between ECMAScript
+<strong>objects</strong>, Let’s take a deeper look at JS <strong>runtime
+system</strong><br> You will see a bunch of <strong>concepts</strong> in
+the following contents, but remember – they are just the
+<strong>Abstraction</strong>, <strong>the things that help you to have a
+better understanding about what runs underneath.</strong></p>
+<h3 id="i.-execution-stack">i. Execution Stack</h3>
+<p>There are severals types of ECMAScript code: * <strong>Global
+Code</strong> * <strong>Function Code</strong> * <strong>Module
+Code</strong> * <strong>……</strong></p>
+<p>Each code is <strong>evaluated</strong> in its <strong>execution
+context</strong><br>what do I means by <strong>evaluate</strong> is that
+interprete the code and then execute.</p>
+<p>Let’s consider a recursive function call:</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">recursive</span>(flag) {</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Termination Condition</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (flag <span class="op">==</span> <span class="dv">2</span>) {</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span><span class="op">;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">recursive</span>(<span class="op">++</span>flag)<span class="op">;</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">// Entry.</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="fu">recursive</span>(<span class="dv">0</span>)<span class="op">;</span></span></code></pre></div>
 <p>The following figure shows the runtime of this function:</p>
-<p><img src="Sources/es.png" alt="es"></p>
+<figure>
+<img src="Sources/es.png" alt="es" />
+<figcaption aria-hidden="true">es</figcaption>
+</figure>
 <ul>
-<li>The <strong>Execution Context Stack</strong> is a LIFO structure(stack), that used to <strong>maintain control flow and order of execution.</strong></li>
-<li>The <strong>Global Context</strong> is always at the bottom of the stack, it is created prior execution of any other context</li>
+<li>The <strong>Execution Context Stack</strong> is a LIFO
+structure(stack), that used to <strong>maintain control flow and order
+of execution.</strong></li>
+<li>The <strong>Global Context</strong> is always at the bottom of the
+stack, it is created prior execution of any other context</li>
 </ul>
-<p>This example may give you a better understanding of <strong>Execution Context:</strong></p>
-<pre><code class="language-javascript">function *gen() {  // generator function in javascript
-    yield 1;
-    return 2;
-}
-
-let g = gen();
-
-console.log(
-    g.next().value, // 1
-    g.next().value, // 2
-)
-</code></pre>
-<p><img src="Sources/ec.png" alt="ec"></p>
+<p>This example may give you a better understanding of <strong>Execution
+Context:</strong></p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="op">*</span><span class="fu">gen</span>() {  <span class="co">// generator function in javascript</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">yield</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">2</span><span class="op">;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> g <span class="op">=</span> <span class="fu">gen</span>()<span class="op">;</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    g<span class="op">.</span><span class="fu">next</span>()<span class="op">.</span><span class="at">value</span><span class="op">,</span> <span class="co">// 1</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    g<span class="op">.</span><span class="fu">next</span>()<span class="op">.</span><span class="at">value</span><span class="op">,</span> <span class="co">// 2</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<figure>
+<img src="Sources/ec.png" alt="ec" />
+<figcaption aria-hidden="true">ec</figcaption>
+</figure>
 <ul>
-<li>The <strong><code>yield</code></strong> statement here returns the value to the caller, and pops the context.</li>
-<li>One the second <code>next()</code> call, the same context is pushed again onto the stack, and is resumed.</li>
+<li>The <strong><code>yield</code></strong> statement here returns the
+value to the caller, and pops the context.</li>
+<li>One the second <code>next()</code> call, the same context is pushed
+again onto the stack, and is resumed.</li>
 </ul>
-<h3>ii. Variable Storiage</h3>
-<p><strong>Every execution context has an associated lexical environment -- called Environment</strong>.<!-- raw HTML omitted --></p>
-<ul>
-<li><strong>Environment can be defined in both ways:</strong></li>
-<li>A <strong>structure</strong> used to define associaton between <strong>identifiers</strong> appearing in the context with their <strong>values</strong>.</li>
-<li>A <strong>storage</strong> of variables, functions, and classes (Objects) defined in this <strong>Execution Context</strong>.</li>
-</ul>
-<p>Technically, an environment is a <strong>pair</strong>, consisting of an environment record (an actual storage table which maps identifiers to values), and a <strong>reference to the parent</strong> (which can be <code>null</code>).</p>
-<p>Similarly to <strong>Prototype Chain</strong> which we've discussed above. the rule for identifiers resolution is very similar: <!-- raw HTML omitted -->
-if a variable is not found in the own environment, there is an attempt to lookup it in the parent environment, in the parent of the parent, and so on — until the whole environment chain is considered.</p>
-<h4>this</h4>
-<p>The <strong><code>this</code></strong> is a special object, the major use-case of <strong><code>this</code></strong> is the class-based <strong>OOP</strong>.<!-- raw HTML omitted -->
-For example:</p>
-<pre><code class="language-javascript">class Point {
-    constructor(x, y) {
-        this._x = x;
-        this._y = y;
-    }
-
-    getX() {
-        return this._x;
-    }
-
-    getY() {
-        return this._y;
-    }
-}
-
-let p1 = new Point(1, 2);
-let p2 = new Point(3, 4);
-
-console.log(
-    p1.getX(); // 1
-    p2.getX(); // 3
-)
-</code></pre>
-<p>When the <code>getX()</code> method be called by p1, or <strong>the <code>getX()</code> Execution Context being created</strong><!-- raw HTML omitted -->
-For this <strong>Execution Context</strong> there will be an <strong>Environment</strong> being created to store local variables and parameters.<!-- raw HTML omitted -->
-<strong>In addition, the <code>getX()</code> Environment will implicit gets a <code>this</code> passed into</strong>, which is bound dynamically depending how a function is called.</p>
-<pre><code class="language-javascript">console.log(x); // undefined
-console.log(y); // throw reference error
-
-var x = 10;
-let y = 20;
-
-console.log(this.x); // 10
-console.log(this.y); // undefined
-console.log(x); // 10
-console.log(y); // 20
-</code></pre>
-<p>At the high-level, the <code>this</code> object is exactly a <code>Binding Object</code>.</p>
-<h3>iii. Job Queue</h3>
-<h3>iv. JS Engine</h3>
+<h3 id="ii.-variable-storiage">ii. Variable Storiage</h3>
+<p><strong>Every execution context has an associated lexical environment
+– called Environment</strong>.<br> * <strong>Environment can be defined
+in both ways:</strong> * A <strong>structure</strong> used to define
+associaton between <strong>identifiers</strong> appearing in the context
+with their <strong>values</strong>. * A <strong>storage</strong> of
+variables, functions, and classes (Objects) defined in this
+<strong>Execution Context</strong>.</p>
+<p>Technically, an environment is a <strong>pair</strong>, consisting of
+an environment record (an actual storage table which maps identifiers to
+values), and a <strong>reference to the parent</strong> (which can be
+<code>null</code>).</p>
+<p>Similarly to <strong>Prototype Chain</strong> which we’ve discussed
+above. the rule for identifiers resolution is very similar: <br> if a
+variable is not found in the own environment, there is an attempt to
+lookup it in the parent environment, in the parent of the parent, and so
+on — until the whole environment chain is considered.</p>
+<h4 id="this">this</h4>
+<p>The <strong><code>this</code></strong> is a special object, the major
+use-case of <strong><code>this</code></strong> is the class-based
+<strong>OOP</strong>.<br> For example:</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> <span class="bu">Point</span> {</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">constructor</span>(x<span class="op">,</span> y) {</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">_x</span> <span class="op">=</span> x<span class="op">;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">_y</span> <span class="op">=</span> y<span class="op">;</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">getX</span>() {</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="kw">this</span><span class="op">.</span><span class="at">_x</span><span class="op">;</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">getY</span>() {</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="kw">this</span><span class="op">.</span><span class="at">_y</span><span class="op">;</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> p1 <span class="op">=</span> <span class="kw">new</span> <span class="bu">Point</span>(<span class="dv">1</span><span class="op">,</span> <span class="dv">2</span>)<span class="op">;</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> p2 <span class="op">=</span> <span class="kw">new</span> <span class="bu">Point</span>(<span class="dv">3</span><span class="op">,</span> <span class="dv">4</span>)<span class="op">;</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    p1<span class="op">.</span><span class="fu">getX</span>()<span class="op">;</span> <span class="co">// 1</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>    p2<span class="op">.</span><span class="fu">getX</span>()<span class="op">;</span> <span class="co">// 3</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p>When the <code>getX()</code> method be called by p1, or <strong>the
+<code>getX()</code> Execution Context being created</strong><br> For
+this <strong>Execution Context</strong> there will be an
+<strong>Environment</strong> being created to store local variables and
+parameters.<br> <strong>In addition, the <code>getX()</code> Environment
+will implicit gets a <code>this</code> passed into</strong>, which is
+bound dynamically depending how a function is called.</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(x)<span class="op">;</span> <span class="co">// undefined</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(y)<span class="op">;</span> <span class="co">// throw reference error</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> x <span class="op">=</span> <span class="dv">10</span><span class="op">;</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> y <span class="op">=</span> <span class="dv">20</span><span class="op">;</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="kw">this</span><span class="op">.</span><span class="at">x</span>)<span class="op">;</span> <span class="co">// 10</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="kw">this</span><span class="op">.</span><span class="at">y</span>)<span class="op">;</span> <span class="co">// undefined</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(x)<span class="op">;</span> <span class="co">// 10</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(y)<span class="op">;</span> <span class="co">// 20</span></span></code></pre></div>
+<p>At the high-level, the <code>this</code> object is exactly a
+<code>Binding Object</code>.</p>
+<h3 id="iii.-job-queue">iii. Job Queue</h3>
+<h3 id="iv.-js-engine">iv. JS Engine</h3>
 	</section>
 	</div>
     </div>
@@ -388,8 +678,10 @@ console.log(y); // 20
 <div id="disqus_thread"></div>
 <script>
     var disqus_config = function () {
-this.page.url = "https://angold4.org/Webinar/Round1/2021-12-03/JSCore.html"
-this.page.identifier = "Webinar/Round1/2021-12-03/JSCore.html"
+this.page.url = "https://angold4.org/Webinar/Round1/2021-12-03
+/JSCore.html"
+this.page.identifier = "Webinar/Round1/2021-12-03
+/JSCore.html"
 
     };
     (function() { // DON'T EDIT BELOW THIS LINE
@@ -420,6 +712,10 @@ this.page.identifier = "Webinar/Round1/2021-12-03/JSCore.html"
    </div>
 </footer>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 <script src="../../../theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->

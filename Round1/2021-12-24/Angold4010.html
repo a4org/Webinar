@@ -10,7 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link href="../../../images/favicon.png" rel="icon">
-
 <link rel="canonical" href=".">
         <meta name="author" content="Angold Wang" />
 
@@ -26,6 +25,128 @@
 
     <link href="../../../theme/css/pygments/monokai.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+  <style>
+
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+
+    li {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    a {
+      font-size: 18px;
+    }
+
+    k
+
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+    {   }
+
+    @media screen {
+      pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
 
 </head>
 <body>
@@ -64,121 +185,185 @@
     <div class="row">
         <div class="col-lg-12">
 	<section id="content" class="body">
-
-
-<h1>Angorithm4 Webinar #10</h1>
-<h5>Co-host by Jiawei Wang 2021-12-24</h5>
-<h2>1. 10th?</h2>
-<p><img src="Sources/1st.png" alt="1st"></p>
-<h3>1. Intro to Performance Engineering</h3>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#angorithm4-webinar-10"
+id="toc-angorithm4-webinar-10">Angorithm4 Webinar #10</a>
+<ul>
+<li><a href="#th" id="toc-th">1. 10th?</a>
+<ul>
+<li><a href="#intro-to-performance-engineering"
+id="toc-intro-to-performance-engineering">1. Intro to Performance
+Engineering</a></li>
+<li><a href="#intro-to-computer-architecture"
+id="toc-intro-to-computer-architecture">2. Intro to Computer
+Architecture</a></li>
+<li><a href="#comparision-sort-i" id="toc-comparision-sort-i">3.
+Comparision Sort I</a></li>
+<li><a href="#comparision-sort-ii" id="toc-comparision-sort-ii">4.
+Comparision Sort II</a></li>
+<li><a href="#comparision-sort-iii" id="toc-comparision-sort-iii">5.
+Comparision Sort III</a></li>
+<li><a href="#microarchitecture" id="toc-microarchitecture">6.
+Microarchitecture</a></li>
+<li><a href="#javascript.-the-core" id="toc-javascript.-the-core">7.
+JavaScript. The Core</a></li>
+<li><a href="#intro-to-database-i" id="toc-intro-to-database-i">8. Intro
+to DataBase I</a></li>
+<li><a href="#intro-to-database-ii-and-digital-modulation"
+id="toc-intro-to-database-ii-and-digital-modulation">9. Intro to
+DataBase II and Digital Modulation</a></li>
+<li><a href="#intro-to-database-iii" id="toc-intro-to-database-iii">10.
+Intro to DataBase III</a></li>
+</ul></li>
+<li><a href="#b-tree" id="toc-b-tree">2. B-Tree</a>
+<ul>
+<li><a href="#dynamic-hashing" id="toc-dynamic-hashing">Dynamic
+Hashing</a></li>
+<li><a href="#what-is-a-b-tree" id="toc-what-is-a-b-tree">What is a
+B-Tree?</a></li>
+</ul></li>
+<li><a href="#below-the-dbms-vm" id="toc-below-the-dbms-vm">3. Below the
+DBMS VM</a>
+<ul>
+<li><a href="#what-happends-underneath"
+id="toc-what-happends-underneath">What Happends Underneath?</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="angorithm4-webinar-10">Angorithm4 Webinar #10</h1>
+<h5 id="co-host-by-jiawei-wang-2021-12-24">Co-host by Jiawei Wang
+2021-12-24</h5>
+<h2 id="th">1. 10th?</h2>
+<figure>
+<img src="Sources/1st.png" alt="1st" />
+<figcaption aria-hidden="true">1st</figcaption>
+</figure>
+<h3 id="intro-to-performance-engineering">1. Intro to Performance
+Engineering</h3>
 <ul>
 <li><a href="Round1/2021-10-15/Angold4001.html">2021-10-15</a></li>
 <li>Hardware development (Complex)</li>
-<li>Matrix multiplication (<strong>Python <code>21041.67s</code></strong> -&gt; Optimized <strong>C <code>3.04s</code></strong>)</li>
+<li>Matrix multiplication (<strong>Python
+<code>21041.67s</code></strong> -&gt; Optimized <strong>C
+<code>3.04s</code></strong>)</li>
 </ul>
-<h3>2. Intro to Computer Architecture</h3>
+<h3 id="intro-to-computer-architecture">2. Intro to Computer
+Architecture</h3>
 <ul>
 <li><a href="Round1/2021-10-22/Angold4002.html">2021-10-22</a></li>
 <li>M1 Pro/Max Released</li>
 <li>RISC vs CISC</li>
 </ul>
-<h3>3. Comparision Sort I</h3>
+<h3 id="comparision-sort-i">3. Comparision Sort I</h3>
 <ul>
 <li><a href="Round1/2021-10-29/Angold4003.html">2021-10-29</a></li>
 <li>Trade off in ISA (Semantic Gap)</li>
 <li>Merge Sort (Comparision Sort i)</li>
 </ul>
-<h3>4. Comparision Sort II</h3>
+<h3 id="comparision-sort-ii">4. Comparision Sort II</h3>
 <ul>
 <li><a href="Round1/2021-11-05/Angold4004.html">2021-11-05</a></li>
 <li>Dynamic Programming (Fds)</li>
 <li>Quick Sort (Comparision Sort ii)</li>
 </ul>
-<h3>5. Comparision Sort III</h3>
+<h3 id="comparision-sort-iii">5. Comparision Sort III</h3>
 <ul>
 <li><a href="Round1/2021-11-19/Angold4005.html">2021-11-19</a></li>
 <li>Virtual Machine</li>
 <li>Heap Sort (Comparision Sort iii)</li>
 <li>Lower Bounds of Comparision Sort (O(NlogN))</li>
 </ul>
-<h3>6. Microarchitecture</h3>
+<h3 id="microarchitecture">6. Microarchitecture</h3>
 <ul>
 <li><a href="Round1/2021-11-26/Angold4006.html">2021-11-26</a></li>
 <li>angorithm4.org</li>
 <li>Turing Machine <strong>(State)</strong></li>
 <li>MIPS-Simulator and Eval (AST-Interpreter)</li>
 </ul>
-<h3>7. JavaScript. The Core</h3>
+<h3 id="javascript.-the-core">7. JavaScript. The Core</h3>
 <ul>
 <li><a href="Round1/2021-12-03/JSCore.html">2021-12-03</a></li>
 <li>Prototype inherience</li>
 <li>Runtime</li>
 </ul>
-<h3>8. Intro to DataBase I</h3>
+<h3 id="intro-to-database-i">8. Intro to DataBase I</h3>
 <ul>
 <li><a href="Round1/2021-12-10/Angold4008.html">2021-12-10</a></li>
 <li>Buffer Pool</li>
 <li>Hashing Part I (Static Hashing)</li>
 </ul>
-<h3>9. Intro to DataBase II and Digital Modulation</h3>
+<h3 id="intro-to-database-ii-and-digital-modulation">9. Intro to
+DataBase II and Digital Modulation</h3>
 <ul>
 <li><a href="Round1/2021-12-17/Angold4009.html">2021-12-17</a></li>
-<li><a href="Round1/2021-12-17/ShuoFeng003.html">Digital Modulation</a></li>
+<li><a href="Round1/2021-12-17/ShuoFeng003.html">Digital
+Modulation</a></li>
 <li>Hashing Part II (Dynamic Hashing)</li>
 </ul>
-<h3>10. Intro to DataBase III</h3>
+<h3 id="intro-to-database-iii">10. Intro to DataBase III</h3>
 <ul>
 <li><a href="Round1/2021-12-24/Angold4010.html">2021-12-24</a></li>
 <li>Below the DBMS VM</li>
 <li>B-Tree</li>
 </ul>
-<h2>2. B-Tree</h2>
-<h3>Dynamic Hashing</h3>
-<p><img src="Sources/Dhash.png" alt="Dhash"></p>
+<h2 id="b-tree">2. B-Tree</h2>
+<h3 id="dynamic-hashing">Dynamic Hashing</h3>
+<figure>
+<img src="Sources/Dhash.png" alt="Dhash" />
+<figcaption aria-hidden="true">Dhash</figcaption>
+</figure>
 <ul>
-<li>
-<p><strong>Trade off</strong></p>
-</li>
-<li>
-<p><strong>Chained Hashing</strong>: Worst case <strong>O(N)</strong></p>
+<li><p><strong>Trade off</strong></p></li>
+<li><p><strong>Chained Hashing</strong>: Worst case
+<strong>O(N)</strong></p>
 <ul>
-<li>Resolve collisions by placing all elements with the same hash key into the same bucket.</li>
-</ul>
-</li>
-<li>
-<p><strong>Extendible Hashing</strong>: Worst case <strong>O(1)</strong> + extra manage time</p>
+<li>Resolve collisions by placing all elements with the same hash key
+into the same bucket.</li>
+</ul></li>
+<li><p><strong>Extendible Hashing</strong>: Worst case
+<strong>O(1)</strong> + extra manage time</p>
 <ul>
-<li>&quot;Only Split the chain when overflowed&quot;</li>
-</ul>
-</li>
-<li>
-<p><strong>Linear Hashing</strong>: Same as Extendible Hashing, but take less time to manage it</p>
+<li>“Only Split the chain when overflowed”</li>
+</ul></li>
+<li><p><strong>Linear Hashing</strong>: Same as Extendible Hashing, but
+take less time to manage it</p>
 <ul>
-<li>&quot;Two Hash Functions&quot;, Balance</li>
+<li>“Two Hash Functions”, Balance</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h3>What is a B-Tree?</h3>
+<h3 id="what-is-a-b-tree">What is a B-Tree?</h3>
 <ul>
 <li><strong>B</strong> Stands for <strong>Balance</strong></li>
 <li><strong>B- Tree</strong> (1971 Boeing)</li>
 <li><strong>B+ Tree</strong> (1973 IBM)</li>
 <li><strong>Blink Tree</strong> (1981 CMU)</li>
 </ul>
-<p><strong>A B-Tree is a self-balancing tree data structure that keeps data sorted and allows searches, sequential access,
-insertions, and deletions in O(log n).</strong></p>
-<p><img src="Sources/B-Tree.png" alt="B-Tree"></p>
+<p><strong>A B-Tree is a self-balancing tree data structure that keeps
+data sorted and allows searches, sequential access, insertions, and
+deletions in O(log n).</strong></p>
+<figure>
+<img src="Sources/B-Tree.png" alt="B-Tree" />
+<figcaption aria-hidden="true">B-Tree</figcaption>
+</figure>
 <ul>
-<li>The original B-Tree from 1971 stored keys + values in all nodes in the tree.</li>
-<li>A B+Tree only <strong>stores values in leaf nodes</strong>. Inner nodes only guide the search process.</li>
+<li>The original B-Tree from 1971 stored keys + values in all nodes in
+the tree.</li>
+<li>A B+Tree only <strong>stores values in leaf nodes</strong>. Inner
+nodes only guide the search process.</li>
 <li><strong>Like Binary Search Tree (Kind of)</strong></li>
 </ul>
-<p><strong><a href="https://www.cs.usfca.edu/~galles/visualization/BPlusTree.html">Example: B+ Tree Visualization by David Gales</a></strong></p>
-<h2>3. Below the DBMS VM</h2>
-<!-- raw HTML omitted -->
-<p><strong><a href="https://www.youtube.com/watch?v=gpxnbly9bz4&amp;t=940s">Video: D. Richard Hipp 2015 in CMU</a></strong></p>
-<h3>What Happends Underneath?</h3>
-<h4><code>emails_random.txt</code></h4>
+<p><strong><a
+href="https://www.cs.usfca.edu/~galles/visualization/BPlusTree.html">Example:
+B+ Tree Visualization by David Gales</a></strong></p>
+<h2 id="below-the-dbms-vm">3. Below the DBMS VM</h2>
+<p><img src="Sources/sqlite.png" align="right" weight="100" height="300"/></p>
+<p><strong><a
+href="https://www.youtube.com/watch?v=gpxnbly9bz4&amp;t=940s">Video: D.
+Richard Hipp 2015 in CMU</a></strong></p>
+<h3 id="what-happends-underneath">What Happends Underneath?</h3>
+<h4 id="emails_random.txt"><code>emails_random.txt</code></h4>
 <pre><code>ckenzie_Leigh5000@irrepsy.com
 Chester_Zaoui4418@sheye.org
 Gladys_Pratt1129@hourpy.biz
@@ -209,75 +394,102 @@ Ethan_Newton6130@ovock.tech
 Kieth_Warden8091@bretoux.com
 Maria_Flynn2748@mafthy.com
 Ronald_Palmer8118@kideod.biz
-... 10000 lines
-</code></pre>
-<h4>1. Postgresql</h4>
-<!-- raw HTML omitted -->
-<pre><code>$  sudo -u postgres psql postgres
-</code></pre>
-<h4>2. Create Table emails</h4>
-<pre><code class="language-sql">CREATE TABLE emails (email VARCHAR(128));
-</code></pre>
-<h4>3. Import Data</h4>
-<pre><code class="language-sql">COPY emails(email) FROM '/Users/Angold4/WorkSpace/Webinar/2021-12-24/src/emails_random.txt' DELIMITER ',' CSV;
-</code></pre>
-<p><img src="Sources/page.png" alt="page"></p>
-<h4>4. Do some stuff:</h4>
-<h5>Find all emails that begin with 'A'</h5>
-<pre><code class="language-sql">SELECT * FROM emails WHERE email LIKE 'A%';
-</code></pre>
-<h5>Count all emails that begin with 'A'</h5>
-<pre><code class="language-sql">SELECT count(*) FROM emails WHERE email LIKE 'A%';
-</code></pre>
-<h5>Find Min Email</h5>
-<pre><code class="language-sql">SELECT min(email) FROM emails;
-</code></pre>
-<pre><code class="language-sql">SELECT * FROM emails WHERE email = 'Abbey_Chester9370@famism.biz';
-</code></pre>
-<pre><code class="language-sql">explain SELECT * FROM emails WHERE email = 'Abbey_Chester9370@famism.biz';
-</code></pre>
+... 10000 lines</code></pre>
+<h4 id="postgresql">1. Postgresql</h4>
+<p><img src="Sources/psql.png"  weight="50" height="50"/></p>
+<pre><code>$  sudo -u postgres psql postgres</code></pre>
+<h4 id="create-table-emails">2. Create Table emails</h4>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> emails (email <span class="dt">VARCHAR</span>(<span class="dv">128</span>));</span></code></pre></div>
+<h4 id="import-data">3. Import Data</h4>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">COPY</span> emails(email) <span class="kw">FROM</span> <span class="st">&#39;/Users/Angold4/WorkSpace/Webinar/2021-12-24/src/emails_random.txt&#39;</span> DELIMITER <span class="st">&#39;,&#39;</span> CSV;</span></code></pre></div>
+<figure>
+<img src="Sources/page.png" alt="page" />
+<figcaption aria-hidden="true">page</figcaption>
+</figure>
+<h4 id="do-some-stuff">4. Do some stuff:</h4>
+<h5 id="find-all-emails-that-begin-with-a">Find all emails that begin
+with ‘A’</h5>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> emails <span class="kw">WHERE</span> email <span class="kw">LIKE</span> <span class="st">&#39;A%&#39;</span>;</span></code></pre></div>
+<h5 id="count-all-emails-that-begin-with-a">Count all emails that begin
+with ‘A’</h5>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">count</span>(<span class="op">*</span>) <span class="kw">FROM</span> emails <span class="kw">WHERE</span> email <span class="kw">LIKE</span> <span class="st">&#39;A%&#39;</span>;</span></code></pre></div>
+<h5 id="find-min-email">Find Min Email</h5>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">min</span>(email) <span class="kw">FROM</span> emails;</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> emails <span class="kw">WHERE</span> email <span class="op">=</span> <span class="st">&#39;Abbey_Chester9370@famism.biz&#39;</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">explain</span> <span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> emails <span class="kw">WHERE</span> email <span class="op">=</span> <span class="st">&#39;Abbey_Chester9370@famism.biz&#39;</span>;</span></code></pre></div>
 <pre><code>                            QUERY PLAN
 ------------------------------------------------------------------
  Seq Scan on emails  (cost=0.00..199.00 rows=1 width=28)
-Filter: ((email)::text = 'Abbey_Chester9370@famism.biz'::text)
-
+Filter: ((email)::text = &#39;Abbey_Chester9370@famism.biz&#39;::text)
 </code></pre>
-<h5>Build a Hash Index</h5>
-<p>A <strong>table index</strong> is a replica of a subset of a table's attributes<!-- raw HTML omitted -->
-that are organized and/or sorted <strong>for efficient access</strong> using a subset of those attributes.</p>
-<pre><code class="language-sql">CREATE INDEX idx_emails_hash ON emails USING HASH(email);
-</code></pre>
+<h5 id="build-a-hash-index">Build a Hash Index</h5>
+<p>A <strong>table index</strong> is a replica of a subset of a table’s
+attributes<br> that are organized and/or sorted <strong>for efficient
+access</strong> using a subset of those attributes.</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">INDEX</span> idx_emails_hash <span class="kw">ON</span> emails <span class="kw">USING</span> <span class="kw">HASH</span>(email);</span></code></pre></div>
 <pre><code>                                  QUERY PLAN
 -------------------------------------------------------------------------------
  Index Scan using idx_emails_hash on emails  (cost=0.00..8.02 rows=1 width=28)
- Index Cond: ((email)::text = 'Abbey_Chester9370@famism.biz'::text)
-</code></pre>
-<h5>Build a B-Tree Index (Limitation of Hashing)</h5>
-<pre><code class="language-sql">SELECT * FROM emails WHERE email like 'Abbey%';
-</code></pre>
-<pre><code class="language-sql">explain SELECT * FROM emails WHERE email like 'Abbey%';
-</code></pre>
+ Index Cond: ((email)::text = &#39;Abbey_Chester9370@famism.biz&#39;::text)</code></pre>
+<h5 id="build-a-b-tree-index-limitation-of-hashing">Build a B-Tree Index
+(Limitation of Hashing)</h5>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> emails <span class="kw">WHERE</span> email <span class="kw">like</span> <span class="st">&#39;Abbey%&#39;</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">explain</span> <span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> emails <span class="kw">WHERE</span> email <span class="kw">like</span> <span class="st">&#39;Abbey%&#39;</span>;</span></code></pre></div>
 <pre><code>                       QUERY PLAN
 ---------------------------------------------------------
  Seq Scan on emails  (cost=0.00..199.00 rows=1 width=28)
- Filter: ((email)::text ~~ 'Abbey%'::text)
-</code></pre>
-<pre><code class="language-sql">CREATE INDEX idx_emails_tree ON emails USING BTREE(email);
-</code></pre>
-<pre><code class="language-sql">explain SELECT * FROM emails WHERE email like 'Abbey%';
-</code></pre>
+ Filter: ((email)::text ~~ &#39;Abbey%&#39;::text)</code></pre>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">INDEX</span> idx_emails_tree <span class="kw">ON</span> emails <span class="kw">USING</span> BTREE(email);</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">explain</span> <span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> emails <span class="kw">WHERE</span> email <span class="kw">like</span> <span class="st">&#39;Abbey%&#39;</span>;</span></code></pre></div>
 <pre><code>                                     QUERY PLAN
 ------------------------------------------------------------------------------------
  Index Only Scan using idx_emails_tree on emails  (cost=0.29..4.31 rows=1 width=28)
-   Index Cond: ((email &gt;= 'Abbey'::text) AND (email &lt; 'Abbez'::text))
-   Filter: ((email)::text ~~ 'Abbey%'::text)
-
+   Index Cond: ((email &gt;= &#39;Abbey&#39;::text) AND (email &lt; &#39;Abbez&#39;::text))
+   Filter: ((email)::text ~~ &#39;Abbey%&#39;::text)
 </code></pre>
-<p><img src="Sources/BufferPool.png" alt="BufferPool"></p>
-<p><img src="Sources/10th.png" alt="10th"></p>
+<figure>
+<img src="Sources/BufferPool.png" alt="BufferPool" />
+<figcaption aria-hidden="true">BufferPool</figcaption>
+</figure>
+<figure>
+<img src="Sources/10th.png" alt="10th" />
+<figcaption aria-hidden="true">10th</figcaption>
+</figure>
 	</section>
 	</div>
     </div>
+
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+this.page.url = "https://angold4.org/Webinar/Round1/2021-12-24
+/Angold4010.html"
+this.page.identifier = "Webinar/Round1/2021-12-24
+/Angold4010.html"
+
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://angold.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
 </div>
 <footer>
    <div class="well well-lg" id="footer-well">
@@ -296,6 +508,10 @@ that are organized and/or sorted <strong>for efficient access</strong> using a s
    </div>
 </footer>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 <script src="../../../theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
@@ -309,3 +525,4 @@ that are organized and/or sorted <strong>for efficient access</strong> using a s
 <script src="../../../theme/js/tim-kraska-betrayed-me.js"></script>
 </body>
 </html>
+

@@ -10,7 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link href="../../../images/favicon.png" rel="icon">
-
 <link rel="canonical" href=".">
         <meta name="author" content="Angold Wang" />
 
@@ -26,6 +25,128 @@
 
     <link href="../../../theme/css/pygments/monokai.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+  <style>
+
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+
+    li {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    a {
+      font-size: 18px;
+    }
+
+    k
+
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+    {   }
+
+    @media screen {
+      pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
 
 </head>
 <body>
@@ -64,55 +185,150 @@
     <div class="row">
         <div class="col-lg-12">
 	<section id="content" class="body">
-
-
-<h2>A4 Spring 2022 Webinar Series</h2>
-<h1>4. TCP Flow Control</h1>
-<h5>Host By Shuo Feng 03/20/2022</h5>
-<h3>FLOW CONTROL</h3>
-<h4>DEFINITION</h4>
-<p>We are always looking for faster speed in data transmission, however, a too fast speed is not necessarily a better choise. Usually, if sending speed much faster than receiving speed, it would contribute to the overflow of receive buffer.
-Flow control provide a mechanism which is able to control the rate of data transmission between two nodes to prevent sender faster too much than receiver.</p>
-<h3>APPROACH</h3>
-<p>Now A send data to B, when the connection is establish, the receiver B provide sender A a receive window (rwnd) to show A how much free space in B`s receive buffer.</p>
-<p>Due to full duplex working mode, both A &amp; B maintain a rwnd, we use 'RCVbuffer' to represent the receive buffer of receiver B, 'LastByteRead' represent the last byte that application read from receive buffer, 'LastByteRcvd' represent the last byte arrived in receive buffer.</p>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#a4-spring-2022-webinar-series"
+id="toc-a4-spring-2022-webinar-series">A4 Spring 2022 Webinar
+Series</a></li>
+<li><a href="#tcp-flow-control" id="toc-tcp-flow-control">4. TCP Flow
+Control</a>
+<ul>
+<li><a href="#flow-control" id="toc-flow-control">FLOW CONTROL</a>
+<ul>
+<li><a href="#approach" id="toc-approach">APPROACH</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+<h2 id="a4-spring-2022-webinar-series">A4 Spring 2022 Webinar
+Series</h2>
+<h1 id="tcp-flow-control">4. TCP Flow Control</h1>
+<h5 id="host-by-shuo-feng-03202022">Host By Shuo Feng 03/20/2022</h5>
+<h2 id="flow-control">FLOW CONTROL</h2>
+<h4 id="definition">DEFINITION</h4>
+<p>We are always looking for faster speed in data transmission, however,
+a too fast speed is not necessarily a better choise. Usually, if sending
+speed much faster than receiving speed, it would contribute to the
+overflow of receive buffer. Flow control provide a mechanism which is
+able to control the rate of data transmission between two nodes to
+prevent sender faster too much than receiver.</p>
+<h3 id="approach">APPROACH</h3>
+<p>Now A send data to B, when the connection is establish, the receiver
+B provide sender A a receive window (rwnd) to show A how much free space
+in B`s receive buffer.</p>
+<p>Due to full duplex working mode, both A &amp; B maintain a rwnd, we
+use ‘RCVbuffer’ to represent the receive buffer of receiver B,
+‘LastByteRead’ represent the last byte that application read from
+receive buffer, ‘LastByteRcvd’ represent the last byte arrived in
+receive buffer.</p>
 <p>To avoid buffer overflow, there must have:</p>
 <p><strong><code>LastByteRcvd - LastByteRead &lt;= RcvBuffer</code></strong></p>
 <p>And we can get:</p>
 <p><strong><code>rwnd = RcvBuffer - [LastByteRcvd - LastByteRead]</code></strong></p>
-<p>So what A need to do is control <strong><code>[LastByteRcvd - LastByteRead]</code></strong> smaller than RcvBuffer</p>
-<p>Both sender and receiver have their buffer space ,for receive buffer, when providing data for application process, it also receive data from sender, to avoid buffer overflow, we must control space accroding to free buffer space to ensure that buffer data will not exceed receive buffer.</p>
-<p>![avatar](2022.3.20/RCVbuffer4 .png)</p>
-<h4>SLIDING WINDOW PROTOCOL</h4>
-<p>Sliding window is measure for flow control. Siliding window alow sender transmit multiple data group without acknowledgment.</p>
-<p>For sender's window, all data in window can be sended continuously, the larger the window, the faster the transfer speed</p>
-<p>For receiver's window, reveiver will send acknowledgment for the last data received in order, when receive data out of data, receiver will storage them in buffer temporarily.</p>
-<p><img src="2022.3.20/neosliding1.png" alt="avatar"></p>
-<p>Now A transfers data to B and there is a 12 bytes size window, at the beginning A sends 7 bytes to B</p>
-<p><img src="2022.3.20/neosliding2.png" alt="avatar"></p>
-<p>TCP may not resend ACK for each massege, to send 26 ~ 32 in send window, TCP devided then into four parts, seg1: 26 —— 27, seg2: 28 —— 29, seg3: 30, seg4: 31 —— 32.</p>
-<p>26 —— 32 was sended sequentially, but B only receive 26, 27, 28, 29, 31, 32, due to 30 was lost in transmission and receiver only send acknowledgment for the highest number that received in order, B send acknowledgment (ack = 30)  to illustrate that 26——29 is received, and for A 26——29 changes from not yet acknowledge to already acknowledge. 31——32 are received but not in order, receiver will storage them in buffer.</p>
-<p><img src="2022.3.20/neosliding3.png" alt="avatar"></p>
-<p>Eventhough some data lost in transmission, sender A would not care about ACK and send remianing data in window, when A sends 12 bytes, there is not usable space window and A will stop transmission, to solve this problem, timeout retransmission will kick in.</p>
-<p>TCP provides that if sender do not receive acknowledgment in specified time, then it have to transfers the data that have transferred.</p>
-<p><img src="2022.3.20/neosliding4.png" alt="avatar"></p>
-<h5>RETRANSMISSION-TIME OUT</h5>
+<p>So what A need to do is control
+<strong><code>[LastByteRcvd - LastByteRead]</code></strong> smaller than
+RcvBuffer</p>
+<p>Both sender and receiver have their buffer space ,for receive buffer,
+when providing data for application process, it also receive data from
+sender, to avoid buffer overflow, we must control space accroding to
+free buffer space to ensure that buffer data will not exceed receive
+buffer.</p>
+<figure>
+<img src="2022.3.20/RCVbuffer4%20.png" alt="avatar" />
+<figcaption aria-hidden="true">avatar</figcaption>
+</figure>
+<h4 id="sliding-window-protocol">SLIDING WINDOW PROTOCOL</h4>
+<p>Sliding window is measure for flow control. Siliding window alow
+sender transmit multiple data group without acknowledgment.</p>
+<p>For sender’s window, all data in window can be sended continuously,
+the larger the window, the faster the transfer speed</p>
+<p>For receiver’s window, reveiver will send acknowledgment for the last
+data received in order, when receive data out of data, receiver will
+storage them in buffer temporarily.</p>
+<figure>
+<img src="2022.3.20/neosliding1.png" alt="avatar" />
+<figcaption aria-hidden="true">avatar</figcaption>
+</figure>
+<p>Now A transfers data to B and there is a 12 bytes size window, at the
+beginning A sends 7 bytes to B</p>
+<figure>
+<img src="2022.3.20/neosliding2.png" alt="avatar" />
+<figcaption aria-hidden="true">avatar</figcaption>
+</figure>
+<p>TCP may not resend ACK for each massege, to send 26 ~ 32 in send
+window, TCP devided then into four parts, seg1: 26 —— 27, seg2: 28 ——
+29, seg3: 30, seg4: 31 —— 32.</p>
+<p>26 —— 32 was sended sequentially, but B only receive 26, 27, 28, 29,
+31, 32, due to 30 was lost in transmission and receiver only send
+acknowledgment for the highest number that received in order, B send
+acknowledgment (ack = 30) to illustrate that 26——29 is received, and for
+A 26——29 changes from not yet acknowledge to already acknowledge. 31——32
+are received but not in order, receiver will storage them in buffer.</p>
+<figure>
+<img src="2022.3.20/neosliding3.png" alt="avatar" />
+<figcaption aria-hidden="true">avatar</figcaption>
+</figure>
+<p>Eventhough some data lost in transmission, sender A would not care
+about ACK and send remianing data in window, when A sends 12 bytes,
+there is not usable space window and A will stop transmission, to solve
+this problem, timeout retransmission will kick in.</p>
+<p>TCP provides that if sender do not receive acknowledgment in
+specified time, then it have to transfers the data that have
+transferred.</p>
+<figure>
+<img src="2022.3.20/neosliding4.png" alt="avatar" />
+<figcaption aria-hidden="true">avatar</figcaption>
+</figure>
+<h5 id="retransmission-time-out">RETRANSMISSION-TIME OUT</h5>
 <ul>
-<li>RTT  : round tirp time</li>
+<li>RTT : round tirp time</li>
 <li>RTTs : round trip time smoothed</li>
 <li>RTTD : deviation RTT</li>
-<li>RTO  ：retransmission time out</li>
+<li>RTO ：retransmission time out</li>
 <li>RFC 6298 recommend: a(Alpha) = 1/8 b(Beta) = 1/4.</li>
 </ul>
-<p><img src="2022.3.20/RTO.png" alt="avatra"></p>
-<h4>SLIDING WINDOW in FOLW CONTROL</h4>
-<p><img src="2022.3.20/TCPheader2.png" alt="avatar">
-In TCP header there is a 2 bytes data called receive window (rwnd), to show how much free space in receiver `s receive buffer， which is also tell sender the amount of data that can be send.</p>
-<p>Benifit from full duplex working mode, sender can receives data and receiver can also sends data, so before data transmission, receiver B tell A about the free buffer space of B thought receive window in TCP header, and the send window of A can not be bigger than receive window.</p>
-<p><img src="2022.3.20/process.png" alt="avatar"></p>
+<figure>
+<img src="2022.3.20/RTO.png" alt="avatra" />
+<figcaption aria-hidden="true">avatra</figcaption>
+</figure>
+<h4 id="sliding-window-in-folw-control">SLIDING WINDOW in FOLW
+CONTROL</h4>
+<p><img src="2022.3.20/TCPheader2.png" alt="avatar" /> In TCP header
+there is a 2 bytes data called receive window (rwnd), to show how much
+free space in receiver `s receive buffer， which is also tell sender the
+amount of data that can be send.</p>
+<p>Benifit from full duplex working mode, sender can receives data and
+receiver can also sends data, so before data transmission, receiver B
+tell A about the free buffer space of B thought receive window in TCP
+header, and the send window of A can not be bigger than receive
+window.</p>
+<figure>
+<img src="2022.3.20/process.png" alt="avatar" />
+<figcaption aria-hidden="true">avatar</figcaption>
+</figure>
 	</section>
 	</div>
     </div>
+
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+this.page.url = "https://angold4.org/Webinar/Round2/2022-03-20
+/2022.html"
+this.page.identifier = "Webinar/Round2/2022-03-20
+/2022.html"
+
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://angold.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
 </div>
 <footer>
    <div class="well well-lg" id="footer-well">
@@ -131,6 +347,10 @@ In TCP header there is a 2 bytes data called receive window (rwnd), to show how 
    </div>
 </footer>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 <script src="../../../theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
@@ -144,3 +364,4 @@ In TCP header there is a 2 bytes data called receive window (rwnd), to show how 
 <script src="../../../theme/js/tim-kraska-betrayed-me.js"></script>
 </body>
 </html>
+

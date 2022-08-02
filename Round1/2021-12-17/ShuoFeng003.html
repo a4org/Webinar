@@ -10,7 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link href="../../../images/favicon.png" rel="icon">
-
 <link rel="canonical" href=".">
         <meta name="author" content="Angold Wang" />
 
@@ -26,6 +25,128 @@
 
     <link href="../../../theme/css/pygments/monokai.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+  <style>
+
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+
+    li {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    a {
+      font-size: 18px;
+    }
+
+    k
+
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+    {   }
+
+    @media screen {
+      pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
 
 </head>
 <body>
@@ -64,125 +185,138 @@
     <div class="row">
         <div class="col-lg-12">
 	<section id="content" class="body">
-
-
-<!-- raw HTML omitted -->
-<h1>Digital Modulation</h1>
-<h4>Target:</h4>
-<p>Make the signal suitable for transmission in channel.
-<!-- raw HTML omitted --></p>
-<h3>Usual Methods:</h3>
-<h4>Digital Data</h4>
-<p> ASK (Amplitude-Shift Keying);
- FSK (Frequency-Shift Keying);
- PSK (Phase-Shift Keying);</p>
-<h4>Analog Data</h4>
-<p> AM (Amplitude Modulation);
- PM (Phase Modulation);
- FM (Frequency Modulation);
-<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
-<p><img src="sources/Summary.jpg" alt="avatar"></p>
-<h3>1. 2ASK</h3>
-<p> Spread digital signal through the amplitude of a carrier wave, or on-off-keying.</p>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#digital-modulation" id="toc-digital-modulation">Digital
+Modulation</a>
+<ul>
+<li><a href="#usual-methods" id="toc-usual-methods">Usual
+Methods:</a></li>
+<li><a href="#ask" id="toc-ask">1. 2ASK</a></li>
+<li><a href="#fsk" id="toc-fsk">2. 2FSK</a></li>
+<li><a href="#psk" id="toc-psk">3. 2PSK</a></li>
+<li><a href="#dpskdifferential-phase-shift-keying"
+id="toc-dpskdifferential-phase-shift-keying">4.2DPSK(Differential-Phase-Shift
+Keying)</a></li>
+</ul></li>
+</ul>
+</nav>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+<h1 id="digital-modulation">Digital Modulation</h1>
+<h4 id="target">Target:</h4>
+<p>Make the signal suitable for transmission in channel. <br></p>
+<h3 id="usual-methods">Usual Methods:</h3>
+<h4 id="digital-data">Digital Data</h4>
+<p> ASK (Amplitude-Shift Keying);  FSK (Frequency-Shift Keying);  PSK
+(Phase-Shift Keying);</p>
+<h4 id="analog-data">Analog Data</h4>
+<p> AM (Amplitude Modulation);  PM (Phase Modulation);  FM (Frequency
+Modulation); <br><br></p>
+<figure>
+<img src="sources/Summary.jpg" alt="avatar" />
+<figcaption aria-hidden="true">avatar</figcaption>
+</figure>
+<h3 id="ask">1. 2ASK</h3>
+<p> Spread digital signal through the amplitude of a carrier wave, or
+on-off-keying.</p>
 <ul>
 <li><strong>Modulate :</strong>
 <ul>
-<li>
-<ol>
-<li>Analog Modulation.
-<img src="sources/ASK.png" alt="avatar"></li>
-</ol>
-</li>
-<li>
-<ol start="2">
-<li>Keying
-<img src="sources/ASK_2.png" alt="avatar"></li>
-</ol>
-</li>
+<li><ol type="1">
+<li>Analog Modulation. <img src="sources/ASK.png" alt="avatar" /></li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>Keying <img src="sources/ASK_2.png" alt="avatar" /></li>
+</ol></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<p><img src="sources/ASK-modulation.jpg" alt="avatar"></p>
+<figure>
+<img src="sources/ASK-modulation.jpg" alt="avatar" />
+<figcaption aria-hidden="true">avatar</figcaption>
+</figure>
 <ul>
 <li><strong>Demodulate :</strong>
 <ul>
-<li>
-<ol>
-<li>Noncoherent.
-<img src="sources/2ASK-Demodulation.png" alt="avatar"><img src="https://user-images.githubusercontent.com/62423463/147357734-7eab1e0e-0451-4a2e-93f5-6d29a5660f8f.png" alt="2DPSK-modulation"></li>
-</ol>
-</li>
+<li><ol type="1">
+<li>Noncoherent. <img src="sources/2ASK-Demodulation.png"
+alt="avatar" /><img
+src="https://user-images.githubusercontent.com/62423463/147357734-7eab1e0e-0451-4a2e-93f5-6d29a5660f8f.png"
+alt="2DPSK-modulation" /></li>
+</ol></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<!-- raw HTML omitted -->
-<h3>2. 2FSK</h3>
-<p> Spread digital data through the frequency of a carrier wave.
-<img src="https://user-images.githubusercontent.com/62423463/147357129-c5a85afc-8a5e-4806-a0bb-a93fe2f2402a.png" alt="2PSK-demodulation"></p>
+<p><br></p>
+<h3 id="fsk">2. 2FSK</h3>
+<p> Spread digital data through the frequency of a carrier wave. <img
+src="https://user-images.githubusercontent.com/62423463/147357129-c5a85afc-8a5e-4806-a0bb-a93fe2f2402a.png"
+alt="2PSK-demodulation" /></p>
 <ul>
 <li><strong>Modulate:</strong>
 <ul>
-<li>Keying
-<img src="sources/FSK.png" alt="avatar">
-<img src="source/2FSK-modulation.gif" alt="avatar"></li>
-</ul>
-</li>
+<li>Keying <img src="sources/FSK.png" alt="avatar" /> <img
+src="source/2FSK-modulation.gif" alt="avatar" /></li>
+</ul></li>
 <li><strong>Demodulate :</strong></li>
 </ul>
-<!-- raw HTML omitted -->
-<h3>3. 2PSK</h3>
+<p><br></p>
+<h3 id="psk">3. 2PSK</h3>
 <p> Spread digital signal through the phase of a carrier wave.</p>
-<ul>
-<li>
-<p><strong>Modulate :</strong></p>
-<ul>
-<li>
-<ol>
-<li>Analog Modulation.
-<img src="sources/PSK.png" alt="avatar"></li>
-</ol>
-</li>
-<li>
-<ol start="2">
-<li>Keying.
-<img src="sources/PSK2.png" alt="avatar">
-<!-- raw HTML omitted --></li>
-</ol>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>Demodulate :</strong></p>
-<ul>
-<li>Coherent
-<img src="sources/2PSK-demodulation.png" alt="avatar">
-<!-- raw HTML omitted --></li>
-</ul>
-</li>
-</ul>
-<h3>4.2DPSK(Differential-Phase-Shift Keying)</h3>
-<p>  Spread digital signal through changing the phase of the carrier wave.
-  Phase difference: <em>0 --&gt; stand &quot;1&quot;</em>
-  ; <em>π --&gt; stand &quot;0&quot;</em>
-  Or reverse.</p>
 <ul>
 <li><strong>Modulate :</strong>
 <ul>
-<li>
-<ol>
-<li>Keying.
-<img src="sources/2DPSK.png" alt="avatar">
-<img src="sources/2DPSK-modulation.png" alt="avatar"></li>
-</ol>
-</li>
+<li><ol type="1">
+<li>Analog Modulation. <img src="sources/PSK.png" alt="avatar" /></li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>Keying. <img src="sources/PSK2.png" alt="avatar" /> <br></li>
+</ol></li>
+</ul></li>
+<li><strong>Demodulate :</strong>
+<ul>
+<li>Coherent <img src="sources/2PSK-demodulation.png" alt="avatar" />
+<br></li>
+</ul></li>
 </ul>
-</li>
-<li><strong>Demodulation :</strong>
-<img src="sources/2DPSK-demodulation.png" alt="avatar"></li>
+<h3
+id="dpskdifferential-phase-shift-keying">4.2DPSK(Differential-Phase-Shift
+Keying)</h3>
+<p>  Spread digital signal through changing the phase of the carrier
+wave.   Phase difference: <em>0 –&gt; stand “1”</em>   ; <em>π –&gt;
+stand “0”</em>   Or reverse.</p>
+<ul>
+<li><strong>Modulate :</strong>
+<ul>
+<li><ol type="1">
+<li>Keying. <img src="sources/2DPSK.png" alt="avatar" /> <img
+src="sources/2DPSK-modulation.png" alt="avatar" /></li>
+</ol></li>
+</ul></li>
+<li><strong>Demodulation :</strong> <img
+src="sources/2DPSK-demodulation.png" alt="avatar" /></li>
 </ul>
 	</section>
 	</div>
     </div>
+
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+this.page.url = "https://angold4.org/Webinar/Round1/2021-12-17
+/ShuoFeng003.html"
+this.page.identifier = "Webinar/Round1/2021-12-17
+/ShuoFeng003.html"
+
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://angold.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
 </div>
 <footer>
    <div class="well well-lg" id="footer-well">
@@ -201,6 +335,10 @@
    </div>
 </footer>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 <script src="../../../theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
@@ -214,3 +352,4 @@
 <script src="../../../theme/js/tim-kraska-betrayed-me.js"></script>
 </body>
 </html>
+

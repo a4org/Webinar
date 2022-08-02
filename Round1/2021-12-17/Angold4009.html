@@ -10,7 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link href="../../../images/favicon.png" rel="icon">
-
 <link rel="canonical" href=".">
         <meta name="author" content="Angold Wang" />
 
@@ -26,6 +25,128 @@
 
     <link href="../../../theme/css/pygments/monokai.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+  <style>
+
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+
+    li {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    a {
+      font-size: 18px;
+    }
+
+    k
+
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+    {   }
+
+    @media screen {
+      pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
 
 </head>
 <body>
@@ -64,76 +185,171 @@
     <div class="row">
         <div class="col-lg-12">
 	<section id="content" class="body">
-
-
-<h1>Angorithm4 Webinar #9</h1>
-<h5>Host By Jiawei Wang 2021-12-17</h5>
-<h2>1.angorithm4.org Dev Process</h2>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#angorithm4-webinar-9"
+id="toc-angorithm4-webinar-9">Angorithm4 Webinar #9</a>
+<ul>
+<li><a href="#angorithm4.org-dev-process"
+id="toc-angorithm4.org-dev-process">1.angorithm4.org Dev Process</a>
+<ul>
+<li><a href="#future-plan" id="toc-future-plan">Future Plan</a></li>
+<li><a href="#minecraft-in-a-weekend"
+id="toc-minecraft-in-a-weekend"><span>Minecraft in a
+Weekend</span></a></li>
+</ul></li>
+<li><a href="#hashing-part-ii" id="toc-hashing-part-ii">2. Hashing (Part
+II)</a>
+<ul>
+<li><a href="#i.-revision-buffer-pool"
+id="toc-i.-revision-buffer-pool">i. Revision: Buffer Pool</a></li>
+<li><a href="#ii.-revision-linear-probe-hashing-static-hashing"
+id="toc-ii.-revision-linear-probe-hashing-static-hashing">ii. Revision:
+Linear Probe Hashing (Static Hashing)</a></li>
+<li><a href="#iii.-dynamic-hashing" id="toc-iii.-dynamic-hashing">iii.
+Dynamic Hashing</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="angorithm4-webinar-9">Angorithm4 Webinar #9</h1>
+<h5 id="host-by-jiawei-wang-2021-12-17">Host By Jiawei Wang
+2021-12-17</h5>
+<h2 id="angorithm4.org-dev-process">1.angorithm4.org Dev Process</h2>
 <blockquote>
-<p>Redesign a brand-new <strong>light</strong> index page, Hope you like it :)</p>
+<p>Redesign a brand-new <strong>light</strong> index page, Hope you like
+it :)</p>
 </blockquote>
-<p><img src="Sources/index.png" alt="index.png"></p>
+<figure>
+<img src="Sources/index.png" alt="index.png" />
+<figcaption aria-hidden="true">index.png</figcaption>
+</figure>
 <ul>
-<li>[x] <strong>Domain Register (USD 7.99/YR)</strong></li>
-<li>[x] <strong>Web Server Basic (Apache httpd2, Ubuntu)</strong></li>
-<li>[x] <strong>Server Language (php, C++)</strong></li>
-<li>[x] <strong>Index Page Design (Custom CSS with Bootstrap)</strong></li>
-<li>[x] <strong>Database (Sqlite)</strong></li>
-<li>[ ] <strong>Applications (Online Docker) (Chat Room)</strong></li>
-<li>[ ] <strong>User-friendly features (md -&gt; html)</strong></li>
-<li>[ ] <strong>Personal Page, information, and other pages (Webinar, Projects...)</strong></li>
-<li>[ ]........</li>
+<li><input type="checkbox" disabled="" checked="" />
+<strong>Domain Register (USD 7.99/YR)</strong></li>
+<li><input type="checkbox" disabled="" checked="" />
+<strong>Web Server Basic (Apache httpd2, Ubuntu)</strong></li>
+<li><input type="checkbox" disabled="" checked="" />
+<strong>Server Language (php, C++)</strong></li>
+<li><input type="checkbox" disabled="" checked="" />
+<strong>Index Page Design (Custom CSS with Bootstrap)</strong></li>
+<li><input type="checkbox" disabled="" checked="" />
+<strong>Database (Sqlite)</strong></li>
+<li><input type="checkbox" disabled="" />
+<strong>Applications (Online Docker) (Chat Room)</strong></li>
+<li><input type="checkbox" disabled="" />
+<strong>User-friendly features (md -&gt; html)</strong></li>
+<li><input type="checkbox" disabled="" />
+<strong>Personal Page, information, and other pages (Webinar,
+Projects…)</strong></li>
+<li>[ ]……..</li>
 </ul>
-<h3>Future Plan</h3>
-<p><img src="Sources/m1.png" alt="Sources/m1.png">
-<img src="Sources/m2.png" alt="Sources/m2.png">
-<img src="Sources/m3.png" alt="Sources/m3.png">
-<img src="Sources/m4.png" alt="Sources/m4.png"></p>
-<h3><a href="https://github.com/jdah/minecraft-weekend">Minecraft in a Weekend</a></h3>
-<p><img src="Sources/c.png" alt="c.png"></p>
-<h2>2. Hashing (Part II)</h2>
-<h3>i. Revision: Buffer Pool</h3>
-<p><img src="Sources/bufferpool.png" alt="bufferpool"></p>
-<h3>ii. Revision: Linear Probe Hashing (Static Hashing)</h3>
+<h3 id="future-plan">Future Plan</h3>
+<p><img src="Sources/m1.png" alt="Sources/m1.png" /> <img
+src="Sources/m2.png" alt="Sources/m2.png" /> <img src="Sources/m3.png"
+alt="Sources/m3.png" /> <img src="Sources/m4.png"
+alt="Sources/m4.png" /></p>
+<h3 id="minecraft-in-a-weekend"><a
+href="https://github.com/jdah/minecraft-weekend">Minecraft in a
+Weekend</a></h3>
+<figure>
+<img src="Sources/c.png" alt="c.png" />
+<figcaption aria-hidden="true">c.png</figcaption>
+</figure>
+<h2 id="hashing-part-ii">2. Hashing (Part II)</h2>
+<h3 id="i.-revision-buffer-pool">i. Revision: Buffer Pool</h3>
+<figure>
+<img src="Sources/bufferpool.png" alt="bufferpool" />
+<figcaption aria-hidden="true">bufferpool</figcaption>
+</figure>
+<h3 id="ii.-revision-linear-probe-hashing-static-hashing">ii. Revision:
+Linear Probe Hashing (Static Hashing)</h3>
 <ul>
-<li>Static Assumption: <strong>You know the number of elements ahead of time.</strong></li>
-<li>Cost More Storiage but Faster <strong>(Handle Collision)</strong> Vs Cost Less Storiage but Slower**(Wide Hash Function)**</li>
+<li>Static Assumption: <strong>You know the number of elements ahead of
+time.</strong></li>
+<li>Cost More Storiage but Faster <strong>(Handle Collision)</strong> Vs
+Cost Less Storiage but Slower<strong>(Wide Hash Function)</strong></li>
 </ul>
-<p><img src="Sources/linear.png" alt="linear"></p>
-<p>If we hash into a slot and we find something that’s already there, I’m trying to insert something there.<!-- raw HTML omitted -->
-We just keep scanning down to the next position and keep going <strong>until we find the first open slot</strong></p>
-<h3>iii. Dynamic Hashing</h3>
+<figure>
+<img src="Sources/linear.png" alt="linear" />
+<figcaption aria-hidden="true">linear</figcaption>
+</figure>
+<p>If we hash into a slot and we find something that’s already there,
+I’m trying to insert something there.<br> We just keep scanning down to
+the next position and keep going <strong>until we find the first open
+slot</strong></p>
+<h3 id="iii.-dynamic-hashing">iii. Dynamic Hashing</h3>
 <ul>
-<li>The previous hash tables require the DBMS to know the <strong>number of elements it wants to store.</strong></li>
+<li>The previous hash tables require the DBMS to know the <strong>number
+of elements it wants to store.</strong></li>
 </ul>
-<p><strong>Otherwise it has rebuild the table if it needs to grow/shrink in size.</strong></p>
+<p><strong>Otherwise it has rebuild the table if it needs to grow/shrink
+in size.</strong></p>
 <p><strong><code>unordered_map</code>?</strong></p>
-<h4>Example</h4>
-<p><img src="Sources/pageex.png" alt="pageex"></p>
-<p><img src="Sources/hash.png" alt="hash"></p>
-<h4>1) Chained Hashing (Used in Java)</h4>
-<p>Maintain a linked list of buckets for each slot in the hash table.<!-- raw HTML omitted -->
-<strong>Resolve collisions by placing all elements with the same hash key into the same bucket.</strong></p>
+<h4 id="example">Example</h4>
+<figure>
+<img src="Sources/pageex.png" alt="pageex" />
+<figcaption aria-hidden="true">pageex</figcaption>
+</figure>
+<figure>
+<img src="Sources/hash.png" alt="hash" />
+<figcaption aria-hidden="true">hash</figcaption>
+</figure>
+<h4 id="chained-hashing-used-in-java">1) Chained Hashing (Used in
+Java)</h4>
+<p>Maintain a linked list of buckets for each slot in the hash
+table.<br> <strong>Resolve collisions by placing all elements with the
+same hash key into the same bucket.</strong></p>
 <ul>
 <li>Similar to Linear Probe Hashing</li>
 </ul>
-<p><img src="Sources/chain.png" alt="chain"></p>
-<h4>2) Extendible Hashing</h4>
+<figure>
+<img src="Sources/chain.png" alt="chain" />
+<figcaption aria-hidden="true">chain</figcaption>
+</figure>
+<h4 id="extendible-hashing">2) Extendible Hashing</h4>
 <ul>
-<li><strong><a href="https://www.youtube.com/watch?v=HcVyagxx_b4">Very Good Explianation</a></strong></li>
+<li><strong><a href="https://www.youtube.com/watch?v=HcVyagxx_b4">Very
+Good Explianation</a></strong></li>
 </ul>
 <blockquote>
-<p>&quot;<strong>Only Split the chain when overflowed</strong>&quot;</p>
+<p>“<strong>Only Split the chain when overflowed</strong>”</p>
 </blockquote>
-<p><img src="Sources/extendible.png" alt="extendible"></p>
-<h4>3) Linear Hashing</h4>
+<figure>
+<img src="Sources/extendible.png" alt="extendible" />
+<figcaption aria-hidden="true">extendible</figcaption>
+</figure>
+<h4 id="linear-hashing">3) Linear Hashing</h4>
 <blockquote>
-<p>&quot;<strong>Two Hash Functions</strong>&quot;</p>
+<p>“<strong>Two Hash Functions</strong>”</p>
 </blockquote>
-<p><img src="Sources/Linearh.png" alt="Linearh"></p>
+<figure>
+<img src="Sources/Linearh.png" alt="Linearh" />
+<figcaption aria-hidden="true">Linearh</figcaption>
+</figure>
 	</section>
 	</div>
     </div>
+
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+this.page.url = "https://angold4.org/Webinar/Round1/2021-12-17
+/Angold4009.html"
+this.page.identifier = "Webinar/Round1/2021-12-17
+/Angold4009.html"
+
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://angold.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
 </div>
 <footer>
    <div class="well well-lg" id="footer-well">
@@ -152,6 +368,10 @@ We just keep scanning down to the next position and keep going <strong>until we 
    </div>
 </footer>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 <script src="../../../theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
@@ -165,3 +385,4 @@ We just keep scanning down to the next position and keep going <strong>until we 
 <script src="../../../theme/js/tim-kraska-betrayed-me.js"></script>
 </body>
 </html>
+

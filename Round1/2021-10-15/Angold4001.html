@@ -10,7 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link href="../../../images/favicon.png" rel="icon">
-
 <link rel="canonical" href=".">
         <meta name="author" content="Angold Wang" />
 
@@ -26,6 +25,128 @@
 
     <link href="../../../theme/css/pygments/monokai.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+  <style>
+
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+
+    li {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    a {
+      font-size: 18px;
+    }
+
+    k
+
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+    {   }
+
+    @media screen {
+      pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
 
 </head>
 <body>
@@ -64,88 +185,160 @@
     <div class="row">
         <div class="col-lg-12">
 	<section id="content" class="body">
-
-
-<h1>Angorithm4 Webinar #1</h1>
-<h4>Host by Jiawei Wang 2021-10-15</h4>
-<h2>1 Why Performance Engineering?</h2>
-<h3>Currency</h3>
+<nav id="TOC" role="doc-toc">
 <ul>
-<li>Performance is the <strong>currency</strong> of computing. You can often “buy” needed properties with performance.
+<li><a href="#angorithm4-webinar-1"
+id="toc-angorithm4-webinar-1">Angorithm4 Webinar #1</a>
 <ul>
-<li><strong>Functionality</strong>  <strong>Reliability</strong>  <strong>Correctness</strong>  <strong>Testability</strong>  <strong>Maintainability</strong>...</li>
+<li><a href="#why-performance-engineering"
+id="toc-why-performance-engineering">1 Why Performance Engineering?</a>
+<ul>
+<li><a href="#currency" id="toc-currency">Currency</a></li>
+<li><a href="#modern-hardware-complex"
+id="toc-modern-hardware-complex">Modern Hardware (Complex)</a></li>
+<li><a href="#the-performance-is-no-longer-free"
+id="toc-the-performance-is-no-longer-free">The Performance is No Longer
+Free</a></li>
+<li><a
+href="#we-need-to-write-software-to-utilize-modern-hardware-efficiently."
+id="toc-we-need-to-write-software-to-utilize-modern-hardware-efficiently.">We
+need to write software to utilize modern hardware efficiently.</a></li>
+</ul></li>
+<li><a href="#different-level-of-abstraction"
+id="toc-different-level-of-abstraction">2. Different Level of
+Abstraction</a>
+<ul>
+<li><a href="#python" id="toc-python">1) Python</a></li>
+<li><a href="#java" id="toc-java">2) Java</a></li>
+<li><a href="#c" id="toc-c">3) C</a></li>
+<li><a href="#why" id="toc-why">Why?</a></li>
+</ul></li>
+<li><a href="#matrix-multiplication" id="toc-matrix-multiplication">3.
+Matrix Multiplication</a>
+<ul>
+<li><a href="#loop-order" id="toc-loop-order">1. Loop Order:</a></li>
+<li><a href="#parallel-programming"
+id="toc-parallel-programming">2.Parallel Programming</a></li>
+<li><a href="#compiler-optimization" id="toc-compiler-optimization">3.
+Compiler Optimization</a></li>
+</ul></li>
+</ul></li>
 </ul>
-</li>
+</nav>
+<h1 id="angorithm4-webinar-1">Angorithm4 Webinar #1</h1>
+<h4 id="host-by-jiawei-wang-2021-10-15">Host by Jiawei Wang
+2021-10-15</h4>
+<h2 id="why-performance-engineering">1 Why Performance Engineering?</h2>
+<h3 id="currency">Currency</h3>
+<ul>
+<li>Performance is the <strong>currency</strong> of computing. You can
+often “buy” needed properties with performance.
+<ul>
+<li><strong>Functionality</strong> <strong>Reliability</strong>
+<strong>Correctness</strong> <strong>Testability</strong>
+<strong>Maintainability</strong>…</li>
+</ul></li>
 </ul>
-<h3>Modern Hardware (Complex)</h3>
+<h3 id="modern-hardware-complex">Modern Hardware (Complex)</h3>
 <ul>
-<li>As the hardware become more and more complex, How can we write software to utilize modern hardware <strong>efficiently</strong>?</li>
+<li>As the hardware become more and more complex, How can we write
+software to utilize modern hardware <strong>efficiently</strong>?</li>
 </ul>
-<h4>1) The Second Generation (1955–65) Transistors and Batch Systems</h4>
-<p><strong><a href="https://github.com/Angold-4/OSDI/blob/master/Chapter/Chapter1/2HSE.md#2-the-second-generation-195565-transistors-and-batch-systems">OSDI Notes Link</a></strong>
-<img src="Sources/early.png" alt="early"></p>
+<h4 id="the-second-generation-195565-transistors-and-batch-systems">1)
+The Second Generation (1955–65) Transistors and Batch Systems</h4>
+<p><strong><a
+href="https://github.com/Angold-4/OSDI/blob/master/Chapter/Chapter1/2HSE.md#2-the-second-generation-195565-transistors-and-batch-systems">OSDI
+Notes Link</a></strong> <img src="Sources/early.png" alt="early" /> *
+Many programs strained the machine’s resources. * Software performance
+engineering was common * Programs had to be planned around the machine.
+* No “Performance Engineering”</p>
+<h4 id="the-fourth-generation-1980-2004-personal-computers">2) The
+Fourth Generation (1980-2004) Personal Computers</h4>
+<p><strong><a
+href="https://github.com/Angold-4/OSDI/blob/master/Chapter/Chapter1/4MCOS.md">OSDI
+Notes Link</a></strong> <img src="Sources/steve.png" alt="steve" /> <img
+src="Sources/2004.png" alt="2004" /></p>
+<h5 id="why-and-how---moores-law-and-dennard-scaling">Why and How? -&gt;
+Moore’s Law and Dennard Scaling</h5>
+<figure>
+<img src="Sources/moore.png" alt="moore" />
+<figcaption aria-hidden="true">moore</figcaption>
+</figure>
 <ul>
-<li>Many programs strained the machine’s resources.</li>
-<li>Software performance engineering was common</li>
-<li>Programs had to be planned around the machine.</li>
-<li>No &quot;Performance Engineering&quot;</li>
-</ul>
-<h4>2) The Fourth Generation (1980-2004) Personal Computers</h4>
-<p><strong><a href="https://github.com/Angold-4/OSDI/blob/master/Chapter/Chapter1/4MCOS.md">OSDI Notes Link</a></strong>
-<img src="Sources/steve.png" alt="steve">
-<img src="Sources/2004.png" alt="2004"></p>
-<h5>Why and How? -&gt; Moore’s Law and Dennard Scaling</h5>
-<p><img src="Sources/moore.png" alt="moore"></p>
+<li><strong>Moore’s Law</strong> – <strong>observation</strong> by
+Gordon Moore in 1965 <br>
 <ul>
-<li>
-<p><strong>Moore’s Law</strong> -- <strong>observation</strong> by Gordon Moore in 1965 <!-- raw HTML omitted --></p>
-<ul>
-<li>the number of transistors on a microchip <strong>doubled</strong> about every year.</li>
+<li>the number of transistors on a microchip <strong>doubled</strong>
+about every year.</li>
 <li>How? 8 bits -&gt; 16 bits -&gt; 32 bits + smaller transistors</li>
-</ul>
-</li>
-<li>
-<p><strong>Dennard Scaling</strong> As transistors get smaller, their <strong>power density</strong> stays constant.</p>
+</ul></li>
+<li><strong>Dennard Scaling</strong> As transistors get smaller, their
+<strong>power density</strong> stays constant.
 <ul>
-<li><strong>1. why smaller faster?</strong> -&gt; Because its gate requires shorter charging and discharging time <strong><a href="https://note.youdao.com/web/#/file/WEB23e18924c57ddb8c09563b64950ac104/note/WEBc36af711fa7632e2513f6114a328589c/">youdao</a></strong></li>
-<li><strong>2. what is power density?</strong> from <a href="https://en.wikipedia.org/wiki/Power_density#:~:text=Power%20density%20is%20the%20amount,expressed%20as%20W%2Fm3.">wikipedia</a><!-- raw HTML omitted -->
-Power density is the amount of power (time rate of energy transfer) per unit volume.</li>
-</ul>
-</li>
+<li><strong>1. why smaller faster?</strong> -&gt; Because its gate
+requires shorter charging and discharging time <strong><a
+href="https://note.youdao.com/web/#/file/WEB23e18924c57ddb8c09563b64950ac104/note/WEBc36af711fa7632e2513f6114a328589c/">youdao</a></strong></li>
+<li><strong>2. what is power density?</strong> from <a
+href="https://en.wikipedia.org/wiki/Power_density#:~:text=Power%20density%20is%20the%20amount,expressed%20as%20W%2Fm3.">wikipedia</a><br>
+Power density is the amount of power (time rate of energy transfer) per
+unit volume.</li>
+</ul></li>
 </ul>
 <blockquote>
-<p><strong>If you found something was too slow, wait couple of years!</strong></p>
+<p><strong>If you found something was too slow, wait couple of
+years!</strong></p>
 </blockquote>
-<h4>3) The Fourth Generation (also) (2004-present)</h4>
+<h4 id="the-fourth-generation-also-2004-present">3) The Fourth
+Generation (also) (2004-present)</h4>
 <p><strong>All that came to end after 2004</strong></p>
-<p><img src="Sources/end.png" alt="end"></p>
-<h4>1. Power Density (Clock Rate)</h4>
-<p><img src="Sources/power.png" alt="power">
-If the scaling of clock frequency had continued its trend of 25%-30% increase per year.<!-- raw HTML omitted -->
-<strong>The tempreture of chip would reach the sun's surface!</strong> (Dannard Scaling <strong>X</strong>)</p>
-<p><strong>Solution -&gt; keep the frequency unchanged</strong><!-- raw HTML omitted --></p>
-<h4>2. Semicondictor fabrication (growing slower than before)</h4>
+<figure>
+<img src="Sources/end.png" alt="end" />
+<figcaption aria-hidden="true">end</figcaption>
+</figure>
+<h4 id="power-density-clock-rate">1. Power Density (Clock Rate)</h4>
+<p><img src="Sources/power.png" alt="power" /> If the scaling of clock
+frequency had continued its trend of 25%-30% increase per year.<br>
+<strong>The tempreture of chip would reach the sun’s surface!</strong>
+(Dannard Scaling <strong>X</strong>)</p>
+<p><strong>Solution -&gt; keep the frequency unchanged</strong><br></p>
+<h4 id="semicondictor-fabrication-growing-slower-than-before">2.
+Semicondictor fabrication (growing slower than before)</h4>
 <ul>
 <li><strong>0.5um -&gt; 0.35um (1 year)</strong></li>
 <li><strong>22nm -&gt; 14nm</strong> (3 years)</li>
 <li><strong>14nm -&gt; 10nm</strong> (4 years)</li>
 </ul>
-<p><img src="Sources/process.png" alt="process"></p>
-<p><strong>Solution -&gt; Introduce Paralleism in the form of multicore processors.</strong><!-- raw HTML omitted --></p>
-<p><img src="Sources/cores.png" alt="cores"></p>
+<figure>
+<img src="Sources/process.png" alt="process" />
+<figcaption aria-hidden="true">process</figcaption>
+</figure>
+<p><strong>Solution -&gt; Introduce Paralleism in the form of multicore
+processors.</strong><br></p>
+<figure>
+<img src="Sources/cores.png" alt="cores" />
+<figcaption aria-hidden="true">cores</figcaption>
+</figure>
 <ul>
-<li>To scale performance, processor manufacturers put <strong>many processing cores</strong> on the microprocessor chip.</li>
-<li>Each generation of Moore’s Law potentially doubles the number of cores. (still work!)</li>
+<li>To scale performance, processor manufacturers put <strong>many
+processing cores</strong> on the microprocessor chip.</li>
+<li>Each generation of Moore’s Law potentially doubles the number of
+cores. (still work!)</li>
 </ul>
-<p><img src="Sources/hole.png" alt="hole"></p>
-<h3>The Performance is No Longer Free</h3>
+<figure>
+<img src="Sources/hole.png" alt="hole" />
+<figcaption aria-hidden="true">hole</figcaption>
+</figure>
+<h3 id="the-performance-is-no-longer-free">The Performance is No Longer
+Free</h3>
 <ul>
 <li>Moore’s Law continues to increase computer performance.</li>
-<li><strong>We couldn't just speed up the hardware like the old days.</strong></li>
-<li>If you wants to use that potential, you had to do <strong>parallel programming</strong>.etc.</li>
+<li><strong>We couldn’t just speed up the hardware like the old
+days.</strong></li>
+<li>If you wants to use that potential, you had to do <strong>parallel
+programming</strong>.etc.</li>
 </ul>
-<!-- raw HTML omitted -->
-<h4>Hardware</h4>
+<p><img src="Sources/intel.png" align="right" weight="300" height="400"/></p>
+<h4 id="hardware">Hardware</h4>
 <ul>
 <li>big multicore processors</li>
 <li>complex cache hierarchies</li>
@@ -153,7 +346,7 @@ If the scaling of clock frequency had continued its trend of 25%-30% increase pe
 <li>GPU</li>
 <li>FPGA</li>
 </ul>
-<h4>Software</h4>
+<h4 id="software">Software</h4>
 <ul>
 <li>parallel-processing</li>
 <li>vector units</li>
@@ -162,246 +355,364 @@ If the scaling of clock frequency had continued its trend of 25%-30% increase pe
 <li>GPU’s</li>
 <li>hyperthreading</li>
 <li>dynamic frequency scaling</li>
-<li>...</li>
+<li>…</li>
 </ul>
-<h3>We need to write software to utilize modern hardware efficiently.</h3>
-<h2>2. Different Level of Abstraction</h2>
-<p><img src="Sources/aws.png" alt="aws"></p>
+<h3
+id="we-need-to-write-software-to-utilize-modern-hardware-efficiently.">We
+need to write software to utilize modern hardware efficiently.</h3>
+<h2 id="different-level-of-abstraction">2. Different Level of
+Abstraction</h2>
+<figure>
+<img src="Sources/aws.png" alt="aws" />
+<figcaption aria-hidden="true">aws</figcaption>
+</figure>
 <p><strong>Square-Matrix Multiplication</strong></p>
-<p><img src="Sources/matrix.png" alt="matrix"></p>
-<h3>1) Python</h3>
-<pre><code class="language-python">import sys, random
-from time import *
-
-n = 4096
-
-A = [[random.random()
-    for row in xrange(n)]
-    for col in xrange(n)]
-B = [[random.random()
-    for row in xrange(n)]
-    for col in xrange(n)]
-
-C = [[0 for row in xrange(n)
-    for col in xrange(n)]]
-
-start = time()
-for i in xrange(n):
-    for j in xrange(n):
-        for k in xrange(n):
-            C[i][j] += A[i][k] * B[k][j]
-end = time()
-
-print '%0.6f' % (end - start)
-
-</code></pre>
+<figure>
+<img src="Sources/matrix.png" alt="matrix" />
+<figcaption aria-hidden="true">matrix</figcaption>
+</figure>
+<h3 id="python">1) Python</h3>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys, random</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> time <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">4096</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> [[random.random()</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> <span class="bu">xrange</span>(n)]</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> col <span class="kw">in</span> <span class="bu">xrange</span>(n)]</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> [[random.random()</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> <span class="bu">xrange</span>(n)]</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> col <span class="kw">in</span> <span class="bu">xrange</span>(n)]</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> [[<span class="dv">0</span> <span class="cf">for</span> row <span class="kw">in</span> <span class="bu">xrange</span>(n)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> col <span class="kw">in</span> <span class="bu">xrange</span>(n)]]</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>start <span class="op">=</span> time()</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">xrange</span>(n):</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">xrange</span>(n):</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">xrange</span>(n):</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>            C[i][j] <span class="op">+=</span> A[i][k] <span class="op">*</span> B[k][j]</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>end <span class="op">=</span> time()</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> <span class="st">&#39;</span><span class="sc">%0.6f</span><span class="st">&#39;</span> <span class="op">%</span> (end <span class="op">-</span> start)</span></code></pre></div>
 <ul>
 <li><strong>Running time = 21042 seconds -&gt; 6 hours</strong></li>
 <li>Analysis:
 <ul>
 <li><strong>C + A * B: Two opeartions each iteration</strong></li>
-<li>When n is <strong><code>4096(2^13)</code></strong> There are <strong><code>2 * n^3 = 2 * (2^13)^3 = 2^37</code></strong> floating point operations.</li>
-<li>Python gets <strong><code>2^37 / 21042 = 6.25M</code></strong> floating point opeartions per second.</li>
-<li>Peak = <strong><code>836G</code></strong> floating point opeartions per second</li>
+<li>When n is <strong><code>4096(2^13)</code></strong> There are
+<strong><code>2 * n^3 = 2 * (2^13)^3 = 2^37</code></strong> floating
+point operations.</li>
+<li>Python gets <strong><code>2^37 / 21042 = 6.25M</code></strong>
+floating point opeartions per second.</li>
+<li>Peak = <strong><code>836G</code></strong> floating point opeartions
+per second</li>
 <li><strong>Python gets <code>0.00075%</code> of peak</strong></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h3>2) Java</h3>
-<pre><code class="language-java">import java.util.Random;
-
-public class mm_java {
-    static int n = 4096;
-    static double[][] A = new double[n][n];
-    static double[][] B = new double[n][n];
-    static double[][] C = new double[n][n];
-
-    public static void main(String[], args) {
-        Random r = new Random();
-
-        for (int i=0; i&lt;n; i++) {
-            for (int j=0; j&lt;n; j++) {
-                A[i][j] = r.nextDouble();
-                B[i][j] = r.nextDouble();
-                C[i][j] = 0;
-            }
-        }
-
-        long start = System.nanoTime();
-
-        for (int i = 0; i &lt; n; i++) {
-            for (int j = 0; j &lt; n; j++) {
-                for (int k = 0; k &lt; n; k++) {
-                    C[i][j] += A[i][k] * B[k][j];
-                }
-            }
-        }
-
-        long stop = System.nanoTime();
-
-        double tdiff = (stop - start) * 1e-9;
-        System.out.println(tdiff);
-    }
-}
-</code></pre>
+<h3 id="java">2) Java</h3>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode java"><code class="sourceCode java"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="im">java</span><span class="op">.</span><span class="im">util</span><span class="op">.</span><span class="im">Random</span><span class="op">;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span> <span class="kw">class</span> mm_java <span class="op">{</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">static</span> <span class="dt">int</span> n <span class="op">=</span> <span class="dv">4096</span><span class="op">;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">static</span> <span class="dt">double</span><span class="op">[][]</span> A <span class="op">=</span> <span class="kw">new</span> <span class="dt">double</span><span class="op">[</span>n<span class="op">][</span>n<span class="op">];</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">static</span> <span class="dt">double</span><span class="op">[][]</span> B <span class="op">=</span> <span class="kw">new</span> <span class="dt">double</span><span class="op">[</span>n<span class="op">][</span>n<span class="op">];</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">static</span> <span class="dt">double</span><span class="op">[][]</span> C <span class="op">=</span> <span class="kw">new</span> <span class="dt">double</span><span class="op">[</span>n<span class="op">][</span>n<span class="op">];</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span><span class="op">(</span><span class="bu">String</span><span class="op">[],</span> args<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">Random</span> r <span class="op">=</span> <span class="kw">new</span> <span class="bu">Random</span><span class="op">();</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> i<span class="op">=</span><span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span>n<span class="op">;</span> i<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> j<span class="op">=</span><span class="dv">0</span><span class="op">;</span> j<span class="op">&lt;</span>n<span class="op">;</span> j<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>                A<span class="op">[</span>i<span class="op">][</span>j<span class="op">]</span> <span class="op">=</span> r<span class="op">.</span><span class="fu">nextDouble</span><span class="op">();</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>                B<span class="op">[</span>i<span class="op">][</span>j<span class="op">]</span> <span class="op">=</span> r<span class="op">.</span><span class="fu">nextDouble</span><span class="op">();</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>                C<span class="op">[</span>i<span class="op">][</span>j<span class="op">]</span> <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>        <span class="dt">long</span> start <span class="op">=</span> <span class="bu">System</span><span class="op">.</span><span class="fu">nanoTime</span><span class="op">();</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> n<span class="op">;</span> i<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> j <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> j <span class="op">&lt;</span> n<span class="op">;</span> j<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>                <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> k <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> k <span class="op">&lt;</span> n<span class="op">;</span> k<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>                    C<span class="op">[</span>i<span class="op">][</span>j<span class="op">]</span> <span class="op">+=</span> A<span class="op">[</span>i<span class="op">][</span>k<span class="op">]</span> <span class="op">*</span> B<span class="op">[</span>k<span class="op">][</span>j<span class="op">];</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>                <span class="op">}</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>        <span class="dt">long</span> stop <span class="op">=</span> <span class="bu">System</span><span class="op">.</span><span class="fu">nanoTime</span><span class="op">();</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>        <span class="dt">double</span> tdiff <span class="op">=</span> <span class="op">(</span>stop <span class="op">-</span> start<span class="op">)</span> <span class="op">*</span> <span class="fl">1e-9</span><span class="op">;</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>        <span class="bu">System</span><span class="op">.</span><span class="fu">out</span><span class="op">.</span><span class="fu">println</span><span class="op">(</span>tdiff<span class="op">);</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <ul>
 <li><strong>Running time = 2738 seconds -&gt; 46 minutes</strong></li>
 <li><strong>Analysis: About 8.8x faster than Python</strong></li>
-<li>...</li>
+<li>…</li>
 <li><strong>Java gets <code>0.007%</code> of peak</strong></li>
 </ul>
-<h3>3) C</h3>
-<pre><code class="language-c">#include &lt;stdlib.h&gt;
-#include &lt;stdio.h&gt;
-#include &lt;sys/time.h&gt;
-
-#define n 4096
-double A[n][n]; double B[n][n]; double C[n][n];
-
-float tdiff(struct timeval *start, struct timeval *end) {
-    return (end-&gt;tv_sec- start-&gt;tv_sec) + 1e-6*(end-&gt;tv_usec-start-&gt;tv_usec);
-}
-
-int main(int argc, const char *argv[]) {
-    for (int i = 0; i &lt; n; ++i) {
-        for (int j = 0; j &lt; n; ++j) {
-            A[i][j] = (double)rand() / (double)RAND_MAX;
-            B[i][j] = (double)rand() / (double)RAND_MAX;
-            C[i][j] = 0;
-        }
-    }
-     struct timeval start, and;
-     gettimeofday(&amp;start, NULL);
-
-     for (int i = 0; i &lt; n; ++i) {
-         for (int j = 0; j &lt; n; ++j) {
-             for (int k = 0; k &lt; n; ++k) {
-                 C[i][j] += A[i][k] * B[k][j];
-             }
-         }
-     }
-
-     gettimeofday(&amp;end, NULL);
-     printf(&quot;0.6f\n&quot;, tdiff(&amp;start, &amp;end));
-     return 0;
-}
-</code></pre>
+<h3 id="c">3) C</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdlib.h&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;sys/time.h&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="pp">#define n 4096</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="dt">double</span> A<span class="op">[</span>n<span class="op">][</span>n<span class="op">];</span> <span class="dt">double</span> B<span class="op">[</span>n<span class="op">][</span>n<span class="op">];</span> <span class="dt">double</span> C<span class="op">[</span>n<span class="op">][</span>n<span class="op">];</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="dt">float</span> tdiff<span class="op">(</span><span class="kw">struct</span> timeval <span class="op">*</span>start<span class="op">,</span> <span class="kw">struct</span> timeval <span class="op">*</span>end<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="op">(</span>end<span class="op">-&gt;</span>tv_sec<span class="op">-</span> start<span class="op">-&gt;</span>tv_sec<span class="op">)</span> <span class="op">+</span> <span class="fl">1e-6</span><span class="op">*(</span>end<span class="op">-&gt;</span>tv_usec<span class="op">-</span>start<span class="op">-&gt;</span>tv_usec<span class="op">);</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">(</span><span class="dt">int</span> argc<span class="op">,</span> <span class="dt">const</span> <span class="dt">char</span> <span class="op">*</span>argv<span class="op">[])</span> <span class="op">{</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> n<span class="op">;</span> <span class="op">++</span>i<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> j <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> j <span class="op">&lt;</span> n<span class="op">;</span> <span class="op">++</span>j<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>            A<span class="op">[</span>i<span class="op">][</span>j<span class="op">]</span> <span class="op">=</span> <span class="op">(</span><span class="dt">double</span><span class="op">)</span>rand<span class="op">()</span> <span class="op">/</span> <span class="op">(</span><span class="dt">double</span><span class="op">)</span>RAND_MAX<span class="op">;</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>            B<span class="op">[</span>i<span class="op">][</span>j<span class="op">]</span> <span class="op">=</span> <span class="op">(</span><span class="dt">double</span><span class="op">)</span>rand<span class="op">()</span> <span class="op">/</span> <span class="op">(</span><span class="dt">double</span><span class="op">)</span>RAND_MAX<span class="op">;</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>            C<span class="op">[</span>i<span class="op">][</span>j<span class="op">]</span> <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>     <span class="kw">struct</span> timeval start<span class="op">,</span> and<span class="op">;</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>     gettimeofday<span class="op">(&amp;</span>start<span class="op">,</span> NULL<span class="op">);</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>     <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> n<span class="op">;</span> <span class="op">++</span>i<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>         <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> j <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> j <span class="op">&lt;</span> n<span class="op">;</span> <span class="op">++</span>j<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>             <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> k <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> k <span class="op">&lt;</span> n<span class="op">;</span> <span class="op">++</span>k<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>                 C<span class="op">[</span>i<span class="op">][</span>j<span class="op">]</span> <span class="op">+=</span> A<span class="op">[</span>i<span class="op">][</span>k<span class="op">]</span> <span class="op">*</span> B<span class="op">[</span>k<span class="op">][</span>j<span class="op">];</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>             <span class="op">}</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>         <span class="op">}</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>     <span class="op">}</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>     gettimeofday<span class="op">(&amp;</span>end<span class="op">,</span> NULL<span class="op">);</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>     printf<span class="op">(</span><span class="st">&quot;0.6f</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">,</span> tdiff<span class="op">(&amp;</span>start<span class="op">,</span> <span class="op">&amp;</span>end<span class="op">));</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>     <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <ul>
 <li><strong>Running time = 1156 seconds -&gt; 19 minutes</strong></li>
 <li><strong>Analysis: About 2x faster than Java</strong></li>
 <li><strong>About 18x faster than Python</strong></li>
-<li>...</li>
+<li>…</li>
 <li><strong>C gets <code>0.014%</code> of peak</strong></li>
 </ul>
-<p>|Version   |Implementation   | Running Time  |Relative Speedup |Absolute Speedup   |Percent of peak   |
-|:--:|:--:|:--:|:--:|:--:|:--:|
-| 1 | Python |21041.67 | 1 | 1 | 0.00075 |
-| 2 | Java | 2387.32 | 8.81 | 9 | 0.007 |
-| 3 | C | 1155.77 | 2.07 | 18 | 0.014 |</p>
-<h3>Why?</h3>
-<p><img src="Sources/Relationship.png" alt="Relationship"></p>
-<h4>1. Interpreted  vs  Compiled</h4>
-<p><img src="Sources/intervscomp.png" alt="intervscomp"></p>
-<ul>
-<li>The interpreter <strong>reads</strong>, <strong>interprets</strong>, and <strong>performs each program statement</strong> and <strong>updates</strong> the machine state.</li>
-<li>The interpreted Language are more <strong>flexible</strong> than Compiled Language</li>
-<li>Since it is execute line by line and do not need the compile time</li>
-</ul>
-<!-- raw HTML omitted -->
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Version</th>
+<th style="text-align: center;">Implementation</th>
+<th style="text-align: center;">Running Time</th>
+<th style="text-align: center;">Relative Speedup</th>
+<th style="text-align: center;">Absolute Speedup</th>
+<th style="text-align: center;">Percent of peak</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Python</td>
+<td style="text-align: center;">21041.67</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0.00075</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">Java</td>
+<td style="text-align: center;">2387.32</td>
+<td style="text-align: center;">8.81</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">0.007</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">1155.77</td>
+<td style="text-align: center;">2.07</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">0.014</td>
+</tr>
+</tbody>
+</table>
+<h3 id="why">Why?</h3>
+<figure>
+<img src="Sources/Relationship.png" alt="Relationship" />
+<figcaption aria-hidden="true">Relationship</figcaption>
+</figure>
+<h4 id="interpreted-vs-compiled">1. Interpreted vs Compiled</h4>
+<p><img src="Sources/intervscomp.png" alt="intervscomp" /> * The
+interpreter <strong>reads</strong>, <strong>interprets</strong>, and
+<strong>performs each program statement</strong> and
+<strong>updates</strong> the machine state. * The interpreted Language
+are more <strong>flexible</strong> than Compiled Language * Since it is
+execute line by line and do not need the compile time</p>
+<p><img src="Sources/interpreter.png" align="right" weight="300" height="200"/></p>
 <ul>
 <li><strong>Example:</strong>
 <ul>
-<li><strong>1. Chrome is written in C++ and C (Compiled Language)</strong></li>
-<li><strong>But it uses javascript as its interface language</strong></li>
-</ul>
-<hr>
-<ul>
+<li><strong>1. Chrome is written in C++ and C (Compiled
+Language)</strong></li>
+<li><strong>But it uses javascript as its interface language</strong>
+****</li>
 <li><strong>2. Unreal Engine is written in C++</strong></li>
-<li><strong>But most of the time for a normal game coder, he uses Python/C#/Lua as its developing language</strong></li>
+<li><strong>But most of the time for a normal game coder, he uses
+Python/C#/Lua as its developing language</strong></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h4>2. Dynamic  vs  Static</h4>
-<p><img src="Sources/java.png" alt="java">
-Java has an <strong>interpreter</strong> as well as a <strong>virtual machine</strong>, and Python has a <strong>virtual machine</strong> as well as an <strong>interpreter</strong>.</p>
+<h4 id="dynamic-vs-static">2. Dynamic vs Static</h4>
+<p><img src="Sources/java.png" alt="java" /> Java has an
+<strong>interpreter</strong> as well as a <strong>virtual
+machine</strong>, and Python has a <strong>virtual machine</strong> as
+well as an <strong>interpreter</strong>. * <strong>The Java virtual
+machine requires the programmer to specify the primitive data type of
+each variable.</strong> * This provides sufficient information for Java
+bytecode to be interpreted and executed by the Java virtual machine.</p>
 <ul>
-<li>
-<p><strong>The Java virtual machine requires the programmer to specify the primitive data type of each variable.</strong></p>
+<li><strong>The Python virtual machine is more complex in the sense that
+it takes on the additional task of pausing before the execution of each
+operation to determine the primitive data types for each variable or
+data structure involved in the operation.</strong>
 <ul>
-<li>This provides sufficient information for Java bytecode to be interpreted and executed by the Java virtual machine.</li>
-</ul>
-</li>
-<li>
-<p><strong>The Python virtual machine is more complex in the sense that it takes on the additional task of pausing before the execution of each operation to determine the primitive data types for each variable or data structure involved in the operation.</strong></p>
-<ul>
-<li>Python frees the programmer from thinking in terms of primitive data types, and allows operations to be expressed at a higher level. The price of this freedom is <strong>performance</strong>.</li>
-</ul>
-</li>
+<li>Python frees the programmer from thinking in terms of primitive data
+types, and allows operations to be expressed at a higher level. The
+price of this freedom is <strong>performance</strong>.</li>
+</ul></li>
 </ul>
 <blockquote>
-<p><strong>The virtual machines of dynamic languages like Python implement some idealized logical machine, and don't necessarily correspond very closely to any real physical hardware.</strong></p>
+<p><strong>The virtual machines of dynamic languages like Python
+implement some idealized logical machine, and don’t necessarily
+correspond very closely to any real physical hardware.</strong></p>
 </blockquote>
 <blockquote>
-<p><strong>The Java virtual machine, in contrast, is more similar in functionality to a classical C compiler, except that instead of emitting machine instructions, it executes built-in routines.</strong></p>
+<p><strong>The Java virtual machine, in contrast, is more similar in
+functionality to a classical C compiler, except that instead of emitting
+machine instructions, it executes built-in routines.</strong></p>
 </blockquote>
-<h4>Why Java is designed in this way?</h4>
+<h4 id="why-java-is-designed-in-this-way">Why Java is designed in this
+way?</h4>
 <ul>
-<li><strong>It is for sake of speed and portability at the same time.</strong></li>
-<li>If you merely interpret the java file with an interpreter you would have <strong>portability but not speed.</strong></li>
-<li>If you have to compile the code for a given processor architecture you would have <strong>speed but not portability.</strong></li>
-<li><strong>With the bytecode, you compile the code (into bytecode) for a common machine that will execute it (the JVM) it is a compromise between speed and portability.</strong></li>
+<li><strong>It is for sake of speed and portability at the same
+time.</strong></li>
+<li>If you merely interpret the java file with an interpreter you would
+have <strong>portability but not speed.</strong></li>
+<li>If you have to compile the code for a given processor architecture
+you would have <strong>speed but not portability.</strong></li>
+<li><strong>With the bytecode, you compile the code (into bytecode) for
+a common machine that will execute it (the JVM) it is a compromise
+between speed and portability.</strong></li>
 </ul>
-<h2>3. Matrix Multiplication</h2>
-<h3>1. Loop Order:</h3>
-<p><strong>We can change the order of the loops in this program without affecting its correctness.</strong></p>
-<pre><code class="language-c">   for (int i = 0; i &lt; n; ++i) {
-             for (int k = 0; k &lt; n; ++k) {
-         for (int j = 0; j &lt; n; ++j) {
-                 C[i][j] += A[i][k] * B[k][j];
-             }
-         }
-   }
-</code></pre>
-<p>|Loop Order | Running Time|
-|:--:|:--:|
-|i, j, k|   1155.77|
-|i, k, j|  177.68 |
-|j, i, k|  1080.61|
-|j, k, i| 3056.63 |
-|k, i, j| 179.21 |
-|k, j, i| 3032.82 |</p>
+<h2 id="matrix-multiplication">3. Matrix Multiplication</h2>
+<h3 id="loop-order">1. Loop Order:</h3>
+<p><strong>We can change the order of the loops in this program without
+affecting its correctness.</strong></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>   <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> n<span class="op">;</span> <span class="op">++</span>i<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>             <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> k <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> k <span class="op">&lt;</span> n<span class="op">;</span> <span class="op">++</span>k<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>         <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> j <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> j <span class="op">&lt;</span> n<span class="op">;</span> <span class="op">++</span>j<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>                 C<span class="op">[</span>i<span class="op">][</span>j<span class="op">]</span> <span class="op">+=</span> A<span class="op">[</span>i<span class="op">][</span>k<span class="op">]</span> <span class="op">*</span> B<span class="op">[</span>k<span class="op">][</span>j<span class="op">];</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>             <span class="op">}</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>         <span class="op">}</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Loop Order</th>
+<th style="text-align: center;">Running Time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">i, j, k</td>
+<td style="text-align: center;">1155.77</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">i, k, j</td>
+<td style="text-align: center;">177.68</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">j, i, k</td>
+<td style="text-align: center;">1080.61</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">j, k, i</td>
+<td style="text-align: center;">3056.63</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">k, i, j</td>
+<td style="text-align: center;">179.21</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">k, j, i</td>
+<td style="text-align: center;">3032.82</td>
+</tr>
+</tbody>
+</table>
 <ul>
-<li><strong>Loop order affects running time by a factor of 18!</strong></li>
+<li><strong>Loop order affects running time by a factor of
+18!</strong></li>
 </ul>
-<p><img src="Sources/cache.png" alt="cache">
-<img src="Sources/case1.png" alt="case1"></p>
-<pre><code class="language-c">
-    for (int i = 0; i &lt; n; ++i) {
-         for (int j = 0; j &lt; n; ++j) {
-             for (int k = 0; k &lt; n; ++k) {
-                 C[i][j] += A[i][k] * B[k][j];
-             }
-         }
-   }
-
-   for (int i = 0; i &lt; n; ++i) {
-             for (int k = 0; k &lt; n; ++k) {
-         for (int j = 0; j &lt; n; ++j) {
-                 C[i][j] += A[i][k] * B[k][j];
-             }
-         }
-   }
-</code></pre>
-<p><img src="Sources/case2.png" alt="case2"></p>
-<p><img src="Sources/matrixrow.png" alt="matrixrow">
-<img src="Sources/matrixcol.png" alt="matrixcol"></p>
-<h3>2.Parallel Programming</h3>
-<p><img src="Sources/cilk.png" alt="cilk"></p>
-<h3>3. Compiler Optimization</h3>
-<p><img src="Sources/summary.png" alt="summary"></p>
+<p><img src="Sources/cache.png" alt="cache" /> <img
+src="Sources/case1.png" alt="case1" /></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> n<span class="op">;</span> <span class="op">++</span>i<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>         <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> j <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> j <span class="op">&lt;</span> n<span class="op">;</span> <span class="op">++</span>j<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>             <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> k <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> k <span class="op">&lt;</span> n<span class="op">;</span> <span class="op">++</span>k<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                 C<span class="op">[</span>i<span class="op">][</span>j<span class="op">]</span> <span class="op">+=</span> A<span class="op">[</span>i<span class="op">][</span>k<span class="op">]</span> <span class="op">*</span> B<span class="op">[</span>k<span class="op">][</span>j<span class="op">];</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>             <span class="op">}</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>         <span class="op">}</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>   <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> n<span class="op">;</span> <span class="op">++</span>i<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>             <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> k <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> k <span class="op">&lt;</span> n<span class="op">;</span> <span class="op">++</span>k<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>         <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> j <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> j <span class="op">&lt;</span> n<span class="op">;</span> <span class="op">++</span>j<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>                 C<span class="op">[</span>i<span class="op">][</span>j<span class="op">]</span> <span class="op">+=</span> A<span class="op">[</span>i<span class="op">][</span>k<span class="op">]</span> <span class="op">*</span> B<span class="op">[</span>k<span class="op">][</span>j<span class="op">];</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>             <span class="op">}</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>         <span class="op">}</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span></span></code></pre></div>
+<figure>
+<img src="Sources/case2.png" alt="case2" />
+<figcaption aria-hidden="true">case2</figcaption>
+</figure>
+<p><img src="Sources/matrixrow.png" alt="matrixrow" /> <img
+src="Sources/matrixcol.png" alt="matrixcol" /></p>
+<h3 id="parallel-programming">2.Parallel Programming</h3>
+<figure>
+<img src="Sources/cilk.png" alt="cilk" />
+<figcaption aria-hidden="true">cilk</figcaption>
+</figure>
+<h3 id="compiler-optimization">3. Compiler Optimization</h3>
+<figure>
+<img src="Sources/summary.png" alt="summary" />
+<figcaption aria-hidden="true">summary</figcaption>
+</figure>
 	</section>
 	</div>
     </div>
+
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+this.page.url = "https://angold4.org/Webinar/Round1/2021-10-15/Angold4001.html"
+this.page.identifier = "Webinar/Round1/2021-10-15/Angold4001.html"
+
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://angold.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
 </div>
 <footer>
    <div class="well well-lg" id="footer-well">
@@ -420,6 +731,10 @@ Java has an <strong>interpreter</strong> as well as a <strong>virtual machine</s
    </div>
 </footer>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 <script src="../../../theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
@@ -433,3 +748,4 @@ Java has an <strong>interpreter</strong> as well as a <strong>virtual machine</s
 <script src="../../../theme/js/tim-kraska-betrayed-me.js"></script>
 </body>
 </html>
+

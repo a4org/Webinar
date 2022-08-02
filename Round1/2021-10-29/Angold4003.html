@@ -10,7 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link href="../../../images/favicon.png" rel="icon">
-
 <link rel="canonical" href=".">
         <meta name="author" content="Angold Wang" />
 
@@ -26,6 +25,128 @@
 
     <link href="../../../theme/css/pygments/monokai.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+  <style>
+
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+
+    li {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    a {
+      font-size: 18px;
+    }
+
+    k
+
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+    {   }
+
+    @media screen {
+      pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
 
 </head>
 <body>
@@ -64,182 +185,234 @@
     <div class="row">
         <div class="col-lg-12">
 	<section id="content" class="body">
-
-
-<h1>Angorithm4 Webinar #3</h1>
-<h4>Cohost by Jiawei Wang 2021-10-29</h4>
-<h2>1. Review ISC</h2>
-<p><img src="Sources/Level.png" alt="Level"></p>
-<p><img src="Sources/rc.png" alt="rc"></p>
-<h2>Trade off</h2>
+<nav id="TOC" role="doc-toc">
 <ul>
-<li>In 1981s. Compiler technology didn't develop well at that time.</li>
-<li><strong>Simple Compiler, Complex Hardware vs. Complex Compiler, Simple Hardware</strong></li>
-</ul>
-<p><img src="Sources/semantic.png" alt="semantic"></p>
-<h3>Decode in x86:</h3>
+<li><a href="#angorithm4-webinar-3"
+id="toc-angorithm4-webinar-3">Angorithm4 Webinar #3</a>
 <ul>
-<li><strong>Intel’s and AMD’s x86 implementations translate x86 instructions into programmer-invisible microoperations (simple instructions) in hardware</strong></li>
-<li>In fact, in most x86-64 machines today, what’s the processors do is that they take the complex instructions, <strong>they translate down</strong>, and save the translated form, so next time, when you get the same instruction, you don’t need to translate it again. You just take the simple micro-operations.</li>
-<li><strong>All high-performance processors' underneath looks like RISC processors</strong></li>
+<li><a href="#review-isc" id="toc-review-isc">1. Review ISC</a></li>
+<li><a href="#trade-off" id="toc-trade-off">Trade off</a></li>
+<li><a href="#comparision-sorti---merge-sort"
+id="toc-comparision-sorti---merge-sort">2. Comparision Sort(I) - Merge
+Sort</a>
+<ul>
+<li><a href="#i.-description" id="toc-i.-description">i.
+Description</a></li>
+<li><a href="#ii.-analysis" id="toc-ii.-analysis">ii. Analysis</a></li>
+<li><a href="#onlogn"
+id="toc-onlogn"><strong><code>O(NlogN)</code></strong></a></li>
+<li><a href="#iii.-example-leetcode-315"
+id="toc-iii.-example-leetcode-315">iii. Example (LeetCode 315)</a></li>
+<li><a href="#runtime" id="toc-runtime">Runtime</a></li>
+</ul></li>
+</ul></li>
 </ul>
-<h2>2. Comparision Sort(I) - Merge Sort</h2>
-<h3>i. Description</h3>
-<pre><code class="language-cpp">
-void Merge(int* A, int* L, int leftCount, int* R, int rightCount) {
-    int i, j, k;
-    i = 0, j = 0, k = 0;
-
-    while (i &lt; leftCount &amp;&amp; j &lt; rightCount)
-    {
-        if(R[j] &lt; L[i]) A[k++] = R[j++];
-        else A[k++] = L[i++];
-    }
-
-    // last check
-    while (i &lt; leftCount) A[k++] = L[i++];
-    while (j &lt; rightCount) A[k++] = R[j++];
-
-}
-
-void MergeSort(int* A, int n) {
-    int mid, *L, *R;
-
-    if (n &lt; 2) return;
-
-    mid = n / 2;
-
-    L = new int[mid];
-    R = new int[n - mid];
-
-    for(int i = 0; i &lt; mid; i++) L[i] = A[i];
-    for(int j = mid; j &lt; n; j++) R[j-mid] = A[j];
-
-    MergeSort(L, mid);
-    MergeSort(R, n-mid);
-
-    Merge(A, L, mid, R, n-mid);
-
-    delete [] R;
-    delete [] L;
-
-}
-
-</code></pre>
+</nav>
+<h1 id="angorithm4-webinar-3">Angorithm4 Webinar #3</h1>
+<h4 id="cohost-by-jiawei-wang-2021-10-29">Cohost by Jiawei Wang
+2021-10-29</h4>
+<h2 id="review-isc">1. Review ISC</h2>
+<figure>
+<img src="Sources/Level.png" alt="Level" />
+<figcaption aria-hidden="true">Level</figcaption>
+</figure>
+<figure>
+<img src="Sources/rc.png" alt="rc" />
+<figcaption aria-hidden="true">rc</figcaption>
+</figure>
+<h2 id="trade-off">Trade off</h2>
+<ul>
+<li>In 1981s. Compiler technology didn’t develop well at that time.</li>
+<li><strong>Simple Compiler, Complex Hardware vs. Complex Compiler,
+Simple Hardware</strong></li>
+</ul>
+<p><img src="Sources/semantic.png" alt="semantic" /> ### Decode in x86:
+* <strong>Intel’s and AMD’s x86 implementations translate x86
+instructions into programmer-invisible microoperations (simple
+instructions) in hardware</strong> * In fact, in most x86-64 machines
+today, what’s the processors do is that they take the complex
+instructions, <strong>they translate down</strong>, and save the
+translated form, so next time, when you get the same instruction, you
+don’t need to translate it again. You just take the simple
+micro-operations. * <strong>All high-performance processors’ underneath
+looks like RISC processors</strong></p>
+<h2 id="comparision-sorti---merge-sort">2. Comparision Sort(I) - Merge
+Sort</h2>
+<h3 id="i.-description">i. Description</h3>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> Merge<span class="op">(</span><span class="dt">int</span><span class="op">*</span> A<span class="op">,</span> <span class="dt">int</span><span class="op">*</span> L<span class="op">,</span> <span class="dt">int</span> leftCount<span class="op">,</span> <span class="dt">int</span><span class="op">*</span> R<span class="op">,</span> <span class="dt">int</span> rightCount<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> i<span class="op">,</span> j<span class="op">,</span> k<span class="op">;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> <span class="dv">0</span><span class="op">,</span> j <span class="op">=</span> <span class="dv">0</span><span class="op">,</span> k <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="op">(</span>i <span class="op">&lt;</span> leftCount <span class="op">&amp;&amp;</span> j <span class="op">&lt;</span> rightCount<span class="op">)</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span><span class="op">(</span>R<span class="op">[</span>j<span class="op">]</span> <span class="op">&lt;</span> L<span class="op">[</span>i<span class="op">])</span> A<span class="op">[</span>k<span class="op">++]</span> <span class="op">=</span> R<span class="op">[</span>j<span class="op">++];</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span> A<span class="op">[</span>k<span class="op">++]</span> <span class="op">=</span> L<span class="op">[</span>i<span class="op">++];</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">// last check</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="op">(</span>i <span class="op">&lt;</span> leftCount<span class="op">)</span> A<span class="op">[</span>k<span class="op">++]</span> <span class="op">=</span> L<span class="op">[</span>i<span class="op">++];</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="op">(</span>j <span class="op">&lt;</span> rightCount<span class="op">)</span> A<span class="op">[</span>k<span class="op">++]</span> <span class="op">=</span> R<span class="op">[</span>j<span class="op">++];</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> MergeSort<span class="op">(</span><span class="dt">int</span><span class="op">*</span> A<span class="op">,</span> <span class="dt">int</span> n<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> mid<span class="op">,</span> <span class="op">*</span>L<span class="op">,</span> <span class="op">*</span>R<span class="op">;</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>n <span class="op">&lt;</span> <span class="dv">2</span><span class="op">)</span> <span class="cf">return</span><span class="op">;</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    mid <span class="op">=</span> n <span class="op">/</span> <span class="dv">2</span><span class="op">;</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    L <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[</span>mid<span class="op">];</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    R <span class="op">=</span> <span class="kw">new</span> <span class="dt">int</span><span class="op">[</span>n <span class="op">-</span> mid<span class="op">];</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span><span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> mid<span class="op">;</span> i<span class="op">++)</span> L<span class="op">[</span>i<span class="op">]</span> <span class="op">=</span> A<span class="op">[</span>i<span class="op">];</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span><span class="op">(</span><span class="dt">int</span> j <span class="op">=</span> mid<span class="op">;</span> j <span class="op">&lt;</span> n<span class="op">;</span> j<span class="op">++)</span> R<span class="op">[</span>j<span class="op">-</span>mid<span class="op">]</span> <span class="op">=</span> A<span class="op">[</span>j<span class="op">];</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    MergeSort<span class="op">(</span>L<span class="op">,</span> mid<span class="op">);</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    MergeSort<span class="op">(</span>R<span class="op">,</span> n<span class="op">-</span>mid<span class="op">);</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    Merge<span class="op">(</span>A<span class="op">,</span> L<span class="op">,</span> mid<span class="op">,</span> R<span class="op">,</span> n<span class="op">-</span>mid<span class="op">);</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    <span class="kw">delete</span> <span class="op">[]</span> R<span class="op">;</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    <span class="kw">delete</span> <span class="op">[]</span> L<span class="op">;</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <pre><code>      5     2     6     1
 
    |  1     2     5     6  |     
    |  2     5  |  1     6  |
    |  5  |  2  |  6  |  1  |
-
 </code></pre>
-<h3>ii. Analysis</h3>
+<h3 id="ii.-analysis">ii. Analysis</h3>
 <p><strong><code>T(N) = 2T(N/2) + O(N)</code></strong></p>
-<p><img src="Sources/Analysis.png" alt="Analysis"></p>
-<h3><strong><code>O(NlogN)</code></strong></h3>
-<h3>iii. Example (LeetCode 315)</h3>
-<p><strong><a href="https://leetcode.com/problems/count-of-smaller-numbers-after-self/">LeetCode 315 Count Number of Smaller Numbers After Self</a></strong></p>
-<pre><code class="language-txt">Input:  [5,2,6,1]
-Output: [2,1,1,0]
-</code></pre>
-<pre><code class="language-cpp">class Solution {
-public:
-    vector&lt;int&gt; countSmaller(vector&lt;int&gt;&amp; nums) {
-        for (int i = 0; i &lt; nums.size(); i++) {
-            int count = 0;
-            for (int j = i+1; j &lt; nums.size(); j++) {
-                if (nums[j] &lt; nums[i]) count++;
-            }
-            nums[i] = count;
-        }
-        return nums;
-    }
-};
-
-</code></pre>
-<h4>Divide and Conquer</h4>
+<figure>
+<img src="Sources/Analysis.png" alt="Analysis" />
+<figcaption aria-hidden="true">Analysis</figcaption>
+</figure>
+<h3 id="onlogn"><strong><code>O(NlogN)</code></strong></h3>
+<h3 id="iii.-example-leetcode-315">iii. Example (LeetCode 315)</h3>
+<p><strong><a
+href="https://leetcode.com/problems/count-of-smaller-numbers-after-self/">LeetCode
+315 Count Number of Smaller Numbers After Self</a></strong></p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode txt"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Input:  [5,2,6,1]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>Output: [2,1,1,0]</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Solution <span class="op">{</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span><span class="op">:</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    vector<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;</span> countSmaller<span class="op">(</span>vector<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;&amp;</span> nums<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> nums<span class="op">.</span>size<span class="op">();</span> i<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>            <span class="dt">int</span> count <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> j <span class="op">=</span> i<span class="op">+</span><span class="dv">1</span><span class="op">;</span> j <span class="op">&lt;</span> nums<span class="op">.</span>size<span class="op">();</span> j<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> <span class="op">(</span>nums<span class="op">[</span>j<span class="op">]</span> <span class="op">&lt;</span> nums<span class="op">[</span>i<span class="op">])</span> count<span class="op">++;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>            nums<span class="op">[</span>i<span class="op">]</span> <span class="op">=</span> count<span class="op">;</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> nums<span class="op">;</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span></code></pre></div>
+<h4 id="divide-and-conquer">Divide and Conquer</h4>
 <pre><code>[A A A A A  B B B B B]
-[A A A A A][B B B B B]
-</code></pre>
-<pre><code>[X X X X]
-</code></pre>
-<pre><code class="language-cpp">using namespace::std;
-
-class Solution {
-    vector&lt;int&gt; counts;
-public:
-    vector&lt;int&gt; countSmaller(vector&lt;int&gt;&amp; nums) {
-        int N = nums.size();
-        counts.resize(N);
-
-        if (N == 0) return {};
-
-        vector&lt;int&gt; sortedNums = nums;
-
-        helper(nums, sortedNums, 0, N-1);
-
-        return counts;
-    }
-
-private: 
-    void helper(vector&lt;int&gt;&amp; nums, vector&lt;int&gt;&amp; sortedNums, int start, int end) {
-        if (start == end) return;
-
-
-        int mid = start + (end - start) / 2; // round down ((int) x / 2 &lt;= (float) x / 2)
-        helper(nums, sortedNums, start, mid);
-        helper(nums, sortedNums, mid+1, end);
-
-        for (int i = start; i &lt;= mid; i++) {
-            auto iter = lower_bound(sortedNums.begin() + mid + 1, sortedNums.begin() + end + 1, nums[i]); // [mid+1, end+1)
-            counts[i] += iter - (sortedNums.begin() + mid + 1); // Ranking in [mid+1, end]
-        }
-        
-        vector&lt;int&gt; temp(end - start + 1); // to store the merged vector from start to end
-        // sort(sortedNums.begin()+start, sortedNums.begin()+end+1);
-
-        int i = start, j = mid+1, p = 0;
-        while (i &lt;= mid &amp;&amp; j &lt;= end) {
-            if (sortedNums[i] &lt;= sortedNums[j]) {
-                temp[p] = sortedNums[i];
-                i++;
-            } else {
-                temp[p] = sortedNums[j];
-                j++;
-            }
-            p++;
-        }
-
-        while (i &lt;= mid) {
-            temp[p] = sortedNums[i];
-            i++;
-            p++;
-        }
-
-        while (j &lt;= end) {
-            temp[p] = sortedNums[j];
-            j++;
-            p++;
-        }
-
-        for (int i = 0; i &lt; end-start+1; i++) {
-            sortedNums[start+i] = temp[i];
-        }
-
-    }
-};
-</code></pre>
-<h3>Runtime</h3>
+[A A A A A][B B B B B]</code></pre>
+<pre><code>[X X X X]</code></pre>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">using</span> <span class="kw">namespace</span><span class="op">::</span>std<span class="op">;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Solution <span class="op">{</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    vector<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;</span> counts<span class="op">;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="kw">public</span><span class="op">:</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    vector<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;</span> countSmaller<span class="op">(</span>vector<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;&amp;</span> nums<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span> N <span class="op">=</span> nums<span class="op">.</span>size<span class="op">();</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        counts<span class="op">.</span>resize<span class="op">(</span>N<span class="op">);</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="op">(</span>N <span class="op">==</span> <span class="dv">0</span><span class="op">)</span> <span class="cf">return</span> <span class="op">{};</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>        vector<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;</span> sortedNums <span class="op">=</span> nums<span class="op">;</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>        helper<span class="op">(</span>nums<span class="op">,</span> sortedNums<span class="op">,</span> <span class="dv">0</span><span class="op">,</span> N<span class="op">-</span><span class="dv">1</span><span class="op">);</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> counts<span class="op">;</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="kw">private</span><span class="op">:</span> </span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    <span class="dt">void</span> helper<span class="op">(</span>vector<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;&amp;</span> nums<span class="op">,</span> vector<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;&amp;</span> sortedNums<span class="op">,</span> <span class="dt">int</span> start<span class="op">,</span> <span class="dt">int</span> end<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="op">(</span>start <span class="op">==</span> end<span class="op">)</span> <span class="cf">return</span><span class="op">;</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span> mid <span class="op">=</span> start <span class="op">+</span> <span class="op">(</span>end <span class="op">-</span> start<span class="op">)</span> <span class="op">/</span> <span class="dv">2</span><span class="op">;</span> <span class="co">// round down ((int) x / 2 &lt;= (float) x / 2)</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>        helper<span class="op">(</span>nums<span class="op">,</span> sortedNums<span class="op">,</span> start<span class="op">,</span> mid<span class="op">);</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>        helper<span class="op">(</span>nums<span class="op">,</span> sortedNums<span class="op">,</span> mid<span class="op">+</span><span class="dv">1</span><span class="op">,</span> end<span class="op">);</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> start<span class="op">;</span> i <span class="op">&lt;=</span> mid<span class="op">;</span> i<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>            <span class="kw">auto</span> iter <span class="op">=</span> lower_bound<span class="op">(</span>sortedNums<span class="op">.</span>begin<span class="op">()</span> <span class="op">+</span> mid <span class="op">+</span> <span class="dv">1</span><span class="op">,</span> sortedNums<span class="op">.</span>begin<span class="op">()</span> <span class="op">+</span> end <span class="op">+</span> <span class="dv">1</span><span class="op">,</span> nums<span class="op">[</span>i<span class="op">]);</span> <span class="co">// [mid+1, end+1)</span></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>            counts<span class="op">[</span>i<span class="op">]</span> <span class="op">+=</span> iter <span class="op">-</span> <span class="op">(</span>sortedNums<span class="op">.</span>begin<span class="op">()</span> <span class="op">+</span> mid <span class="op">+</span> <span class="dv">1</span><span class="op">);</span> <span class="co">// Ranking in [mid+1, end]</span></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>        vector<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;</span> temp<span class="op">(</span>end <span class="op">-</span> start <span class="op">+</span> <span class="dv">1</span><span class="op">);</span> <span class="co">// to store the merged vector from start to end</span></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>        <span class="co">// sort(sortedNums.begin()+start, sortedNums.begin()+end+1);</span></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>        <span class="dt">int</span> i <span class="op">=</span> start<span class="op">,</span> j <span class="op">=</span> mid<span class="op">+</span><span class="dv">1</span><span class="op">,</span> p <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> <span class="op">(</span>i <span class="op">&lt;=</span> mid <span class="op">&amp;&amp;</span> j <span class="op">&lt;=</span> end<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="op">(</span>sortedNums<span class="op">[</span>i<span class="op">]</span> <span class="op">&lt;=</span> sortedNums<span class="op">[</span>j<span class="op">])</span> <span class="op">{</span></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>                temp<span class="op">[</span>p<span class="op">]</span> <span class="op">=</span> sortedNums<span class="op">[</span>i<span class="op">];</span></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>                i<span class="op">++;</span></span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>                temp<span class="op">[</span>p<span class="op">]</span> <span class="op">=</span> sortedNums<span class="op">[</span>j<span class="op">];</span></span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>                j<span class="op">++;</span></span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>            p<span class="op">++;</span></span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> <span class="op">(</span>i <span class="op">&lt;=</span> mid<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>            temp<span class="op">[</span>p<span class="op">]</span> <span class="op">=</span> sortedNums<span class="op">[</span>i<span class="op">];</span></span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a>            i<span class="op">++;</span></span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>            p<span class="op">++;</span></span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> <span class="op">(</span>j <span class="op">&lt;=</span> end<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a>            temp<span class="op">[</span>p<span class="op">]</span> <span class="op">=</span> sortedNums<span class="op">[</span>j<span class="op">];</span></span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a>            j<span class="op">++;</span></span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a>            p<span class="op">++;</span></span>
+<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> end<span class="op">-</span>start<span class="op">+</span><span class="dv">1</span><span class="op">;</span> i<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a>            sortedNums<span class="op">[</span>start<span class="op">+</span>i<span class="op">]</span> <span class="op">=</span> temp<span class="op">[</span>i<span class="op">];</span></span>
+<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a><span class="op">};</span></span></code></pre></div>
+<h3 id="runtime">Runtime</h3>
 <pre><code>      5     2     6     1
 
    |  1     2     5     6  |  &lt;- counts = [2, 1, 1, 0]
    |  2     5  |  1     6  |  &lt;- counts = [1, 0, 1, 0]
    |  5  |  2  |  6  |  1  |  &lt;- start == end return
-
 </code></pre>
 	</section>
 	</div>
     </div>
+
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+this.page.url = "https://angold4.org/Webinar/Round1/2021-10-29
+/Angold4003.html"
+this.page.identifier = "Webinar/Round1/2021-10-29
+/Angold4003.html"
+
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://angold.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
 </div>
 <footer>
    <div class="well well-lg" id="footer-well">
@@ -258,6 +431,10 @@ private:
    </div>
 </footer>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 <script src="../../../theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
@@ -271,3 +448,4 @@ private:
 <script src="../../../theme/js/tim-kraska-betrayed-me.js"></script>
 </body>
 </html>
+

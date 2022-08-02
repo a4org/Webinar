@@ -10,7 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link href="../../../images/favicon.png" rel="icon">
-
 <link rel="canonical" href=".">
         <meta name="author" content="Angold Wang" />
 
@@ -26,6 +25,128 @@
 
     <link href="../../../theme/css/pygments/monokai.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../theme/css/style.css" type="text/css"/>
+
+  <style>
+
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+
+    li {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    a {
+      font-size: 18px;
+    }
+
+    k
+
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+    {   }
+
+    @media screen {
+      pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
 
 </head>
 <body>
@@ -64,123 +185,227 @@
     <div class="row">
         <div class="col-lg-12">
 	<section id="content" class="body">
-
-
-<h1>Angorithm4 Webinar #6</h1>
-<h4>Cohost by Jiawei Wang 2021-11-26</h4>
-<h2>1. Announcement</h2>
-<h3>1. About angorithm4.org</h3>
+<nav id="TOC" role="doc-toc">
 <ul>
-<li><strong>In Progress...</strong></li>
-<li><strong>With database, and support notes display, video playing etc.</strong></li>
+<li><a href="#angorithm4-webinar-6"
+id="toc-angorithm4-webinar-6">Angorithm4 Webinar #6</a>
+<ul>
+<li><a href="#announcement" id="toc-announcement">1. Announcement</a>
+<ul>
+<li><a href="#about-angorithm4.org" id="toc-about-angorithm4.org">1.
+About angorithm4.org</a></li>
+<li><a href="#about-linux" id="toc-about-linux">2. About Linux:</a></li>
+</ul></li>
+<li><a href="#microarchitecture---single-cycle"
+id="toc-microarchitecture---single-cycle">2. Microarchitecture -
+Single-Cycle</a>
+<ul>
+<li><a href="#turing-machine" id="toc-turing-machine">1. Turing
+Machine</a></li>
+<li><a href="#single-cycle-machine" id="toc-single-cycle-machine">2.
+Single-Cycle Machine</a></li>
+<li><a href="#mips-simulator" id="toc-mips-simulator">3.
+MIPS-Simulator</a></li>
+</ul></li>
+<li><a href="#eva" id="toc-eva">3. Eva</a>
+<ul>
+<li><a href="#runtime-semantics-should-be-preserved"
+id="toc-runtime-semantics-should-be-preserved">Runtime semantics should
+be preserved !</a></li>
+<li><a href="#runtime-1-arithmatic"
+id="toc-runtime-1-arithmatic">Runtime #1 Arithmatic</a></li>
+<li><a href="#runtime-2-variable" id="toc-runtime-2-variable">Runtime #2
+Variable</a></li>
+<li><a href="#runtime-3-function-var-lambda"
+id="toc-runtime-3-function-var-lambda">Runtime #3 Function (var
+lambda)</a></li>
+<li><a href="#runtime-4-class-var-environment"
+id="toc-runtime-4-class-var-environment">Runtime #4 Class (var
+Environment)</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="angorithm4-webinar-6">Angorithm4 Webinar #6</h1>
+<h4 id="cohost-by-jiawei-wang-2021-11-26">Cohost by Jiawei Wang
+2021-11-26</h4>
+<h2 id="announcement">1. Announcement</h2>
+<h3 id="about-angorithm4.org">1. About angorithm4.org</h3>
+<ul>
+<li><strong>In Progress…</strong></li>
+<li><strong>With database, and support notes display, video playing
+etc.</strong></li>
 <li><strong>About one month</strong> (till end of this year)</li>
 <li><strong>Runs on my Raspberry Pi 4B</strong></li>
-<li><strong>A challenge for me, since it won't based on any web framework</strong></li>
-<li>Maybe you can help...</li>
+<li><strong>A challenge for me, since it won’t based on any web
+framework</strong></li>
+<li>Maybe you can help…</li>
 </ul>
-<h3>2. About Linux:</h3>
+<h3 id="about-linux">2. About Linux:</h3>
 <ul>
-<li>Run Ubuntu on VirtualBox is <strong>not</strong> a good idea..., Mostly, especially when you do not have a desktop computer.</li>
-<li><strong>Instead, Try boot Ubuntu sepreate from Windows (Install ubuntu 20.04 LTS alongside windows 10)</strong></li>
-<li><strong>All you need is a 32GB SD Card and <a href="https://www.youtube.com/watch?v=-iSAyiicyQY">this</a> video</strong></li>
+<li>Run Ubuntu on VirtualBox is <strong>not</strong> a good idea…,
+Mostly, especially when you do not have a desktop computer.</li>
+<li><strong>Instead, Try boot Ubuntu sepreate from Windows (Install
+ubuntu 20.04 LTS alongside windows 10)</strong></li>
+<li><strong>All you need is a 32GB SD Card and <a
+href="https://www.youtube.com/watch?v=-iSAyiicyQY">this</a>
+video</strong></li>
 </ul>
-<h2>2. Microarchitecture - Single-Cycle</h2>
-<h3>1. Turing Machine</h3>
-<p><img src="Sources/Turing.png" alt="Turing"></p>
-<p><img src="Sources/TMs.png" alt="TMs"></p>
-<!-- raw HTML omitted -->
-<h4>T-recognizable:</h4>
-<p><strong>If the Turing machine is always reject by looping forever</strong> (From state to state but never stop in the final state).</p>
-<h4>One example of T-recognizable: (Hilbert's 10th Problem)</h4>
+<h2 id="microarchitecture---single-cycle">2. Microarchitecture -
+Single-Cycle</h2>
+<h3 id="turing-machine">1. Turing Machine</h3>
+<figure>
+<img src="Sources/Turing.png" alt="Turing" />
+<figcaption aria-hidden="true">Turing</figcaption>
+</figure>
+<figure>
+<img src="Sources/TMs.png" alt="TMs" />
+<figcaption aria-hidden="true">TMs</figcaption>
+</figure>
+<p><img src="Sources/TS.png" align="right" weight="300" height="400"/>
+#### T-decidable: <strong>If the Turing machine is always
+halting</strong><br>which means always rejecting by explicitly coming to
+a reject state and halting.</p>
+<h4 id="t-recognizable">T-recognizable:</h4>
+<p><strong>If the Turing machine is always reject by looping
+forever</strong> (From state to state but never stop in the final
+state).</p>
+<h4 id="one-example-of-t-recognizable-hilberts-10th-problem">One example
+of T-recognizable: (Hilbert’s 10th Problem)</h4>
 <ul>
 <li>Equations of polynomials where solutions must be integers.</li>
-<li>Let D = {p | polynomial p(x1, x2, ..., xk) = 0 <strong>has a solution in integers</strong>}</li>
-<li>E.g. <code>3x^2 - 2xy -y^2z = 7 Solution: x = 1, y = 2, z = -2</code></li>
-<li>Hilbert's 10th problem: <strong>Give an algorithm (TM) to decide D. (Only yes or no)</strong></li>
-<li><strong>Matiyasevich proved in 1970: D is not decidable.</strong></li>
+<li>Let D = {p | polynomial p(x1, x2, …, xk) = 0 <strong>has a solution
+in integers</strong>}</li>
+<li>E.g.
+<code>3x^2 - 2xy -y^2z = 7 Solution: x = 1, y = 2, z = -2</code></li>
+<li>Hilbert’s 10th problem: <strong>Give an algorithm (TM) to decide D.
+(Only yes or no)</strong></li>
+<li><strong>Matiyasevich proved in 1970: D is not
+decidable.</strong></li>
 </ul>
-<p><img src="Sources/relation.png" alt="relation"></p>
-<h3>2. Single-Cycle Machine</h3>
-<p><img src="Sources/single.png" alt="single"></p>
+<figure>
+<img src="Sources/relation.png" alt="relation" />
+<figcaption aria-hidden="true">relation</figcaption>
+</figure>
+<h3 id="single-cycle-machine">2. Single-Cycle Machine</h3>
+<figure>
+<img src="Sources/single.png" alt="single" />
+<figcaption aria-hidden="true">single</figcaption>
+</figure>
 <ul>
-<li><strong>Each instrurction takes a single clock cycle to execute</strong></li>
-<li>From <strong>ISA</strong> point of view, there are <strong>no “intermediate states” between AS and AS’</strong> during instruction execution</li>
-<li>All <strong>six phases</strong> of the instruction processing cycle take a single machine clock cycle to complete
+<li><strong>Each instrurction takes a single clock cycle to
+execute</strong></li>
+<li>From <strong>ISA</strong> point of view, there are <strong>no
+“intermediate states” between AS and AS’</strong> during instruction
+execution</li>
+<li>All <strong>six phases</strong> of the instruction processing cycle
+take a single machine clock cycle to complete
 <ul>
 <li>Fetch</li>
 <li>Decode</li>
-<li>Evaluate Address</li>
-<li>Fetch Operands</li>
+<li>Evaluate Address<br />
+</li>
+<li>Fetch Operands<br />
+</li>
 <li>Execute</li>
 <li>Store Result</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<p><img src="Sources/state.png" alt="state"></p>
+<p><img src="Sources/state.png" alt="state" /> * <strong>Bottom neck of
+Single-Cycle Machine: The slowest instruction determines cycle time
+-&gt; long cycle time (STORE)</strong> * We can have
+<strong>programmer-invisible state</strong> to optimize the speed of the
+instruction execution: <strong>multiple state transitions per
+instruction</strong> * <strong>AS -&gt; AS’ (transform AS to AS’ in a
+single clock cycle)</strong> * <strong>AS -&gt; AS + MS1 -&gt; AS + MS2
+-&gt; … -&gt; AS’ (take multiple clock cycles to transform AS to
+AS’)</strong> * <strong>Multi-Cycle Machine: The slowest “stage”
+determines cycle time</strong></p>
+<h3 id="mips-simulator">3. MIPS-Simulator</h3>
 <ul>
-<li><strong>Bottom neck of Single-Cycle Machine: The slowest instruction determines cycle time -&gt; long cycle time (STORE)</strong></li>
-<li>We can have <strong>programmer-invisible state</strong> to optimize the speed of the instruction execution: <strong>multiple state transitions per instruction</strong>
-<ul>
-<li><strong>AS -&gt; AS' (transform AS to AS' in a single clock cycle)</strong></li>
-<li><strong>AS -&gt; AS + MS1 -&gt; AS + MS2 -&gt; ... -&gt; AS' (take multiple clock cycles to transform AS to AS')</strong></li>
+<li><strong>Source Code: <a
+href="https://github.com/Angold-4/MIPS-Simulator">Angold-4/MIPS-Simulator</a></strong></li>
+<li><strong>Based on <a
+href="https://course.ece.cmu.edu/~ece447/s15/doku.php?id=labs">CMU
+18-447 Lab1</a></strong></li>
 </ul>
-</li>
-<li><strong>Multi-Cycle Machine: The slowest &quot;stage&quot; determines cycle time</strong></li>
-</ul>
-<h3>3. MIPS-Simulator</h3>
+<h4 id="mips">MIPS</h4>
 <ul>
-<li><strong>Source Code: <a href="https://github.com/Angold-4/MIPS-Simulator">Angold-4/MIPS-Simulator</a></strong></li>
-<li><strong>Based on <a href="https://course.ece.cmu.edu/~ece447/s15/doku.php?id=labs">CMU 18-447 Lab1</a></strong></li>
-</ul>
-<h4>MIPS</h4>
-<ul>
-<li><strong>Microprocessor without interlocked Pipelined Stages</strong></li>
-<li>The hardware doesn’t do anything to detect the dependency between instructions, everything is handled by the software, so that you can <strong>design a microprocessor that is simple</strong></li>
+<li><strong>Microprocessor without interlocked Pipelined
+Stages</strong></li>
+<li>The hardware doesn’t do anything to detect the dependency between
+instructions, everything is handled by the software, so that you can
+<strong>design a microprocessor that is simple</strong></li>
 <li>Using C to simulate MIPS-hardware</li>
 </ul>
-<h4>Example</h4>
-<p><img src="Sources/appaddi.png" alt="appaddi">
-<img src="Sources/addih.png" alt="addih"></p>
-<pre><code class="language-c">/*
- * handle_addi
- * Add Immediate 
- * Opcode: 8
- * The 16-bit immediate is sign-extended and added to the contents of 
- * general register rs to form the result. The result is placed into general register rt.
- */
-
-int handle_addi(uint32_t instr) {
-    // decode source code and target register
-    int rs = decode_i_rs(instr);
-    int rt = decode_i_rt(instr);
-
-    int32_t immediate = (int32_t) decode_i_immediate(instr);
-    // Note: addi normally raises exception on overflow
-    // however, this functionality is not implemented here
-
-    NEXT_STATE.REGS[rt] = CURRENT_STATE.REGS[rs] + immediate;
-
-    NEXT_STATE.PC = CURRENT_STATE.PC + 4;
-
-    return STATUS_OK;
-}
-
-</code></pre>
-<p><img src="Sources/mips.png" alt="mips">
-<img src="Sources/addimips.png" alt="addimips"></p>
-<h2>3. Eva</h2>
+<h4 id="example">Example</h4>
+<p><img src="Sources/appaddi.png" alt="appaddi" /> <img
+src="Sources/addih.png" alt="addih" /></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">/*</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"> * handle_addi</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"> * Add Immediate </span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"> * Opcode: 8</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"> * The 16-bit immediate is sign-extended and added to the contents of </span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"> * general register rs to form the result. The result is placed into general register rt.</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"> */</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> handle_addi<span class="op">(</span><span class="dt">uint32_t</span> instr<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">// decode source code and target register</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> rs <span class="op">=</span> decode_i_rs<span class="op">(</span>instr<span class="op">);</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> rt <span class="op">=</span> decode_i_rt<span class="op">(</span>instr<span class="op">);</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int32_t</span> immediate <span class="op">=</span> <span class="op">(</span><span class="dt">int32_t</span><span class="op">)</span> decode_i_immediate<span class="op">(</span>instr<span class="op">);</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Note: addi normally raises exception on overflow</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">// however, this functionality is not implemented here</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    NEXT_STATE<span class="op">.</span>REGS<span class="op">[</span>rt<span class="op">]</span> <span class="op">=</span> CURRENT_STATE<span class="op">.</span>REGS<span class="op">[</span>rs<span class="op">]</span> <span class="op">+</span> immediate<span class="op">;</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    NEXT_STATE<span class="op">.</span>PC <span class="op">=</span> CURRENT_STATE<span class="op">.</span>PC <span class="op">+</span> <span class="dv">4</span><span class="op">;</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> STATUS_OK<span class="op">;</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p><img src="Sources/mips.png" alt="mips" /> <img
+src="Sources/addimips.png" alt="addimips" /></p>
+<h2 id="eva">3. Eva</h2>
 <ul>
-<li><strong>Source Code: <a href="https://github.com/Angold-4/Eval">Angold-4/Eval</a></strong></li>
+<li><strong>Source Code: <a
+href="https://github.com/Angold-4/Eval">Angold-4/Eval</a></strong></li>
 </ul>
-<h3>Runtime semantics should be preserved !</h3>
-<p><img src="Sources/runtime.png" alt="runtime"></p>
-<h3>Runtime #1 Arithmatic</h3>
-<h3>Runtime #2 Variable</h3>
-<h3>Runtime #3 Function (var lambda)</h3>
-<h3>Runtime #4 Class (var Environment)</h3>
+<h3 id="runtime-semantics-should-be-preserved">Runtime semantics should
+be preserved !</h3>
+<figure>
+<img src="Sources/runtime.png" alt="runtime" />
+<figcaption aria-hidden="true">runtime</figcaption>
+</figure>
+<h3 id="runtime-1-arithmatic">Runtime #1 Arithmatic</h3>
+<h3 id="runtime-2-variable">Runtime #2 Variable</h3>
+<h3 id="runtime-3-function-var-lambda">Runtime #3 Function (var
+lambda)</h3>
+<h3 id="runtime-4-class-var-environment">Runtime #4 Class (var
+Environment)</h3>
 	</section>
 	</div>
     </div>
+
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+this.page.url = "https://angold4.org/Webinar/Round1/2021-11-26
+/Angold4006.html"
+this.page.identifier = "Webinar/Round1/2021-11-26
+/Angold4006.html"
+
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://angold.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
 </div>
 <footer>
    <div class="well well-lg" id="footer-well">
@@ -199,6 +424,10 @@ int handle_addi(uint32_t instr) {
    </div>
 </footer>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 <script src="../../../theme/js/bootstrap.min.js"></script>
 
 <!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
@@ -212,3 +441,4 @@ int handle_addi(uint32_t instr) {
 <script src="../../../theme/js/tim-kraska-betrayed-me.js"></script>
 </body>
 </html>
+
